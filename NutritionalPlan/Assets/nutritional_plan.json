@@ -1,0 +1,2339 @@
+{
+    "carbohydrate": [
+        {
+            "name": "לחמים",
+            "dishes": [
+                {
+                    "name": "לחם קל",
+                    "amount": 3,
+                    "unit": "פרוסות",
+                    "note": "עד 50 קק״ל/פרוסה",
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "לחם מלא",
+                    "amount": 2,
+                    "unit": "פרוסות",
+                    "note": "75 קק״ל לפרוסה",
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "לחם לבן",
+                    "amount": 1,
+                    "unit": "פרוסה",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "לחמניה רגילה",
+                    "amount": 0.5,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "לחמניה קלה",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "עד 120 קק״ל",
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "פיתה לבנה רגילה",
+                    "amount": 0.5,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "פיתה קלה",
+                    "amount": 1,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "פיתה כוסמין",
+                    "amount": 1,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "בגט ארוך",
+                    "amount": 0.25,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "בייגלה עגול",
+                    "amount": 0.5,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "פריכיות אורז",
+                    "amount": 3,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "טורטייה מחיטה מלאה",
+                    "amount": 1,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "טורטייה מופחתת קלוריות",
+                    "amount": 1,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "טורטייה מקמח תירס",
+                    "amount": 1,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "דפי אורז קוטר גדול",
+                    "amount": 3,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "חבילה טוסטונים",
+                    "amount": 1,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "לחמית",
+                    "amount": 3,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "קליליות",
+                    "amount": 5,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "קרקרים זהב",
+                    "amount": 3,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "קרקרים פיטנס",
+                    "amount": 5,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "קמחים",
+            "dishes": [
+                {
+                    "name": "קוואקר דק",
+                    "amount": 4,
+                    "unit": "כפות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "קמח מכל סוג",
+                    "amount": 3,
+                    "unit": "כפות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "קורנפלור",
+                    "amount": 4,
+                    "unit": "כפות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "פירורי לחם",
+                    "amount": 4,
+                    "unit": "כפות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "תחליפי פחמימה מבושלת",
+            "dishes": [
+                {
+                    "name": "אורז",
+                    "amount": 7,
+                    "unit": "כפות מטבח רגילות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "אטריות",
+                    "amount": 7,
+                    "unit": "כפות מטבח רגילות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "פסטה",
+                    "amount": 7,
+                    "unit": "כפות מטבח רגילות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "פתיתים",
+                    "amount": 7,
+                    "unit": "כפות מטבח רגילות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "קינואה",
+                    "amount": 7,
+                    "unit": "כפות מטבח רגילות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "בורגול",
+                    "amount": 7,
+                    "unit": "כפות מטבח רגילות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "קוסקוס",
+                    "amount": 7,
+                    "unit": "כפות מטבח רגילות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "תירס",
+                    "amount": 7,
+                    "unit": "כפות מטבח רגילות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "גרעינים",
+                    "amount": 7,
+                    "unit": "כפות מטבח רגילות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "פירה תפו”א",
+                    "amount": 7,
+                    "unit": "כפות מטבח רגילות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "בטטה",
+                    "amount": 7,
+                    "unit": "כפות מטבח רגילות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "קטניות מבושלות - אפונה",
+                    "amount": 4,
+                    "unit": "כפות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "קטניות מבושלות - חומוס",
+                    "amount": 4,
+                    "unit": "כפות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "קטניות מבושלות - עדשים",
+                    "amount": 4,
+                    "unit": "כפות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "כדורי פלאפל אפוי",
+                    "amount": 3,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "ערמונים",
+                    "amount": 8,
+                    "unit": "יחידות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "קטניות מבושלות - חומוס",
+                    "amount": 6,
+                    "unit": "כפות",
+                    "note": "כחצי מנת פחמימה + חצי מנת חלבון",
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "קטניות מבושלות - עדשים",
+                    "amount": 6,
+                    "unit": "כפות",
+                    "note": "כחצי מנת פחמימה + חצי מנת חלבון",
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "קטניות מבושלות - אפונה",
+                    "amount": 6,
+                    "unit": "כפות",
+                    "note": "כחצי מנת פחמימה + חצי מנת חלבון",
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "צ’יפס אפוי קפוא משקית",
+                    "amount": 110,
+                    "unit": "גרם",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "אדממה",
+                    "amount": 200,
+                    "unit": "גרם",
+                    "note": "חצי מנת חלבון + חצי מנת פחמימה",
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "אלכוהול",
+            "dishes": [
+                {
+                    "name": "בירה",
+                    "amount": 1,
+                    "unit": "שליש",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "יין",
+                    "amount": 1,
+                    "unit": "כוס",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "וודקה",
+                    "amount": 1,
+                    "unit": "שוט",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "טקילה",
+                    "amount": 1,
+                    "unit": "שוט",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "וויסקי",
+                    "amount": 1,
+                    "unit": "שוט",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "רום",
+                    "amount": 1,
+                    "unit": "שוט",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "ג’ין",
+                    "amount": 1,
+                    "unit": "שוט",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "עראק",
+                    "amount": 1,
+                    "unit": "שוט",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "ליקר",
+                    "amount": 60,
+                    "unit": "מיל",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "קוקטייל",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "2 מנות פחמימה",
+                    "nutritional_values": {
+                        "carbohydrate": 2,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "מתוקים, חטיפים ודגנים",
+            "dishes": [
+                {
+                    "name": "סילאן",
+                    "amount": 2,
+                    "unit": "כפות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "דבש",
+                    "amount": 1,
+                    "unit": "כף גדושה",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "ריבה לייט",
+                    "amount": 2,
+                    "unit": "כפות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "נוטלה",
+                    "amount": 1,
+                    "unit": "כף",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "ממרח שוקולד השחר",
+                    "amount": 1,
+                    "unit": "כף",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "עוגיות פתיבר",
+                    "amount": 3,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "עוגיות אוריאו",
+                    "amount": 2,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "חטיף מיני שוקולד",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "כיפכף / מקופלת / פסק זמן",
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "אצבעות קינדר",
+                    "amount": 2,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "שורה קינדר בואנו",
+                    "amount": 1,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "עוגיות לוטוס",
+                    "amount": 3,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "חטיף תמר",
+                    "amount": 1,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "מיני מגנום",
+                    "amount": 1,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "ארטיק דיאט",
+                    "amount": 2,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "ארטיק על בסיס פרי",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "תמרה, לה פרוטה",
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "חטיף אנרגיה",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "עד 120 קק”ל",
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "קורנפלקס",
+                    "amount": 4,
+                    "unit": "כפות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "גרנולה",
+                    "amount": 3,
+                    "unit": "כפות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "במבה קטנה",
+                    "amount": 1,
+                    "unit": "שקית 25 גרם",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "חטיף אישי - דוריטוס",
+                    "amount": 25,
+                    "unit": "גרם",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "חטיף אישי - ביסלי",
+                    "amount": 25,
+                    "unit": "גרם",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "חטיף אישי - אפרופו",
+                    "amount": 25,
+                    "unit": "גרם",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "בייגלה",
+                    "amount": 1,
+                    "unit": "כוס חד”פ",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "פופקורן מוכן בסיר",
+                    "amount": 3,
+                    "unit": "כוסות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "חטיף פריכיות הטעימות",
+                    "amount": 1,
+                    "unit": "שקית",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "חטיף פיטנס",
+                    "amount": 1,
+                    "unit": "שקית",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "פירות",
+            "dishes": [
+                {
+                    "name": "אגס",
+                    "amount": 1,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "תפוח עץ",
+                    "amount": 1,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "אפרסק",
+                    "amount": 1,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "אפרסמון",
+                    "amount": 1,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "תפוז",
+                    "amount": 1,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "קלמנטינות קטנות",
+                    "amount": 2,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "בננה",
+                    "amount": 1,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "דובדבנים",
+                    "amount": 10,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "תותים",
+                    "amount": 8,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "קיווי",
+                    "amount": 2,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "משמשים",
+                    "amount": 3,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "ענבים",
+                    "amount": 12,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "פירות יער קפואים",
+                    "amount": 1,
+                    "unit": "כוס",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "אוכמניות",
+                    "amount": 2,
+                    "unit": "כוסות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "אשכולית",
+                    "amount": 0.5,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "פומלה",
+                    "amount": 0.5,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "אבטיח",
+                    "amount": 1,
+                    "unit": "קערה / 200 גרם",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "מלון",
+                    "amount": 1,
+                    "unit": "קערה / 200 גרם",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "תאנה טרייה",
+                    "amount": 1,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "מנגו",
+                    "amount": 0.5,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "שזיפים מיובשים",
+                    "amount": 2,
+                    "unit": "קטנים",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "תמרים מיובשים",
+                    "amount": 2,
+                    "unit": "קטנים",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "חמוציות",
+                    "amount": 1,
+                    "unit": "כף",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "צימוקים",
+                    "amount": 1,
+                    "unit": "כף",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "משמש מיובש",
+                    "amount": 2,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "אננס טרי",
+                    "amount": 1,
+                    "unit": "כוס",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                }
+            ]
+        }
+    ],
+    "protein": [
+        {
+            "name": "בשרי",
+            "dishes": [
+                {
+                    "name": "חזה עוף",
+                    "amount": 150,
+                    "unit": "גרם (2 חתיכות גודל כף יד)",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "פרגית",
+                    "amount": 150,
+                    "unit": "גרם (חתיכה גודל כף יד)",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "כרע וירך עוף",
+                    "amount": 150,
+                    "unit": null,
+                    "note": "2 שוקיים גדולות / 3 קטנות",
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "בשר טחון",
+                    "amount": 150,
+                    "unit": "גרם",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "קציצות מבשר טחון",
+                    "amount": 4,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "סינטה",
+                    "amount": 150,
+                    "unit": "גרם",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "פילה בקר",
+                    "amount": 150,
+                    "unit": "גרם",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "כתף בקר",
+                    "amount": 150,
+                    "unit": "גרם",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "אנטריקוט",
+                    "amount": 180,
+                    "unit": "גרם",
+                    "note": "להוסיף 2 מנות שומן",
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 2
+                    }
+                },
+                {
+                    "name": "פסטרמה",
+                    "amount": 5,
+                    "unit": "פרוסות",
+                    "note": "חצי מנת חלבון",
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "דקניקים כתף בקר",
+                    "amount": 0.5,
+                    "unit": "קופסא",
+                    "note": "חצי מנת חלבון",
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "פסטרמה בקר",
+                    "amount": 4,
+                    "unit": "פרוסות",
+                    "note": "חצי מנת חלבון",
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "קציצת המבורגר",
+                    "amount": 200,
+                    "unit": "גרם",
+                    "note": "להוסיף מנת שומן",
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "כנפיים",
+                    "amount": 4,
+                    "unit": null,
+                    "note": "להוסיף מנת שומן",
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "כבד עוף",
+                    "amount": 200,
+                    "unit": "גרם",
+                    "note": "להוסיף מנת שומן",
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "שניצל מטוגן",
+                    "amount": 200,
+                    "unit": "גרם",
+                    "note": "להוסיף מנת שומן + חצי מנת פחמימה",
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 1,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "שניצל אפוי",
+                    "amount": 170,
+                    "unit": "גרם",
+                    "note": "להוסיף חצי מנת פחמימה",
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "טבעוני",
+            "dishes": [
+                {
+                    "name": "טופו",
+                    "amount": 150,
+                    "unit": "גרם (חצי חבילה)",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "סייטן",
+                    "amount": 170,
+                    "unit": "גרם",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "קטניות",
+                    "amount": 120,
+                    "unit": "גרם (8 כפות)",
+                    "note": "חצי מנת פחמימה + חצי מנת חלבון",
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "פתיתי סויה",
+                    "amount": 150,
+                    "unit": "גרם",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "תורמוס",
+                    "amount": 200,
+                    "unit": "גרם",
+                    "note": "חצי מנת חלבון",
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "נתחי סויה דמוי עוף טבעול",
+                    "amount": 115,
+                    "unit": "גרם",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "נקנקיות צמחוניות",
+                    "amount": 3,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "המבורגר צמחוני של 99 קלוריות",
+                    "amount": 2,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "כדורי בשר צמחוניים של טבעול",
+                    "amount": 7,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "שווארמה צמחונית טבעול",
+                    "amount": 110,
+                    "unit": "גרם",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "המבורגר ביונד מיט",
+                    "amount": 1,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "טחון מהצומח טבעול",
+                    "amount": 150,
+                    "unit": "גרם",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "ממרח סויה",
+                    "amount": 3,
+                    "unit": "כפות",
+                    "note": "חצי מנת חלבון",
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "דגים",
+            "dishes": [
+                {
+                    "name": "לברק",
+                    "amount": 200,
+                    "unit": "גרם (2 פרוסות)",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "אמנון",
+                    "amount": 200,
+                    "unit": "גרם (2 פרוסות)",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "סלמון",
+                    "amount": 150,
+                    "unit": "גרם (חצי פילה)",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "טונה בשמן סחוטה היטב",
+                    "amount": 1,
+                    "unit": "קופסא",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "טונה במים",
+                    "amount": 2,
+                    "unit": "קופסאות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "סלמון מעושן",
+                    "amount": 50,
+                    "unit": "גרם (חצי אריזה של 100 גרם)",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "סרדינים סחוטה היטב",
+                    "amount": 1,
+                    "unit": "קופסא",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "חלבי",
+            "dishes": [
+                {
+                    "name": "קוטג’",
+                    "amount": 125,
+                    "unit": "גרם (חצי קופסא)",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "גבינה לבנה 4%",
+                    "amount": 125,
+                    "unit": "גרם (חצי קופסא)",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "גבינה לבנה 5%",
+                    "amount": 125,
+                    "unit": "גרם (חצי קופסא)",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "גבינת שמנת 5%",
+                    "amount": 100,
+                    "unit": "גרם (חצי קופסא)",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "לבאנה",
+                    "amount": 100,
+                    "unit": "גרם (חצי קופסא)",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "גבינה בולגרית 5%",
+                    "amount": 80,
+                    "unit": "גרם (שליש קופסא)",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "גבינה צפתית 5%",
+                    "amount": 80,
+                    "unit": "גרם (שליש קופסא)",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "גבינת חמד 5%",
+                    "amount": 80,
+                    "unit": "גרם (שליש קופסא)",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "גבינת פטה 5%",
+                    "amount": 80,
+                    "unit": "גרם (שליש קופסא)",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "גבינת ריקוטה",
+                    "amount": 100,
+                    "unit": "גרם (3-4 כפות)",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "גבינה צהובה 9%",
+                    "amount": 2,
+                    "unit": "פרוסות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "גבינה צהובה 15%",
+                    "amount": 1.5,
+                    "unit": "פרוסות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "יוגורט חלבון בטעם טבעי",
+                    "amount": 1,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "יוגורט חלבון בטעם 0-1.5%",
+                    "amount": 1,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "אבקת חלבון",
+                    "amount": 1,
+                    "unit": "סקופ",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "חטיף חלבון",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "חצי חלבון + חצי פחמימה",
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "ביצים",
+                    "amount": 2,
+                    "unit": "(ביצה + חלבון)",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "משולשי מון בלאן",
+                    "amount": 5,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "חלב 1-3%",
+                    "amount": 1,
+                    "unit": "כוס",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "חלב סויה לייט",
+                    "amount": 2,
+                    "unit": "כוסות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "חלב סויה ללא תוספת סוכר",
+                    "amount": 2,
+                    "unit": "כוסות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0.5,
+                        "fat": 0
+                    }
+                }
+            ]
+        }
+    ],
+    "fat": [
+        {
+            "name": "מנות שומן (כ-100 קק”ל)",
+            "dishes" :
+            [
+                {
+                    "name": "שמן מכל סוג",
+                    "amount": 1,
+                    "unit": "כף",
+                    "note": "זית, קנולה, סויה, קוקוס",
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "זיתים",
+                    "amount": 8,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "אגוזי מלך",
+                    "amount": 5,
+                    "unit": "חצאים",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "אגוזי קשיו",
+                    "amount": 5,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "פקאן",
+                    "amount": 5,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "לוז",
+                    "amount": 5,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "בוטנים",
+                    "amount": 5,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "אגוזי ברזיל",
+                    "amount": 2,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "זרעי צ’יה",
+                    "amount": 2,
+                    "unit": "כפות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "זרעי פשתן",
+                    "amount": 2,
+                    "unit": "כפות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "צנוברים",
+                    "amount": 1,
+                    "unit": "כף",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "גרעיני דלעת",
+                    "amount": 1,
+                    "unit": "כף",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "גרעיני חמניה",
+                    "amount": 1,
+                    "unit": "כף",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "חמאת בוטנים",
+                    "amount": 1,
+                    "unit": "כף",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "חמאת שקדים",
+                    "amount": 1,
+                    "unit": "כף",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "טחינה גולמית",
+                    "amount": 1,
+                    "unit": "כף",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "סלט טחינה",
+                    "amount": 2,
+                    "unit": "כפות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "מיונז לייט",
+                    "amount": 2,
+                    "unit": "כפות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "מיונז רגיל",
+                    "amount": 1,
+                    "unit": "כף",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "אבוקדו",
+                    "amount": 0.5,
+                    "unit": null,
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "קרם קוקוס 22%",
+                    "amount": 5,
+                    "unit": "כפות",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "קרם קוקוס 17%",
+                    "amount": 0.25,
+                    "unit": "כוס",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "חמאה",
+                    "amount": 1,
+                    "unit": "כף",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "ממרח עגבניות מיובשות",
+                    "amount": 1,
+                    "unit": "כף",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "ממרח פסטו",
+                    "amount": 1,
+                    "unit": "כף",
+                    "note": null,
+                    "nutritional_values": {
+                        "carbohydrate": 0,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                }
+            ]
+        }
+    ],
+    "other": [
+        {
+            "name": "אכילה בחוץ",
+            "dishes" :
+            [
+                {
+                    "name": "משולש פיצה סטנדרטי",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "2 מנות פחמימה, מנת חלבון",
+                    "nutritional_values": {
+                        "carbohydrate": 2,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "בורקס אישי",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "מנת פחמימה + חצי מנת שומן",
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0.5
+                    }
+                },
+                {
+                    "name": "קוראסון קטן",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "מנת פחמימה + חצי מנת שומן",
+                    "nutritional_values": {
+                        "carbohydrate": 1,
+                        "protein": 0,
+                        "fat": 0.5
+                    }
+                },
+                {
+                    "name": "ג’חנון",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "2 מנות פחמימה + 2 מנות שומן",
+                    "nutritional_values": {
+                        "carbohydrate": 2,
+                        "protein": 0,
+                        "fat": 2
+                    }
+                },
+                {
+                    "name": "רול סושי לא מטוגן עם דג ואבוקדו",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "1.5 מנות פחמימה + 1 מנת חלבון (עם דג) או שומן (עם אבוקדו)",
+                    "nutritional_values": {
+                        "carbohydrate": 1.5,
+                        "protein": 1,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "רול סושי לא מטוגן עם אבוקדו",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "1.5 מנות פחמימה + 1 מנת חלבון (עם דג) או שומן (עם אבוקדו)",
+                    "nutritional_values": {
+                        "carbohydrate": 1.5,
+                        "protein": 0,
+                        "fat": 1
+                    }
+                },
+                {
+                    "name": "רול סושי לא מטוגן עם דג",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "1.5 מנות פחמימה + 1 מנת חלבון (עם דג) או שומן (עם אבוקדו)",
+                    "nutritional_values": {
+                        "carbohydrate": 1.5,
+                        "protein": 1,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "שניצל 200 גרם",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "חצי מנת פחמימה + 2 מנות שומן + מנת חלבון",
+                    "nutritional_values": {
+                        "carbohydrate": 0.5,
+                        "protein": 1,
+                        "fat": 2
+                    }
+                },
+                {
+                    "name": "המבורגר בלחמניה 200 גרם",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "2 מנות פחמימה + מנת חלבון + 2 מנת שומן",
+                    "nutritional_values": {
+                        "carbohydrate": 2,
+                        "protein": 1,
+                        "fat": 2
+                    }
+                },
+                {
+                    "name": "שווארמה פרגית בפיתה",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "2 מנות פחמימה + מנת חלבון + מנת שומן",
+                    "nutritional_values": {
+                        "carbohydrate": 2,
+                        "protein": 1,
+                        "fat": 2
+                    }
+                },
+                {
+                    "name": "פיתה סביח",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "2 מנות פחמימה + חצי מנת חלבון + 1.5 מנת שומן",
+                    "nutritional_values": {
+                        "carbohydrate": 2,
+                        "protein": 0.5,
+                        "fat": 1.5
+                    }
+                },
+                {
+                    "name": "פלאפל בפיתה",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "3 מנות פחמימה + חצי מנת חלבון + 2 מנות שומן",
+                    "nutritional_values": {
+                        "carbohydrate": 3,
+                        "protein": 0.5,
+                        "fat": 2
+                    }
+                },
+                {
+                    "name": "קערת חומוס בצלחת",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "2 מנות פחמימה + 2 מנות שומן",
+                    "nutritional_values": {
+                        "carbohydrate": 2,
+                        "protein": 0,
+                        "fat": 2
+                    }
+                },
+                {
+                    "name": "קערת פסטה במסעדה",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "3 מנות פחמימה",
+                    "nutritional_values": {
+                        "carbohydrate": 3,
+                        "protein": 0,
+                        "fat": 0
+                    }
+                },
+                {
+                    "name": "נודלס מוקפץ עם עוף",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "3 מנות פחמימה + מנת חלבון + 2 מנות שומן",
+                    "nutritional_values": {
+                        "carbohydrate": 3,
+                        "protein": 1,
+                        "fat": 2
+                    }
+                },
+                {
+                    "name": "נודלס מוקפץ עם טופו",
+                    "amount": 1,
+                    "unit": null,
+                    "note": "3 מנות פחמימה + מנת חלבון + 2 מנות שומן",
+                    "nutritional_values": {
+                        "carbohydrate": 3,
+                        "protein": 1,
+                        "fat": 2
+                    }
+                }
+            ]
+        }
+    ]
+}
+
