@@ -55,7 +55,7 @@ struct DishCellView: View {
             
             Spacer()
             
-                Image(systemName: isSelected ? "checkmark.circle" : "circle")
+            Image(systemSymbol: isSelected ? .checkmarkCircle : .circle)
                     .resizable()
                     .foregroundStyle(isSelected ? .green : .primary)
                     .padding(4.0)
