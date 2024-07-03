@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import SFSafeSymbols
 
 struct DailyReportView: View {
     
@@ -45,7 +46,7 @@ struct DailyReportView: View {
                     
             ToolbarItem {
                 Button("",
-                       systemImage: "plus",
+                       systemImage: SFSymbol.plus.rawValue,
                        action: addMeal)
             }
             

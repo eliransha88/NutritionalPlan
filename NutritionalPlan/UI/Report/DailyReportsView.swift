@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import SFSafeSymbols
 
 struct DailyReportsView: View {
     
@@ -36,7 +37,7 @@ struct DailyReportsView: View {
         .toolbar {
             ToolbarItem {
                 Button("",
-                       systemImage: "plus",
+                       systemImage: SFSymbol.plus.rawValue,
                        action: addReport)
             }
             
@@ -89,7 +90,7 @@ struct DailyReportCellView: View {
             
             if report.meals.isNotEmpty {
                 Button("",
-                       systemImage: "square.and.arrow.up",
+                       systemImage: SFSymbol.squareAndArrowUp.rawValue,
                        action: onShareButtonTap)
             }
         }

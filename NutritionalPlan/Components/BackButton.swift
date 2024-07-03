@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SFSafeSymbols
 
 struct BackButtonModifier: ViewModifier {
     
@@ -16,8 +17,9 @@ struct BackButtonModifier: ViewModifier {
             .navigationBarBackButtonHidden()
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
+                    
                     Button("",
-                           systemImage: "chevron.left",
+                           systemImage: SFSymbol.chevronLeft.rawValue,
                            action: action)
                 }
             }

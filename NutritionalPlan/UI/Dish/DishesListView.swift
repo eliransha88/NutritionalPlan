@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import SFSafeSymbols
 
 struct DishesListView: View {
     
@@ -63,7 +64,7 @@ struct DishesListView: View {
                 
                 ToolbarItem {
                     Button("",
-                           systemImage: "plus",
+                           systemImage: SFSymbol.plus.rawValue,
                            action: addReport)
                 }
                 

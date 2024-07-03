@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 import Combine
+import SFSafeSymbols
 
 class DishViewModel: ObservableObject {
     
@@ -130,12 +131,12 @@ struct DishView: View {
             }
             
             ToolbarItemGroup(placement: .keyboard) {
-                Button("", systemImage: "chevron.up") {
+                Button("", systemImage: SFSymbol.chevronUp.rawValue) {
                     focusedField = focusedField?.previousField
                 }
                 .disabled(focusedField == .name)
                 
-                Button("", systemImage: "chevron.down") {
+                Button("", systemImage: SFSymbol.chevronDown.rawValue) {
                     focusedField = focusedField?.nextField
                 }
                 .disabled(focusedField == .fat)

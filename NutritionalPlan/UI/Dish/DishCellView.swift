@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SFSafeSymbols
 
 struct DishCellView: View {
     
@@ -27,7 +28,17 @@ struct DishCellView: View {
     
     var body: some View {
         HStack(spacing: 0) {
-                        
+            
+            Button {
+                dish.isFavorite.toggle()
+            } label: {
+                Image(systemSymbol: dish.isFavorite ? .starFill : .star)
+                    .resizable()
+                    .foregroundStyle(isSelected ? .green : .primary)
+                    .padding(4.0)
+                    .frame(width: 32, height: 32)
+            }
+            
             VStack(alignment: .leading, spacing: 0) {
                 Text(dish.description)
                     .font(.headline)
