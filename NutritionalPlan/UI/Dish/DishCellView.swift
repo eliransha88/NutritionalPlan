@@ -27,17 +27,18 @@ struct DishCellView: View {
     }
     
     var body: some View {
-        HStack(spacing: 0) {
-            
-            Button {
-                dish.isFavorite.toggle()
-            } label: {
-                Image(systemSymbol: dish.isFavorite ? .starFill : .star)
-                    .resizable()
-                    .foregroundStyle(isSelected ? .green : .primary)
-                    .padding(4.0)
-                    .frame(width: 32, height: 32)
-            }
+        HStack(spacing: 8.0) {
+
+            Image(systemSymbol: dish.isFavorite ? .starFill : .star)
+                .resizable()
+                .foregroundStyle(dish.isFavorite ? .green : .primary)
+                .padding(4.0)
+                .frame(width: 32, height: 32)
+                .onTapGesture {
+                    withAnimation {
+                        dish.isFavorite.toggle()
+                    }
+                }
             
             VStack(alignment: .leading, spacing: 0) {
                 Text(dish.description)
@@ -54,15 +55,16 @@ struct DishCellView: View {
             
             Spacer()
             
-            Button {
-                isSelected.toggle()
-            } label: {
                 Image(systemName: isSelected ? "checkmark.circle" : "circle")
                     .resizable()
                     .foregroundStyle(isSelected ? .green : .primary)
                     .padding(4.0)
                     .frame(width: 32, height: 32)
-            }
+                    .onTapGesture {
+                        withAnimation {
+                            isSelected.toggle()
+                        }
+                    }
         }
         .swipeActions(edge: .leading) {
             Button("ערוך") {

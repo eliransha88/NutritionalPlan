@@ -115,7 +115,7 @@ final class Category: Codable, Equatable {
         case protein = "חלבון"
         case fat = "שומן"
         case other = "לאכול בחוץ"
-        case unknown = "לא ידוע"
+        case unknown = "אחר"
     }
 
     var type: CategoryType

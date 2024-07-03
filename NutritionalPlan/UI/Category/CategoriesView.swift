@@ -7,77 +7,48 @@
 
 import SwiftUI
 import SwiftData
+import SFSafeSymbols
 
 struct CategoriesView: View {
 
     @Environment(\.modelContext) var modelContext: ModelContext
     @State private var searchString: String = ""
+    @State private var newCategoryName: String = ""
+    @State private var isNewCategoryAlertPresented: Bool = false
     
-    @Bindable var meal: Meal
+    @Bindable var dish: Dish
     @Binding var navigationPath: NavigationPath
     
     var body: some View {
-       CategoriesListView(searchString: searchString,
+        CategoriesListView(dish: dish,
+                           searchString: searchString,
                           navigationPath: $navigationPath)
-        .navigationTitle("קטגוריות")
+        .navigationTitle("בחר קטגוריה")
         .toolbarRole(.editor)
-        .navigationDestination(for: Category.self) {
-            CategoryView(meal: meal,
-                         category: $0,
-                         navigationPath: $navigationPath)
-        }
-        .backButton {
-            validateMeal()
-        }
-    }
-    
-    func validateMeal() {
-        if meal.dishes.isEmpty {
-            modelContext.delete(meal)
-        }
-        navigationPath.removeLast()
-    }
-}
-
-struct CategoriesListView: View {
-    
-    @Environment(\.modelContext) var modelContext: ModelContext
-    @Query() var categories: [Category]
-    
-    @Binding var navigationPath: NavigationPath
-    
-    init(searchString: String,
-         navigationPath: Binding<NavigationPath>) {
-        self._categories = Query(filter: #Predicate { category in
-           if searchString.isEmpty {
-               true
-           } else {
-               category.name.localizedStandardContains(searchString)
-           }
-       }, sort: \Category.name)
-        self._navigationPath = navigationPath
-    }
-    
-    var body: some View {
-        List {
-            let sections = Dictionary(grouping: categories, by: \.type)
-            ForEach(Array(CategoryType.allCases), id: \.rawValue) { key in
-                if let categories = sections[key],
-                   !categories.isEmpty {
-                    Section(key.rawValue) {
-                        ForEach(categories) { category in
-                            HStack {
-                                Text(category.name)
-                                Spacer()
-                            }
-                            .frame(maxWidth: .infinity)
-                            .onTapGesture {
-                                navigationPath.append(category)
-                            }
-                        }
-                    }
+        .toolbar {
+            ToolbarItem {
+                Button("",
+                       systemImage: SFSymbol.plus.rawValue) {
+                    newCategoryName = ""
+                    isNewCategoryAlertPresented = true
                 }
             }
         }
+        .alert("", isPresented: $isNewCategoryAlertPresented) {
+            TextField("שם הקטגוריה", text: $newCategoryName)
+            Button("צור") {
+                addCategory()
+            }
+            .disabled(newCategoryName.isEmpty)
+        } message: {
+            Text("הכנס את שם הקטגוריה")
+        }
+    }
+
+    
+    func addCategory() {
+        let category = Category(type: .unknown, name: newCategoryName)
+        category.dishes?.append(dish)
+        modelContext.insert(category)
     }
 }

@@ -11,6 +11,11 @@ import SFSafeSymbols
 
 struct DishesListView: View {
     
+    enum Filter: Equatable, Hashable {
+        case category(CategoryType)
+        case favorites
+    }
+    
     @Environment(\.modelContext) var modelContext: ModelContext
     @State private var searchString: String = ""
     
@@ -19,22 +24,22 @@ struct DishesListView: View {
     @Query(sort: \Dish.name) var dishes: [Dish]
     @Query(sort: \Category.name) var categories: [Category]
     
-    @State private var selectedCategoryType: CategoryType = .all
+    @State private var selectedFilter: Filter = .category(.all)
     
     var filteredDishes: [Dish] {
         dishes.filter {
-            guard selectedCategoryType == .all || $0.category?.type == selectedCategoryType else {
-                return false
+            switch selectedFilter {
+            case .category(let categoryType):
+                if categoryType != .all && $0.category?.type != categoryType {
+                    return false
+                }
+            case .favorites:
+                if !$0.isFavorite {
+                    return false
+                }
             }
             return searchString.isEmpty ? true : $0.name.localizedStandardContains(searchString)
         }
-    }
-    
-    var filteredCategories: [Category] {
-        guard selectedCategoryType == .all else {
-            return categories
-        }
-        return categories.filter({ $0.type == selectedCategoryType })
     }
     
     init(meal: Meal,
@@ -54,11 +59,13 @@ struct DishesListView: View {
             .toolbar {
                 
                 ToolbarItem {
-                    Picker("", selection: $selectedCategoryType) {
+                    Picker("", selection: $selectedFilter) {
                         ForEach(CategoryType.allCases, id: \.rawValue) {
                             Text($0.rawValue)
-                                .tag($0)
+                                .tag(Filter.category($0))
                         }
+                        Text("מעודפים")
+                            .tag(Filter.favorites)
                     }
                 }
                 

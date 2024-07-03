@@ -39,6 +39,13 @@ class DishViewModel: ObservableObject {
     }
     
     func setupObservables() {
+        $amount
+            .compactMap({ Double($0) })
+            .sink { [weak self] in
+                self?.dish.amount = $0
+            }
+            .store(in: &cancellables)
+        
         $carbohydrate
             .compactMap({ Double($0) })
             .sink { [weak self] in
@@ -110,7 +117,7 @@ struct DishView: View {
     @Binding var navigationPath: NavigationPath
     
     @FocusState private var focusedField: Field?
-    
+        
     init(isEditing: Bool,
          dish: Dish,
          navigationPath: Binding<NavigationPath>) {
@@ -162,6 +169,10 @@ struct DishView: View {
         .onSubmit {
             focusedField = focusedField?.nextField
         }
+        .navigationDestination(for: Category?.self) { _ in
+            CategoriesView(dish: viewModel.dish,
+                           navigationPath: $navigationPath)
+        }
     }
     
     var detailsSection: some View {
@@ -189,18 +200,18 @@ struct DishView: View {
             .submitLabel(.next)
             
             if viewModel.isEditing {
-                Picker("סוג", selection: $viewModel.dish.category) {
-                    Text("לא ידוע")
-                        .tag(Optional<Category>.none)
+                HStack {
+                  Text("קטגוריה:")
+                        .font(.headline)
                     
-                    if categories.isEmpty == false {
-                        Divider()
-                        
-                        ForEach(categories) { category in
-                            Text(category.name)
-                                .tag(Optional(category))
-                        }
-                    }
+                    Spacer()
+                    
+                    Text(viewModel.dish.category?.name ?? "לא ידוע")
+                    
+                    Image(systemSymbol: .chevronRight)
+                }
+                .onTapGesture {
+                    navigationPath.append(viewModel.dish.category)
                 }
             } else if let categoryName = viewModel.dish.category?.name  {
                 HStack(spacing: 8.0) {
