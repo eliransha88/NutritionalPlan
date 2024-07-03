@@ -55,10 +55,6 @@ struct DailyReportView: View {
             }
             
         }
-        .navigationDestination(for: Meal.self) {
-            DishesListView(meal: $0,
-                           navigationPath: $navigationPath)
-        }
     }
     
     func addMeal() {

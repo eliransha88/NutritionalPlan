@@ -49,6 +49,10 @@ struct DailyReportsView: View {
         .onAppear {
             clearEmptyMeals()
         }
+        .navigationDestination(for: Meal.self) {
+            DishesListView(meal: $0,
+                           navigationPath: $navigationPath)
+        }
     }
     
     func addReport() {

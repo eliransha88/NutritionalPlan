@@ -22,7 +22,7 @@ class DishViewModel: ObservableObject {
     @Published var isAlertPresented: Bool = false
     
     @Bindable var dish: Dish
-    
+    var nutritionalValues: NutritionalValues
     var saveDishSubject: PassthroughSubject<Dish, Never> = .init()
     lazy var saveDishPublisher: AnyPublisher<Dish, Never> = saveDishSubject.eraseToAnyPublisher()
     
@@ -30,10 +30,11 @@ class DishViewModel: ObservableObject {
     
     init(dish: Dish, isEditing: Bool) {
         self.dish = dish
+        self.nutritionalValues = dish.nutritionalValues ?? .init(dish: dish)
         self.amount = dish.amount.asString
-        self.carbohydrate = dish.nutritionalValues?.carbohydrate.asString ?? ""
-        self.protein = dish.nutritionalValues?.protein.asString ?? ""
-        self.fat = dish.nutritionalValues?.fat.asString ?? ""
+        self.carbohydrate = nutritionalValues.carbohydrate.asString
+        self.protein = nutritionalValues.protein.asString
+        self.fat = nutritionalValues.fat.asString
         self.isEditing = isEditing
         setupObservables()
     }
@@ -49,21 +50,21 @@ class DishViewModel: ObservableObject {
         $carbohydrate
             .compactMap({ Double($0) })
             .sink { [weak self] in
-                self?.dish.nutritionalValues?.carbohydrate = $0
+                self?.nutritionalValues.carbohydrate = $0
             }
             .store(in: &cancellables)
         
         $protein
             .compactMap({ Double($0) })
             .sink { [weak self] in
-                self?.dish.nutritionalValues?.protein = $0
+                self?.nutritionalValues.protein = $0
             }
             .store(in: &cancellables)
         
         $fat
             .compactMap({ Double($0) })
             .sink { [weak self] in
-                self?.dish.nutritionalValues?.fat = $0
+                self?.nutritionalValues.fat = $0
             }
             .store(in: &cancellables)
     }
@@ -80,6 +81,7 @@ class DishViewModel: ObservableObject {
     
     func validateDish() {
         if dish.isValidate {
+            dish.nutritionalValues = nutritionalValues
             saveDishSubject.send(dish)
             withAnimation{
                 isEditing.toggle()
@@ -164,6 +166,7 @@ struct DishView: View {
                 .font(.subheadline)
         }
         .onReceive(viewModel.saveDishPublisher, perform: { dish in
+            modelContext.insert(viewModel.nutritionalValues)
             modelContext.insert(dish)
         })
         .onSubmit {

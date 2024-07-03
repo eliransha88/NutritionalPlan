@@ -24,7 +24,7 @@ struct DishesListView: View {
     @Query(sort: \Dish.name) var dishes: [Dish]
     @Query(sort: \Category.name) var categories: [Category]
     
-    @State private var selectedFilter: Filter = .category(.all)
+    @State private var selectedFilter: Filter = .favorites
     
     var filteredDishes: [Dish] {
         dishes.filter {
@@ -77,6 +77,11 @@ struct DishesListView: View {
                 
                 ToolbarItem {
                     EditButton()
+                }
+            }
+            .onAppear {
+                if filteredDishes.isEmpty && searchString.isEmpty {
+                    selectedFilter = .category(.all)
                 }
             }
             .navigationDestination(for: Dish.self) {

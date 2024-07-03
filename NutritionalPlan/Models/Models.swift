@@ -118,6 +118,7 @@ final class Category: Codable, Equatable {
         case unknown = "אחר"
     }
 
+    @Attribute(.unique) let id: String = UUID().uuidString
     var type: CategoryType
     var name: String
     var dishes: [Dish]? = []
@@ -151,7 +152,7 @@ final class Category: Codable, Equatable {
 
 @Model
 final class Dish: Codable {
-    let id: String
+    @Attribute(.unique) let id: String
     var name: String
     var amount: Double
     var unit: String
@@ -218,9 +219,11 @@ final class Dish: Codable {
 
 @Model
 final class NutritionalValues: Codable {
+    @Attribute(.unique) let id: String = UUID().uuidString
     var carbohydrate: Double
     var protein: Double
     var fat: Double
+    var dish: Dish? = nil
     
     var description: String {
         " פחמימה " + carbohydrate.asString +
@@ -234,7 +237,8 @@ final class NutritionalValues: Codable {
         
     init(carbohydrate: Double = 0,
          protein: Double = 0,
-         fat: Double = 0) {
+         fat: Double = 0,
+         dish: Dish? = nil) {
         self.carbohydrate = carbohydrate
         self.protein = protein
         self.fat = fat
