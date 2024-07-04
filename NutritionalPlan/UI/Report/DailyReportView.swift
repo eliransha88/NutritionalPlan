@@ -11,11 +11,11 @@ import SFSafeSymbols
 
 struct DailyReportView: View {
     
+    @EnvironmentObject var router: Router
     @Environment(\.modelContext) var modelContext
     @Query var meals: [Meal]
     
     @Bindable var report: DailyReport
-    @Binding var navigationPath: NavigationPath
     
     var filteredMeals: [Meal] {
         meals.filter({ $0.report == report })
@@ -33,7 +33,7 @@ struct DailyReportView: View {
                     ForEach(filteredMeals, id: \.self) { meal in
                         Text(meal.description)
                             .onTapGesture {
-                                navigationPath.append(meal)
+                                router.navigate(to: .mealView(meal))
                             }
                     }
                     .onDelete(perform: deleteMeal)
@@ -60,7 +60,7 @@ struct DailyReportView: View {
     func addMeal() {
         let meal: Meal = .init(report: report)
         modelContext.insert(meal)
-        navigationPath.append(meal)
+        router.navigate(to: .mealView(meal))
     }
     
     func deleteMeal(at indexSet: IndexSet) {

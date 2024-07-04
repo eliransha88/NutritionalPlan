@@ -13,10 +13,9 @@ struct DailyReportsView: View {
     
     private let shareWhatsappMessageService: ShareWhatsappMessageService = .init()
     
+    @EnvironmentObject var router: Router
     @Environment(\.modelContext) var modelContext: ModelContext
     @Query(sort: \DailyReport.date, order: .reverse) var reports: [DailyReport]
-    
-    @Binding var navigationPath: NavigationPath
     
     var body: some View {
         List {
@@ -24,7 +23,7 @@ struct DailyReportsView: View {
                 Section(report.dateString) {
                     DailyReportCellView(report: report,
                                         onCellTap: {
-                        navigationPath.append(report)
+                        router.navigate(to: .dailyReportView(report))
                     },
                                         onShareButtonTap: {
                         let message: String = "סיכום יומי:" + "\n" + report.description
@@ -44,21 +43,24 @@ struct DailyReportsView: View {
             ToolbarItem {
                 EditButton()
             }
+            
+            ToolbarItem(placement: .topBarLeading) {
+                Button("",
+                       systemImage:  SFSymbol.gearshape.rawValue) {
+                    router.navigate(to: .settings)
+                }
+            }
         }
         .navigationTitle("סיכום יומי")
         .onAppear {
             clearEmptyMeals()
-        }
-        .navigationDestination(for: Meal.self) {
-            DishesListView(meal: $0,
-                           navigationPath: $navigationPath)
         }
     }
     
     func addReport() {
         let report = DailyReport()
         modelContext.insert(report)
-        navigationPath.append(report)
+        router.navigate(to: .dailyReportView(report))
     }
     
     func clearEmptyMeals() {

@@ -10,6 +10,8 @@ import SwiftData
 
 struct ContentView: View {
 
+    @StateObject private var router: Router = .init()
+    
     @Environment(\.modelContext) var modelContext: ModelContext
     @Query var categories: [Category]
     @State private var path: NavigationPath = .init()
@@ -22,16 +24,27 @@ struct ContentView: View {
     }
     
     var body: some View {
-        NavigationStack(path: $path) {
-            DailyReportsView(navigationPath: $path)
+        NavigationStack(path: $router.navigationPath) {
+            DailyReportsView()
             .onAppear {
                 fetchAndSaveProducts()
             }
-            .navigationDestination(for: DailyReport.self) {
-                DailyReportView(report: $0,
-                                navigationPath: $path)
-            }
+            .navigationDestination(for: Router.Destination.self, destination: {
+                switch $0 {
+                case let .mealView(meal):
+                    DishesListView(meal: meal)
+                case let .dishView(dish, isEditing):
+                    DishView(isEditing: isEditing, dish: dish)
+                case let .selectDishCategory(dish):
+                    CategoriesView(dish: dish)
+                case let .dailyReportView(report):
+                    DailyReportView(report: report)
+                case .settings:
+                    SettingsView()
+                }
+            })
         }
+        .environmentObject(router)
     }
 }
 
@@ -55,12 +68,12 @@ private extension ContentView {
     }
 }
 
-#Preview {
-    do {
-        let previewer = try Previewer()
-        return ContentView(nutritionalPlanService: .init())
-            .modelContainer(previewer.container)
-    } catch {
-        return Text("Failed to create preview: \(error.localizedDescription)")
-    }
-}
+//#Preview {
+//    do {
+//        let previewer = try Previewer()
+//        return ContentView(nutritionalPlanService: .init())
+//            .modelContainer(previewer.container)
+//    } catch {
+//        return Text("Failed to create preview: \(error.localizedDescription)")
+//    }
+//}

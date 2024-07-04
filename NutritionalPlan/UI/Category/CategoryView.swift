@@ -10,15 +10,14 @@ import SwiftData
 
 struct CategoryView: View {
     
+    @EnvironmentObject var router: Router
     @Environment(\.modelContext) var modelContext: ModelContext
     
     @Bindable var meal: Meal
     @Bindable var category: Category
-    @Binding var navigationPath: NavigationPath
     
     var body: some View {
-        DishesListView(meal: meal,
-                       navigationPath: $navigationPath)
+        DishesListView(meal: meal)
         .navigationTitle(category.name)
         .navigationBarTitleDisplayMode(.inline)
         .backButton {
@@ -30,6 +29,6 @@ struct CategoryView: View {
         if meal.dishes.isEmpty {
             modelContext.delete(meal)
         }
-        navigationPath.removeLast()
+        router.navigateBack()
     }
 }

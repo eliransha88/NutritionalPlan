@@ -71,10 +71,14 @@
 
 "category_type_unknown_title"  = "אחר";
 
-"share_to_whatsapp_message" = "סיכום יומי:\n%@"
+"share_to_whatsapp_message" = "סיכום יומי:\n%@";
 
 "daily_nutritional_values_carbohydrate"  = "פחמימות:";
 
 "daily_nutritional_values_protein"  = "חלבונים:";
 
 "daily_nutritional_values_fat" = "שומן:";
+
+"done_button" = "סיים";
+
+"insert_value" = "הכנס ערך";

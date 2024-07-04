@@ -114,17 +114,16 @@ struct DishView: View {
     
     @StateObject private var viewModel: DishViewModel
     
+    @EnvironmentObject var router: Router
     @Environment(\.modelContext) var modelContext: ModelContext
     @Query var categories: [Category]
-    @Binding var navigationPath: NavigationPath
     
     @FocusState private var focusedField: Field?
         
     init(isEditing: Bool,
-         dish: Dish,
-         navigationPath: Binding<NavigationPath>) {
-        self._viewModel = StateObject(wrappedValue: DishViewModel(dish: dish, isEditing: isEditing))
-        self._navigationPath = navigationPath
+         dish: Dish) {
+        self._viewModel = StateObject(wrappedValue: DishViewModel(dish: dish,
+                                                                  isEditing: isEditing))
     }
     
     var body: some View {
@@ -172,10 +171,6 @@ struct DishView: View {
         .onSubmit {
             focusedField = focusedField?.nextField
         }
-        .navigationDestination(for: Category?.self) { _ in
-            CategoriesView(dish: viewModel.dish,
-                           navigationPath: $navigationPath)
-        }
     }
     
     var detailsSection: some View {
@@ -214,7 +209,7 @@ struct DishView: View {
                     Image(systemSymbol: .chevronRight)
                 }
                 .onTapGesture {
-                    navigationPath.append(viewModel.dish.category)
+                    router.navigate(to: .selectDishCategory(viewModel.dish))
                 }
             } else if let categoryName = viewModel.dish.category?.name  {
                 HStack(spacing: 8.0) {

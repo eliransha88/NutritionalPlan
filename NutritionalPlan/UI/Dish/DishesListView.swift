@@ -16,11 +16,11 @@ struct DishesListView: View {
         case favorites
     }
     
+    @EnvironmentObject var router: Router
     @Environment(\.modelContext) var modelContext: ModelContext
     @State private var searchString: String = ""
     
     @Bindable var meal: Meal
-    @Binding var navigationPath: NavigationPath
     @Query(sort: \Dish.name) var dishes: [Dish]
     @Query(sort: \Category.name) var categories: [Category]
     
@@ -42,10 +42,8 @@ struct DishesListView: View {
         }
     }
     
-    init(meal: Meal,
-         navigationPath: Binding<NavigationPath>) {
+    init(meal: Meal) {
         self.meal = meal
-        self._navigationPath = navigationPath
     }
     
     var body: some View {
@@ -84,9 +82,6 @@ struct DishesListView: View {
                     selectedFilter = .category(.all)
                 }
             }
-            .navigationDestination(for: Dish.self) {
-                DishView(isEditing: true, dish: $0, navigationPath: $navigationPath)
-            }
     }
     
     var list: some View {
@@ -96,7 +91,7 @@ struct DishesListView: View {
                              meal: $meal,
                              isSelected: meal.dishes.contains(dish),
                              onEditButtonTap: {
-                    navigationPath.append(dish)
+                    router.navigate(to: .dishView(dish))
                 })
             }
             .onDelete(perform: deleteDish)
@@ -107,7 +102,7 @@ struct DishesListView: View {
     
     func addReport() {
         let dish = Dish()
-        navigationPath.append(dish)
+        router.navigate(to: .dishView(dish))
     }
     
     func deleteDish(at indexSet: IndexSet) {
@@ -123,6 +118,6 @@ struct DishesListView: View {
         if meal.dishes.isEmpty {
             modelContext.delete(meal)
         }
-        navigationPath.removeLast()
+        router.navigateBack()
     }
 }

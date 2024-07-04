@@ -11,15 +11,14 @@ import SFSafeSymbols
 
 struct CategoriesListView: View {
     
+    @EnvironmentObject var router: Router
     @Environment(\.modelContext) var modelContext: ModelContext
     @Query() var categories: [Category]
     
     @Bindable var dish: Dish
-    @Binding var navigationPath: NavigationPath
     
     init(dish: Dish,
-         searchString: String,
-         navigationPath: Binding<NavigationPath>) {
+         searchString: String) {
         self.dish = dish
         self._categories = Query(filter: #Predicate { category in
            if searchString.isEmpty {
@@ -28,7 +27,6 @@ struct CategoriesListView: View {
                category.name.localizedStandardContains(searchString)
            }
        }, sort: \Category.name)
-        self._navigationPath = navigationPath
     }
     
     var body: some View {
@@ -53,7 +51,7 @@ struct CategoriesListView: View {
                             .frame(maxWidth: .infinity)
                             .onTapGesture {
                                 dish.category = category
-                                navigationPath.removeLast()
+                                router.navigateBack()
                             }
                         }
                     }

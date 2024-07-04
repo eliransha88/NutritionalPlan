@@ -11,18 +11,17 @@ import SFSafeSymbols
 
 struct CategoriesView: View {
 
+    @EnvironmentObject var router: Router
     @Environment(\.modelContext) var modelContext: ModelContext
     @State private var searchString: String = ""
     @State private var newCategoryName: String = ""
     @State private var isNewCategoryAlertPresented: Bool = false
     
     @Bindable var dish: Dish
-    @Binding var navigationPath: NavigationPath
     
     var body: some View {
         CategoriesListView(dish: dish,
-                           searchString: searchString,
-                          navigationPath: $navigationPath)
+                           searchString: searchString)
         .navigationTitle("בחר קטגוריה")
         .toolbarRole(.editor)
         .toolbar {
