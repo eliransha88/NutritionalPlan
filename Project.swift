@@ -3,7 +3,7 @@ import ProjectDescriptionHelpers
 
 let project = Project(
     name: "NutritionalPlan",
-    options: .options(developmentRegion: "he"),
+    options: .options(developmentRegion: "en"),
     targets: [
         .target(
             name: "NutritionalPlan",

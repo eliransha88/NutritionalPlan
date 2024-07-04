@@ -31,6 +31,7 @@ struct DailyReportView: View {
                 
                 Section(Strings.dailyConsumption) {
                     DailyNutritionalValuesView(report: report)
+                        .id(report.meals)
                 }
                 
                 Section(Strings.mealsSectionTitle) {

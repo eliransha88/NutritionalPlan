@@ -21,6 +21,7 @@ struct BackButtonModifier: ViewModifier {
                     Button("",
                            systemImage: SFSymbol.chevronLeft.rawValue,
                            action: action)
+                    .flipsForRightToLeftLayoutDirection(false)
                 }
             }
     }

@@ -8,87 +8,87 @@
     // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
     // swiftlint:disable nesting type_body_length type_name
     public enum NutritionalPlanStrings {
-      /// צור
+      /// Create
       public static let addCategoryAlertButtonTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "add_category_alert_button_title")
-      /// הכנס את שם הקטגוריה
+      /// Enter the category name
       public static let addCategoryAlertMessage = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "add_category_alert_message")
-      /// שם הקטגוריה
+      /// Category Name
       public static let addCategoryAlertTextfieldPlaceholder = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "add_category_alert_textfield_placeholder")
-      /// הערות
+      /// Notes
       public static let addDishNotes = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "add_dish_notes")
-      /// בחר קטגוריה
+      /// Select Category
       public static let categoriesViewTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "categories_view_title")
-      /// קטגוריה:
+      /// Category:
       public static let category = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "category")
-      /// הכל
+      /// All
       public static let categoryTypeAllTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "category_type_all_title")
-      /// פחמימה
+      /// Carbohydrate
       public static let categoryTypeCarbohydrateTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "category_type_carbohydrate_title")
-      /// שומן
+      /// Fat
       public static let categoryTypeFatTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "category_type_fat_title")
-      /// לאכול בחוץ
+      /// Eating Out
       public static let categoryTypeOtherTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "category_type_other_title")
-      /// חלבון
+      /// Protein
       public static let categoryTypeProteinTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "category_type_protein_title")
-      /// אחר
+      /// Other
       public static let categoryTypeUnknownTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "category_type_unknown_title")
-      /// צור
+      /// Create
       public static let create = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "create")
-      /// צריכה יומית
+      /// Daily Consumption
       public static let dailyConsumption = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "daily_consumption")
-      /// פחמימות
+      /// Carbohydrates
       public static let dailyNutritionalValuesCarbohydrate = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "daily_nutritional_values_carbohydrate")
-      /// שומן
+      /// Fat
       public static let dailyNutritionalValuesFat = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "daily_nutritional_values_fat")
-      /// חלבונים
+      /// Proteins
       public static let dailyNutritionalValuesProtein = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "daily_nutritional_values_protein")
-      /// סיכום יומי
+      /// Daily Summary
       public static let dailyReportTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "daily_report_title")
-      /// כמות
+      /// Amount
       public static let dishAmout = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "dish_amout")
-      /// פרטי המנה
+      /// Dish Details
       public static let dishDetails = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "dish_details")
-      /// שם המנה
+      /// Dish Name
       public static let dishName = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "dish_name")
-      /// פחמימה: %@ חלבון: %@ שומן: %@
+      /// Carbohydrate: %@ Protein: %@ Fat: %@
       public static func dishNutritionalValuesDescription(_ p1: Any, _ p2: Any, _ p3: Any) -> String {
         return NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "dish_nutritional_values_description",String(describing: p1), String(describing: p2), String(describing: p3))
       }
-      /// מידת שקילה
+      /// Unit
       public static let dishUnit = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "dish_unit")
-      /// מנות
+      /// Dishes
       public static let dishesSectionTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "dishes_section_title")
-      /// סיים
+      /// Done
       public static let doneButton = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "done_button")
-      /// ערוך
+      /// Edit
       public static let editButtonTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "edit_button_title")
-      /// מעודפים
+      /// Favorites
       public static let favoritesTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "favorites_title")
-      /// הכנס ערך
+      /// Enter Value
       public static let insertValue = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "insert_value")
-      /// ארוחות
+      /// Meals
       public static let mealsSectionTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "meals_section_title")
-      /// ערכיים תזונתיים
+      /// Nutritional Values
       public static let nutritionalValues = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "nutritional_values")
-      /// פחמימה
+      /// Carbohydrate
       public static let nutritionalValuesCarbohydrate = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "nutritional_values_carbohydrate")
-      /// שומן
+      /// Fat
       public static let nutritionalValuesFat = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "nutritional_values_fat")
-      /// חלבון
+      /// Protein
       public static let nutritionalValuesProtein = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "nutritional_values_protein")
-      /// שמור
+      /// Save
       public static let saveButtonTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "save_button_title")
-      /// אוקי
+      /// Okay
       public static let saveDishErrorButton = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "save_dish_error_button")
-      /// אנא מלא את כל הפרטים הנדרשים: שם המנה, כמות וקטגוריה.
+      /// Please fill in all the required details: dish name, amount, and category.
       public static let saveDishErrorMessage = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "save_dish_error_message")
-      /// שגיאה
+      /// Error
       public static let saveDishErrorTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "save_dish_error_title")
-      /// סיכום יומי:\n%@
+      /// Daily Summary:\n%@
       public static func shareToWhatsappMessage(_ p1: Any) -> String {
         return NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "share_to_whatsapp_message",String(describing: p1))
       }
-      /// בחר קטגוריה
+      /// Select Category
       public static let unknownCategory = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "unknown_category")
     }
     // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

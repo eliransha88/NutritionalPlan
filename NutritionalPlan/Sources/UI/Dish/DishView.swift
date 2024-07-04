@@ -134,7 +134,7 @@ struct DishView: View {
         }
         .toolbar {
             ToolbarItem {
-                Button(viewModel.isEditing ? Strings.editButtonTitle : Strings.saveButtonTitle,
+                Button(viewModel.isEditing ? Strings.saveButtonTitle : Strings.editButtonTitle,
                        action: viewModel.onEditButtonTap)
             }
             
@@ -203,7 +203,7 @@ struct DishView: View {
                     
                     Text(viewModel.dish.category?.name ?? Strings.unknownCategory)
                     
-                    Image(systemSymbol: .chevronRight)
+                    AccessoryItem(style: .arrow)
                 }
                 .onTapGesture {
                     router.navigate(to: .selectDishCategory(viewModel.dish))
@@ -221,7 +221,7 @@ struct DishView: View {
     }
     
     var notesSection: some View {
-        Section("הערות") {
+        Section(Strings.addDishNotes) {
             TextEditor(text: $viewModel.dish.note)
                 .frame(minHeight: 100)
                 .disabled(!viewModel.isEditing)
