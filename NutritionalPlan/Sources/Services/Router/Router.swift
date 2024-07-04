@@ -10,14 +10,6 @@ import SwiftUI
 
 final class Router: ObservableObject {
     
-    public enum Destination: Hashable {
-        case mealView(_ meal: Meal)
-        case dishView(_ dish: Dish, isEditing: Bool = true)
-        case selectDishCategory(_ dish: Dish)
-        case dailyReportView(_ dailyRpeort: DailyReport)
-        case settings
-    }
-    
     @Published var navigationPath = NavigationPath()
     
     func navigate(to destination: Destination) {

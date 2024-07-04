@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import SFSafeSymbols
 
 struct ContentView: View {
 
@@ -26,6 +27,19 @@ struct ContentView: View {
     var body: some View {
         NavigationStack(path: $router.navigationPath) {
             DailyReportsView()
+                .toolbar {
+                    ToolbarItemGroup(placement: .topBarLeading) {
+                        Button("",
+                               systemImage:  SFSymbol.gearshape.rawValue) {
+                            router.navigate(to: .settings)
+                        }
+                        
+                        Button("",
+                               systemImage:  SFSymbol.menucard.rawValue) {
+                            router.navigate(to: .menu)
+                        }
+                    }
+                }
             .onAppear {
                 fetchAndSaveProducts()
             }
@@ -41,6 +55,10 @@ struct ContentView: View {
                     DailyReportView(report: report)
                 case .settings:
                     SettingsView()
+                case .menu:
+                    MenuView()
+                case let .menuByCategory(category):
+                    MenuByCategoryView(category: category)
                 }
             })
             
@@ -54,9 +72,9 @@ private extension ContentView {
 
     func fetchAndSaveProducts() {
         guard categories.isEmpty else {
-            print("categories already fetched")
             return
         }
+        print("start fetching nutritional plan")
         do {
             let categories = try nutritionalPlanService.fetchRemoteCategories()
             categories.forEach {

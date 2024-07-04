@@ -20,8 +20,9 @@ struct CategoriesView: View {
     @Bindable var dish: Dish
     
     var body: some View {
-        CategoriesListView(dish: dish,
-                           searchString: searchString)
+        CategoriesListView(searchString: searchString,
+                           selectedCategory: dish.category,
+                           onCategoryTap: select(category:))
         .navigationTitle(Strings.categoriesViewTitle)
         .toolbarRole(.editor)
         .toolbar {
@@ -49,5 +50,10 @@ struct CategoriesView: View {
         let category = Category(type: .unknown, name: newCategoryName)
         category.dishes?.append(dish)
         modelContext.insert(category)
+    }
+    
+    func select(category: Category) {
+        dish.category = category
+        router.navigateBack()
     }
 }

@@ -68,6 +68,8 @@
       public static let insertValue = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "insert_value")
       /// Meals
       public static let mealsSectionTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "meals_section_title")
+      /// Menu
+      public static let menuTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "menu_title")
       /// Nutritional Values
       public static let nutritionalValues = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "nutritional_values")
       /// Carbohydrate

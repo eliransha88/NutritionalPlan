@@ -43,13 +43,6 @@ struct DailyReportsView: View {
             ToolbarItem {
                 EditButton()
             }
-            
-            ToolbarItem(placement: .topBarLeading) {
-                Button("",
-                       systemImage:  SFSymbol.gearshape.rawValue) {
-                    router.navigate(to: .settings)
-                }
-            }
         }
         .navigationTitle(Strings.dailyReportTitle)
         .onAppear {
