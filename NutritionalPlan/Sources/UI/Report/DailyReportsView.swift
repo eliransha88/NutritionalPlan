@@ -67,31 +67,3 @@ struct DailyReportsView: View {
         }
     }
 }
-
-struct DailyReportCellView: View {
-    
-    let report: DailyReport
-    let onCellTap: VoidHandler
-    let onShareButtonTap: VoidHandler
-    
-    var body: some View {
-        HStack(spacing: 8.0) {
-            HStack {
-                Text(report.description)
-                    .font(.subheadline)
-                    .padding()
-                
-                Spacer()
-            }
-            .onTapGesture {
-                onCellTap()
-            }
-            
-            if report.meals.isNotEmpty {
-                Button("",
-                       systemImage: SFSymbol.squareAndArrowUp.rawValue,
-                       action: onShareButtonTap)
-            }
-        }
-    }
-}

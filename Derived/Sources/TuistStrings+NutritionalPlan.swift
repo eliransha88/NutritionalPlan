@@ -78,6 +78,10 @@
       public static let nutritionalValuesFat = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "nutritional_values_fat")
       /// Protein
       public static let nutritionalValuesProtein = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "nutritional_values_protein")
+      /// Copy to clipboard
+      public static let reportMenuCopyButtonTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "report_menu_copy_button_title")
+      /// Share via Whatsapp
+      public static let reportMenuShareButtonTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "report_menu_share_button_title")
       /// Save
       public static let saveButtonTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "save_button_title")
       /// Okay
@@ -86,6 +90,12 @@
       public static let saveDishErrorMessage = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "save_dish_error_message")
       /// Error
       public static let saveDishErrorTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "save_dish_error_title")
+      /// Settings
+      public static let settingsTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "settings_title")
+      /// Phone number
+      public static let settingsViewSharePhoneNumberTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "settings_view_share_phone_number_title")
+      /// Share via Whatsapp
+      public static let settingsViewShareSectionTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "settings_view_share_section_title")
       /// Daily Summary:\n%@
       public static func shareToWhatsappMessage(_ p1: Any) -> String {
         return NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "share_to_whatsapp_message",String(describing: p1))

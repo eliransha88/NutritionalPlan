@@ -13,6 +13,7 @@ let project = Project(
             deploymentTargets: .default,
             infoPlist: .extendingDefault(
                 with: [
+                    "CFBundleDisplayName": "שיטת המנות",
                     "LSApplicationQueriesSchemes": "whatsapp",
                     "UILaunchScreen": [:],
                 ]

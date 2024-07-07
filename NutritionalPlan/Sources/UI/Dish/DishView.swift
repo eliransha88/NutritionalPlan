@@ -11,7 +11,7 @@ import SFSafeSymbols
 
 struct DishView: View {
     
-    enum Field: Int {
+    enum Field: Int, CaseIterable {
         case name
         case amount
         case unit
@@ -59,12 +59,12 @@ struct DishView: View {
                 Button("", systemImage: SFSymbol.chevronUp.rawValue) {
                     focusedField = focusedField?.previousField
                 }
-                .disabled(focusedField == .name)
+                .disabled(focusedField == Field.allCases.first)
                 
                 Button("", systemImage: SFSymbol.chevronDown.rawValue) {
                     focusedField = focusedField?.nextField
                 }
-                .disabled(focusedField == .fat)
+                .disabled(focusedField == Field.allCases.last)
                 
                 Spacer()
                 

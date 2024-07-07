@@ -97,3 +97,13 @@
 "dish_nutritional_values_description" = "פחמימה: %@ חלבון: %@ שומן: %@";
 
 "menu_title" = "תפריט";
+
+"report_menu_share_button_title" = "שתף";
+
+"report_menu_copy_button_title" = "העתק";
+
+"settings_title" = "הגדרות";
+
+"settings_view_share_section_title" = "שיתוף באמצעות הWhatsapp";
+
+"settings_view_share_phone_number_title" = "מספר פלאפון";

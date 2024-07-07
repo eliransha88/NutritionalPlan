@@ -96,3 +96,13 @@
 "dish_nutritional_values_description" = "Carbohydrate: %@ Protein: %@ Fat: %@";
 
 "menu_title" = "Menu";
+
+"report_menu_share_button_title" = "Share via Whatsapp";
+
+"report_menu_copy_button_title" = "Copy to clipboard";
+
+"settings_title" = "Settings";
+
+"settings_view_share_section_title" = "Share via Whatsapp";
+
+"settings_view_share_phone_number_title" = "Phone number";

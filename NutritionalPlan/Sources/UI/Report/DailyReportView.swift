@@ -36,7 +36,7 @@ struct DailyReportView: View {
                 
                 Section(Strings.mealsSectionTitle) {
                     ForEach(filteredMeals, id: \.self) { meal in
-                        Text(meal.description)
+                        MealCellView(meal: meal)
                             .onTapGesture {
                                 router.navigate(to: .mealView(meal))
                             }

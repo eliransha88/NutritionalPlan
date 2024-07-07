@@ -22,16 +22,7 @@ final class DailyReport: Codable {
     }
     
     var totalNutritionalValues: NutritionalValues {
-        let dishesNutritionalValues = meals.compactMap({
-            $0.dishes.compactMap({
-                $0.nutritionalValues
-            })
-        }).flatMap({ $0 })
-        return dishesNutritionalValues.reduce(into: .init()) { partialResult, value in
-            partialResult.carbohydrate += value.carbohydrate
-            partialResult.protein += value.protein
-            partialResult.fat += value.fat
-        }
+        meals.compactMap({ $0.totalNutritionalValues }).reduce(.init(), +)
     }
     
     var description: String {
@@ -91,6 +82,29 @@ final class Meal: Codable {
     
     var description: String {
         dishes.compactMap({ $0.name }).joined(separator: ", ")
+    }
+    
+    var nutritionalValueString: String {
+        let dic = [
+            Strings.dailyNutritionalValuesCarbohydrate: totalNutritionalValues.carbohydrate,
+            Strings.dailyNutritionalValuesProtein: totalNutritionalValues.protein,
+            Strings.dailyNutritionalValuesFat: totalNutritionalValues.fat
+        ].filter({ $0.value > 0 })
+        
+        if dic.isEmpty {
+            return ""
+        } else {
+            let keyValueString = dic.map({ "\($0.key): \($0.value)" }).joined(separator: ",")
+            return "(" + keyValueString + ")"
+        }
+    }
+    
+    var totalNutritionalValues: NutritionalValues {
+        return dishes.reduce(into: .init()) { partialResult, value in
+            partialResult.carbohydrate += value.nutritionalValues?.carbohydrate ?? 0
+            partialResult.protein += value.nutritionalValues?.protein ?? 0
+            partialResult.fat += value.nutritionalValues?.fat ?? 0
+        }
     }
     
     init(dishes: [Dish] = [],
@@ -289,6 +303,12 @@ final class NutritionalValues: Codable {
         try container.encode(carbohydrate, forKey: .carbohydrate)
         try container.encode(protein, forKey: .protein)
         try container.encode(fat, forKey: .fat)
+    }
+    
+    static func + (lhs: NutritionalValues, rhs: NutritionalValues) -> NutritionalValues {
+        return .init(carbohydrate: lhs.carbohydrate + rhs.carbohydrate,
+                                 protein: lhs.protein + rhs.protein,
+                                 fat: lhs.fat + rhs.fat)
     }
 }
 

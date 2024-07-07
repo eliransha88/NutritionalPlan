@@ -55,16 +55,17 @@ struct DishCellView: View {
             
             Spacer()
             
-            Image(systemSymbol: isSelected ? .checkmarkCircle : .circle)
-                    .resizable()
-                    .foregroundStyle(isSelected ? .green : .primary)
-                    .padding(4.0)
-                    .frame(width: 32, height: 32)
-                    .onTapGesture {
-                        withAnimation {
-                            isSelected.toggle()
-                        }
-                    }
+            Button {
+                withAnimation {
+                    isSelected.toggle()
+                }
+            } label: {
+                Image(systemSymbol: isSelected ? .checkmarkCircle : .plusCircle)
+                        .resizable()
+                        .foregroundStyle(isSelected ? .green : .primary)
+                        .padding(4.0)
+                        .frame(width: 32, height: 32)
+            }
         }
         .swipeActions(edge: .leading) {
             Button(Strings.editButtonTitle) {

@@ -28,17 +28,21 @@ struct DishesListView: View {
     
     var filteredDishes: [Dish] {
         dishes.filter {
-            switch selectedFilter {
-            case .category(let categoryType):
-                if categoryType != .all && $0.category?.type != categoryType {
-                    return false
+            if searchString.isEmpty {
+                switch selectedFilter {
+                case .category(let categoryType):
+                    if categoryType == .all || $0.category?.type == categoryType {
+                        return true
+                    }
+                case .favorites:
+                    if $0.isFavorite {
+                        return true
+                    }
                 }
-            case .favorites:
-                if !$0.isFavorite {
-                    return false
-                }
+                return false
+            } else {
+                return $0.name.localizedStandardContains(searchString)
             }
-            return searchString.isEmpty ? true : $0.name.localizedStandardContains(searchString)
         }
     }
     

@@ -10,7 +10,8 @@ import SFSafeSymbols
 
 struct SettingsView: View {
     
-    enum Field: Int {
+    enum Field: Int, CaseIterable {
+        case phoneNumber
         case carbohydrate
         case protein
         case fat
@@ -26,9 +27,19 @@ struct SettingsView: View {
     
     @FocusState private var focusedField: Field?
     let dailyNutritionalValuesService: DailyNutritionalValuesService = .init()
+    let shareWhatsappMessageService: ShareWhatsappMessageService = .init()
     
     var body: some View {
         List {
+            
+            Section(Strings.settingsViewShareSectionTitle) {
+                EditTextField(title: Strings.settingsViewSharePhoneNumberTitle,
+                              keyboardType: .phonePad,
+                              text: shareWhatsappMessageService.$phoneNumber,
+                              isEditable: true)
+                .focused($focusedField, equals: .phoneNumber)
+            }
+            
             Section(Strings.dailyConsumption) {
                 EditTextField(title: Strings.dailyNutritionalValuesCarbohydrate,
                               keyboardType: .decimalPad,
@@ -55,12 +66,12 @@ struct SettingsView: View {
                 Button("", systemImage: SFSymbol.chevronUp.rawValue) {
                     focusedField = focusedField?.previousField
                 }
-                .disabled(focusedField == .carbohydrate)
+                .disabled(focusedField == Field.allCases.first)
                 
                 Button("", systemImage: SFSymbol.chevronDown.rawValue) {
                     focusedField = focusedField?.nextField
                 }
-                .disabled(focusedField == .fat)
+                .disabled(focusedField == Field.allCases.last)
                 
                 Spacer()
                 
@@ -69,7 +80,7 @@ struct SettingsView: View {
                 }
             }
         }
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle(Strings.settingsTitle)
         .toolbarRole(.editor)
         .onSubmit {
             focusedField = focusedField?.nextField
