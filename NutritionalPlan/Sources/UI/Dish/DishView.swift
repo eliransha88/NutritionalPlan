@@ -15,10 +15,10 @@ struct DishView: View {
         case name
         case amount
         case unit
-        case notes
         case carbohydrate
         case protein
         case fat
+        case notes
         
         var nextField: Field? {
             Field(rawValue: rawValue + 1)
@@ -29,25 +29,25 @@ struct DishView: View {
         }
     }
     
-    @StateObject private var viewModel: DishViewModel
+    @State private var viewModel: DishViewModel
     
     @Environment(Router.self) var router
     @Environment(\.modelContext) var modelContext: ModelContext
     @Query var categories: [Category]
     
     @FocusState private var focusedField: Field?
-        
+    
     init(isEditing: Bool,
          dish: Dish) {
-        self._viewModel = StateObject(wrappedValue: DishViewModel(dish: dish,
-                                                                  isEditing: isEditing))
+        self._viewModel = State(wrappedValue: DishViewModel(dish: dish,
+                                                            isEditing: isEditing))
     }
     
     var body: some View {
         Form {
             detailsSection
-            notesSection
             nutritionalValuesSection
+            notesSection
         }
         .toolbar {
             ToolbarItem {
@@ -99,10 +99,11 @@ struct DishView: View {
             .textContentType(.name)
             .submitLabel(.next)
             
-            EditTextField(title: Strings.dishAmout,
-                          keyboardType: .decimalPad,
-                          text: $viewModel.amount,
-                          isEditable: viewModel.isEditing)
+            EditDoubleTextField(title: Strings.dishAmout,
+                                keyboardType: .decimalPad,
+                                text: $viewModel.dish.amount,
+                                formatter: viewModel.amountFormatter,
+                                isEditable: viewModel.isEditing)
             .focused($focusedField, equals: .amount)
             
             EditTextField(title: Strings.dishUnit,
@@ -148,22 +149,25 @@ struct DishView: View {
     
     var nutritionalValuesSection: some View {
         Section(Strings.nutritionalValues) {
-            EditTextField(title: Strings.nutritionalValuesCarbohydrate,
-                          keyboardType: .decimalPad,
-                          text: $viewModel.carbohydrate,
-                          isEditable: viewModel.isEditing)
+            EditDoubleTextField(title: Strings.nutritionalValuesCarbohydrate,
+                                keyboardType: .decimalPad,
+                                text: $viewModel.nutritionalValues.carbohydrate,
+                                formatter: viewModel.amountFormatter,
+                                isEditable: viewModel.isEditing)
             .focused($focusedField, equals: .carbohydrate)
             
-            EditTextField(title: Strings.nutritionalValuesProtein,
-                          keyboardType: .decimalPad,
-                          text: $viewModel.protein,
-                          isEditable: viewModel.isEditing)
+            EditDoubleTextField(title: Strings.nutritionalValuesProtein,
+                                keyboardType: .decimalPad,
+                                text: $viewModel.nutritionalValues.protein,
+                                formatter: viewModel.amountFormatter,
+                                isEditable: viewModel.isEditing)
             .focused($focusedField, equals: .protein)
             
-            EditTextField(title: Strings.nutritionalValuesFat,
-                          keyboardType: .decimalPad,
-                          text: $viewModel.fat,
-                          isEditable: viewModel.isEditing)
+            EditDoubleTextField(title: Strings.nutritionalValuesFat,
+                                keyboardType: .decimalPad,
+                                text: $viewModel.nutritionalValues.fat,
+                                formatter: viewModel.amountFormatter,
+                                isEditable: viewModel.isEditing)
             .focused($focusedField, equals: .fat)
         }
     }
