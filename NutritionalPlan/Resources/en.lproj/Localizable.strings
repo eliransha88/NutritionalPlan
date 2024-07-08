@@ -106,3 +106,15 @@
 "settings_view_share_section_title" = "Share via Whatsapp";
 
 "settings_view_share_phone_number_title" = "Phone number";
+
+"category_type_all_title" = "All";
+
+"category_type_carbohydrate_title" = "Carbohydrate";
+
+"category_type_protein_title" = "Protien";
+
+"category_type_fat_title" = "Fat";
+
+"category_type_other_title" = "Junk Food";
+
+"category_type_unknown_title" = "Other";

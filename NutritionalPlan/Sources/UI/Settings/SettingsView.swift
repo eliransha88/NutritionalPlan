@@ -32,7 +32,7 @@ struct SettingsView: View {
     var body: some View {
         List {
             
-            Section(Strings.settingsViewShareSectionTitle) {
+            SectionView(Strings.settingsViewShareSectionTitle) {
                 EditTextField(title: Strings.settingsViewSharePhoneNumberTitle,
                               keyboardType: .phonePad,
                               text: shareWhatsappMessageService.$phoneNumber,
@@ -40,7 +40,7 @@ struct SettingsView: View {
                 .focused($focusedField, equals: .phoneNumber)
             }
             
-            Section(Strings.dailyConsumption) {
+            SectionView(Strings.dailyConsumption) {
                 EditTextField(title: Strings.dailyNutritionalValuesCarbohydrate,
                               keyboardType: .decimalPad,
                               text: dailyNutritionalValuesService.$carbohydrateDailyConsumption,

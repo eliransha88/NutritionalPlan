@@ -11,6 +11,10 @@ import SFSafeSymbols
 
 struct DishView: View {
     
+    struct Constants {
+        static let rowInsets: EdgeInsets = .init(top: 0, leading: 12.0, bottom: 0, trailing: 12.0)
+    }
+    
     enum Field: Int, CaseIterable {
         case name
         case amount
@@ -91,7 +95,7 @@ struct DishView: View {
     }
     
     var detailsSection: some View {
-        Section(Strings.dishDetails) {
+        SectionView(Strings.dishDetails, rowInsets: Constants.rowInsets) {
             EditTextField(title: Strings.dishName,
                           text: $viewModel.dish.name,
                           isEditable: viewModel.isEditing)
@@ -139,7 +143,7 @@ struct DishView: View {
     }
     
     var notesSection: some View {
-        Section(Strings.addDishNotes) {
+        SectionView(Strings.addDishNotes, rowInsets: Constants.rowInsets) {
             TextEditor(text: $viewModel.dish.note)
                 .frame(minHeight: 100)
                 .disabled(!viewModel.isEditing)
@@ -148,7 +152,7 @@ struct DishView: View {
     }
     
     var nutritionalValuesSection: some View {
-        Section(Strings.nutritionalValues) {
+        SectionView(Strings.nutritionalValues, rowInsets: Constants.rowInsets) {
             EditDoubleTextField(title: Strings.nutritionalValuesCarbohydrate,
                                 keyboardType: .decimalPad,
                                 text: $viewModel.nutritionalValues.carbohydrate,

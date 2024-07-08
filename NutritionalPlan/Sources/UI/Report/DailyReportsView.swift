@@ -20,19 +20,22 @@ struct DailyReportsView: View {
     var body: some View {
         List {
             ForEach(reports) { report in
-                Section(report.dateString) {
+                SectionView(report.dateString) {
                     DailyReportCellView(report: report,
                                         onCellTap: {
                         router.navigate(to: .dailyReportView(report))
                     },
                                         onShareButtonTap: {
                         let message: String = Strings.shareToWhatsappMessage(report.description)
-                        shareWhatsappMessageService.shareWhatsapp(message: message)
+                            shareWhatsappMessageService.shareWhatsapp(message: message)
                     })
                 }
             }
             .onDelete(perform: deleteReport)
+            .listRowInsets(.init(inset: 12.0))
+            .listRowBackground(Color.secondary.opacity(0.4))
         }
+        .listRowSpacing(12.0)
         .toolbar {
             ToolbarItem {
                 Button("",

@@ -29,12 +29,12 @@ struct DailyReportView: View {
         VStack {
             List {
                 
-                Section(Strings.dailyConsumption) {
+                SectionView(Strings.dailyConsumption) {
                     DailyNutritionalValuesView(report: report)
                         .id(report.meals)
                 }
                 
-                Section(Strings.mealsSectionTitle) {
+                SectionView(Strings.mealsSectionTitle) {
                     ForEach(filteredMeals, id: \.self) { meal in
                         MealCellView(meal: meal)
                             .onTapGesture {
@@ -42,9 +42,13 @@ struct DailyReportView: View {
                             }
                     }
                     .onDelete(perform: deleteMeal)
+                    .listRowInsets(.init(inset: 12.0))
+                    .listRowBackground(Color.secondary.opacity(0.4))
                 }
             }
         }
+        .listRowSpacing(8.0)
+        .preferredColorScheme(.dark)
         .navigationTitle(report.dateString)
         .toolbarRole(.editor)
         .toolbar {

@@ -35,7 +35,7 @@ struct CategoriesListView: View {
             ForEach(Array(CategoryType.allCases), id: \.rawValue) { key in
                 if let categories = sections[key],
                    !categories.isEmpty {
-                    Section(key.rawValue) {
+                    SectionView(key.rawValue) {
                         ForEach(categories) { category in
                             HStack {
                                 Text(category.name)
@@ -48,7 +48,8 @@ struct CategoriesListView: View {
                                         .frame(width: 16, height: 16)
                                 }
                             }
-                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .contentShape(Rectangle())
                             .onTapGesture {
                                 onCategoryTap(category)
                             }
@@ -56,7 +57,10 @@ struct CategoriesListView: View {
                     }
                 }
             }
+            .listRowInsets(.init(inset: 12.0))
+            .listRowBackground(Color.secondary.opacity(0.4))
         }
+        .listRowSpacing(8.0)
     }
 }
 

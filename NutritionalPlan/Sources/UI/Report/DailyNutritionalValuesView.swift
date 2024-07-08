@@ -18,25 +18,43 @@ struct DailyNutritionalValuesView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Row(title: Strings.dailyNutritionalValuesCarbohydrate, value: "\(report.totalNutritionalValues.carbohydrate)/\(dailyConsumation.carbohydrate)")
-            Row(title: Strings.dailyNutritionalValuesProtein, value: "\(report.totalNutritionalValues.protein)/\(dailyConsumation.protein)")
-            Row(title: Strings.dailyNutritionalValuesFat, value: "\(report.totalNutritionalValues.fat)/\(dailyConsumation.fat)")
+        HStack {
+            VStack(alignment: .leading, spacing: 8.0) {
+                Row(title: Strings.dailyNutritionalValuesCarbohydrate,
+                    value: "\(report.totalNutritionalValues.carbohydrate)/\(dailyConsumation.carbohydrate)",
+                    color: .green
+                )
+                Row(title: Strings.dailyNutritionalValuesProtein,
+                    value: "\(report.totalNutritionalValues.protein)/\(dailyConsumation.protein)",
+                    color: .red)
+                Row(title: Strings.dailyNutritionalValuesFat,
+                    value: "\(report.totalNutritionalValues.fat)/\(dailyConsumation.fat)",
+                    color: .blue)
+            }
+            
+            Spacer()
+            
+            DailyNutritionalProgressBarView(report: report,
+                                            dailyConsumation: dailyConsumation)
+            .padding()
         }
+        .padding()
     }
     
     struct Row: View {
         
         let title: String
         let value: String
+        let color: Color
         
         var body: some View {
-            HStack {
+            VStack(alignment: .leading) {
                 Text(title)
-                    .font(.headline)
+                    .font(.subheadline)
                 
                 Text(value)
                     .font(.subheadline)
+                    .foregroundStyle(color)
             }
         }
     }

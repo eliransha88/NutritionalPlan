@@ -12,10 +12,15 @@ struct MealCellView: View {
     let meal: Meal
     
     var body: some View {
-        Text(meal.description)
-            .font(.subheadline) +
-        Text(" ") +
-        Text(meal.nutritionalValueString)
-            .font(.caption)
+        VStack(alignment: .leading) {
+            Text(meal.description)
+                .font(.subheadline)
+                .multilineTextAlignment(.leading)
+            
+            Text(meal.nutritionalValueString)
+                .font(.caption)
+                .multilineTextAlignment(.leading)
+        }
+        .padding(.vertical, 4.0)
     }
 }

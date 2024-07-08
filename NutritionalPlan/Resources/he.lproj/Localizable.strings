@@ -107,3 +107,15 @@
 "settings_view_share_section_title" = "שיתוף באמצעות הWhatsapp";
 
 "settings_view_share_phone_number_title" = "מספר פלאפון";
+
+"category_type_all_title" = "הכל";
+
+"category_type_carbohydrate_title" = "פחמימה";
+
+"category_type_protein_title" = "חלבון";
+
+"category_type_fat_title" = "שומן";
+
+"category_type_other_title" = "לאכול בחוץ";
+
+"category_type_unknown_title" = "אחר";

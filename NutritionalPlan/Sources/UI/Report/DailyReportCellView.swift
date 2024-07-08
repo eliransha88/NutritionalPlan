@@ -48,9 +48,8 @@ struct DailyReportCellView: View {
                     Image(systemSymbol: .ellipsisCircle)
                         .foregroundColor(Color.primary)
                 }
-                
-
             }
         }
+        .padding()
     }
 }

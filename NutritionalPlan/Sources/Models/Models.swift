@@ -30,10 +30,12 @@ final class DailyReport: Codable {
             return "תאכל משהו שלא תהיה רעב"
         }
         
-        return meals.map {
+        return meals.sorted() {
+            $0.createdDate > $1.createdDate
+        }.map {
             $0.dishes.map { $0.name }
                 .joined(separator: ", ")
-            }
+        }
         .joined(separator: "\n")
     }
     
@@ -73,6 +75,8 @@ final class DailyReport: Codable {
 @Model
 final class Meal: Codable {
     let id: String = UUID().uuidString
+    let createdDate: Date = Date()
+    
     var dishes: [Dish]
     var report: DailyReport?
     
@@ -94,7 +98,7 @@ final class Meal: Codable {
         if dic.isEmpty {
             return ""
         } else {
-            let keyValueString = dic.map({ "\($0.key): \($0.value)" }).joined(separator: ",")
+            let keyValueString = dic.map({ "\($0.key): \($0.value)" }).joined(separator: ", ")
             return "(" + keyValueString + ")"
         }
     }
@@ -163,6 +167,17 @@ final class Category: Codable, Equatable {
         case fat = "שומן"
         case other = "לאכול בחוץ"
         case unknown = "אחר"
+        
+        var title: String {
+            switch self {
+            case .all: return Strings.categoryTypeAllTitle
+            case .carbohydrate: return Strings.categoryTypeCarbohydrateTitle
+            case .protein: return Strings.categoryTypeProteinTitle
+            case .fat: return Strings.categoryTypeFatTitle
+            case .other: return Strings.categoryTypeOtherTitle
+            case .unknown: return Strings.categoryTypeUnknownTitle
+            }
+        }
     }
 
     @Attribute(.unique) let id: String = UUID().uuidString

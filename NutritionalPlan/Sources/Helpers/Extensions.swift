@@ -15,6 +15,11 @@ extension Double {
     var asString: String {
         self == floor(self) ? Int(self).description : self.description
     }
+    
+    
+    var asSize: CGSize {
+        .init(width: self, height: self)
+    }
 }
 
 extension Array {
@@ -37,5 +42,22 @@ extension View {
 
     func frame(size: CGSize, alignment: Alignment = .center) -> some View {
         self.frame(width: size.width, height: size.height, alignment: alignment)
+    }
+}
+
+extension Int {
+    
+    var asSize: CGSize {
+        .init(width: self, height: self)
+    }
+}
+
+extension EdgeInsets {
+    
+    init(inset: CGFloat) {
+        self.init(top: inset,
+                  leading: inset,
+                  bottom: inset,
+                  trailing: inset)
     }
 }

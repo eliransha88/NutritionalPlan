@@ -63,7 +63,7 @@ struct DishesListView: View {
                 ToolbarItem {
                     Picker("", selection: $selectedFilter) {
                         ForEach(CategoryType.allCases, id: \.rawValue) {
-                            Text($0.rawValue)
+                            Text($0.title)
                                 .tag(Filter.category($0))
                         }
                         Text(Strings.favoritesTitle)
@@ -99,7 +99,10 @@ struct DishesListView: View {
                 })
             }
             .onDelete(perform: deleteDish)
+            .listRowInsets(.init(inset: 12.0))
+            .listRowBackground(Color.secondary.opacity(0.4))
         }
+        .listRowSpacing(8.0)
         .searchable(text: $searchString)
         .autocorrectionDisabled()
     }

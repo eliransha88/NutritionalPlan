@@ -80,6 +80,7 @@ struct DishCellView: View {
                 meal.dishes.remove(at: index)
             }
         }
+        .padding(.vertical, 4.0)
     }
 }
 

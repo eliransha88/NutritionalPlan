@@ -10,12 +10,25 @@ import SwiftUI
 struct MenuByCategoryView: View {
     
     @Environment(Router.self) var router
+    @State private var searchString: String = ""
+    
     let category: Category
+    
+    var filteredDishes: [Dish] {
+        guard let dishes = category.dishes else {
+            return []
+        }
+        if searchString.isEmpty {
+            return dishes
+        } else {
+            return dishes.filter({ $0.name.localizedStandardContains(searchString) })
+        }
+    }
     
     var body: some View {
         
         List {
-            ForEach(category.dishes ?? []) { dish in
+            ForEach(filteredDishes) { dish in
                 VStack(alignment: .leading, spacing: 0) {
                     Text(dish.description)
                         .font(.headline)
@@ -29,12 +42,16 @@ struct MenuByCategoryView: View {
                         .font(.caption)
                 }
             }
+            .listRowInsets(.init(inset: 12.0))
+            .listRowBackground(Color.secondary.opacity(0.4))
         }
+        .listRowSpacing(12.0)
+        .searchable(text: $searchString)
+        .autocorrectionDisabled()
         .backButton {
             router.navigateBack()
         }
         .navigationTitle(category.name)
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

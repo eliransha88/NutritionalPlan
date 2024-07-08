@@ -26,9 +26,9 @@
       public static let categoryTypeCarbohydrateTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "category_type_carbohydrate_title")
       /// Fat
       public static let categoryTypeFatTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "category_type_fat_title")
-      /// Eating Out
+      /// Junk Food
       public static let categoryTypeOtherTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "category_type_other_title")
-      /// Protein
+      /// Protien
       public static let categoryTypeProteinTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "category_type_protein_title")
       /// Other
       public static let categoryTypeUnknownTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "category_type_unknown_title")
