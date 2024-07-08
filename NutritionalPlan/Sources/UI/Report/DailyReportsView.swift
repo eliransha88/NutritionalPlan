@@ -11,8 +11,6 @@ import SFSafeSymbols
 
 struct DailyReportsView: View {
     
-    private let shareWhatsappMessageService: ShareWhatsappMessageService = .init()
-    
     @Environment(Router.self) var router
     @Environment(\.modelContext) var modelContext: ModelContext
     @Query(sort: \DailyReport.date, order: .reverse) var reports: [DailyReport]
@@ -20,15 +18,8 @@ struct DailyReportsView: View {
     var body: some View {
         List {
             ForEach(reports) { report in
-                SectionView(report.dateString) {
-                    DailyReportCellView(report: report,
-                                        onCellTap: {
-                        router.navigate(to: .dailyReportView(report))
-                    },
-                                        onShareButtonTap: {
-                        let message: String = Strings.shareToWhatsappMessage(report.description)
-                            shareWhatsappMessageService.shareWhatsapp(message: message)
-                    })
+                DailyReportCellView(report: report) {
+                    router.navigate(to: .dailyReportView(report))
                 }
             }
             .onDelete(perform: deleteReport)
@@ -36,17 +27,6 @@ struct DailyReportsView: View {
             .listRowBackground(Color.secondary.opacity(0.4))
         }
         .listRowSpacing(12.0)
-        .toolbar {
-            ToolbarItem {
-                Button("",
-                       systemImage: SFSymbol.plus.rawValue,
-                       action: addReport)
-            }
-            
-            ToolbarItem {
-                EditButton()
-            }
-        }
         .navigationTitle(Strings.dailyReportTitle)
         .onAppear {
             clearEmptyMeals()

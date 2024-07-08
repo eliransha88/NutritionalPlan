@@ -39,6 +39,7 @@ struct DailyNutritionalValuesView: View {
             .padding()
         }
         .padding()
+        .background(Color.secondary.opacity(0.2))
     }
     
     struct Row: View {

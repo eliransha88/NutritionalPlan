@@ -10,6 +10,7 @@ import Foundation
 extension Router {
     
     enum Destination: Hashable {
+        case dailyReportsList
         case mealView(_ meal: Meal)
         case dishView(_ dish: Dish, isEditing: Bool = true)
         case selectDishCategory(_ dish: Dish)

@@ -36,7 +36,7 @@
 "save_button_title" = "שמור";
 
 /* סיכום יומי */
-"daily_report_title" = "סיכום יומי";
+"daily_report_title" = "היסטוריה";
 
 /* ערוך */
 "edit_button_title" = "ערוך";
@@ -119,3 +119,11 @@
 "category_type_other_title" = "לאכול בחוץ";
 
 "category_type_unknown_title" = "אחר";
+
+"date_today" = "היום";
+
+"date_yesterday" = "אתמול";
+
+"no_meals" = "אין ארוחות";
+
+"show_all_history" = "הצג הכל";

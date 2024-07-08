@@ -15,10 +15,18 @@ struct ContentView: View {
     
     @Environment(\.modelContext) var modelContext: ModelContext
     @Query var categories: [Category]
+    @Query var reports: [DailyReport]
+    
     @State private var path: NavigationPath = .init()
     @State private var searchString: String = ""
     
     let nutritionalPlanService: NutritionalPlanService
+    
+    var report: DailyReport {
+        reports.first(where: {
+            Calendar.current.isDateInToday($0.date)
+        }) ?? .init()
+    }
     
     init(nutritionalPlanService: NutritionalPlanService) {
         self.nutritionalPlanService = nutritionalPlanService
@@ -26,7 +34,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack(path: $router.navigationPath) {
-            DailyReportsView()
+            DailyReportView(report: report)
                 .toolbar {
                     ToolbarItemGroup(placement: .topBarLeading) {
                         Button("",
@@ -59,11 +67,14 @@ struct ContentView: View {
                     MenuView()
                 case let .menuByCategory(category):
                     MenuByCategoryView(category: category)
+                case .dailyReportsList:
+                    DailyReportsView()
                 }
             })
             
         }
         .environment(router)
+        .tint(Color.green)
         
     }
 }

@@ -42,8 +42,12 @@
       public static let dailyNutritionalValuesFat = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "daily_nutritional_values_fat")
       /// Proteins
       public static let dailyNutritionalValuesProtein = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "daily_nutritional_values_protein")
-      /// Daily Summary
+      /// History
       public static let dailyReportTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "daily_report_title")
+      /// Today
+      public static let dateToday = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "date_today")
+      /// Yesterday
+      public static let dateYesterday = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "date_yesterday")
       /// Amount
       public static let dishAmout = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "dish_amout")
       /// Dish Details
@@ -70,6 +74,8 @@
       public static let mealsSectionTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "meals_section_title")
       /// Menu
       public static let menuTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "menu_title")
+      /// No Meals
+      public static let noMeals = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "no_meals")
       /// Nutritional Values
       public static let nutritionalValues = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "nutritional_values")
       /// Carbohydrate
@@ -100,6 +106,8 @@
       public static func shareToWhatsappMessage(_ p1: Any) -> String {
         return NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "share_to_whatsapp_message",String(describing: p1))
       }
+      /// Show all
+      public static let showAllHistory = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "show_all_history")
       /// Select Category
       public static let unknownCategory = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "unknown_category")
     }

@@ -15,6 +15,7 @@ struct CircularProgressBarView: View {
         static let arrowSize: CGSize = 10.asSize
     }
     
+    @Environment(\.layoutDirection) var layoutDirection
     
     let progress: Double
     let color: Color
@@ -33,7 +34,7 @@ struct CircularProgressBarView: View {
             Circle()
                 .trim(from: 0, to: CGFloat(min(progress, 1.0)))
                 .stroke(color, style: StrokeStyle(lineWidth: Constants.lineWidth, lineCap: .round))
-                .rotationEffect(Angle(degrees: -90))
+                .rotationEffect(Angle(degrees: layoutDirection == .rightToLeft ? 90 : -90))
                 .animation(.linear, value: progress)
                 .overlay(alignment: .top) {
                     Image(systemSymbol: .arrowRight)
@@ -41,6 +42,7 @@ struct CircularProgressBarView: View {
                         .scaledToFit()
                         .frame(size: Constants.arrowSize)
                         .padding(.top, -5)
+                        
                 }
         }
     }

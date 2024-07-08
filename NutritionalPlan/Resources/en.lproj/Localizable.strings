@@ -35,7 +35,7 @@
 "save_button_title" = "Save";
 
 /* Daily Summary */
-"daily_report_title" = "Daily Summary";
+"daily_report_title" = "History";
 
 /* Edit */
 "edit_button_title" = "Edit";
@@ -118,3 +118,11 @@
 "category_type_other_title" = "Junk Food";
 
 "category_type_unknown_title" = "Other";
+
+"date_today" = "Today";
+
+"date_yesterday" = "Yesterday";
+
+"no_meals" = "No Meals";
+
+"show_all_history" = "Show all";

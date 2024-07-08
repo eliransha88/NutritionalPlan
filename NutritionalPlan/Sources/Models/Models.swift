@@ -40,10 +40,18 @@ final class DailyReport: Codable {
     }
     
     var dateString: String {
-        let dateFormatter: DateFormatter = .init()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        dateFormatter.locale = .current
-        return dateFormatter.string(from: date)
+        let calendar = Calendar.current
+        
+        if calendar.isDateInToday(date) {
+            return Strings.dateToday
+        } else if calendar.isDateInYesterday(date) {
+            return Strings.dateYesterday
+        } else {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "EEEE, d MMM"
+            dateFormatter.locale = .current
+            return dateFormatter.string(from: date)
+        }
     }
     
     init(meals: [Meal] = []) {

@@ -28,7 +28,7 @@ struct NutritionalPlanApp: App {
     }()
     
     let nutritionalPlanService: NutritionalPlanService = .init()
-
+    
     var body: some Scene {
         WindowGroup {
             ContentView(nutritionalPlanService: nutritionalPlanService)

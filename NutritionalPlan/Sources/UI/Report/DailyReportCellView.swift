@@ -12,44 +12,22 @@ struct DailyReportCellView: View {
     
     let report: DailyReport
     let onCellTap: VoidHandler
-    let onShareButtonTap: VoidHandler
     
     var body: some View {
-        HStack(spacing: 8.0) {
+        VStack(alignment: .leading, spacing: 8.0) {
+            Text(report.dateString)
+                .font(.headline)
+            
             HStack {
                 Text(report.description)
                     .font(.subheadline)
                     .multilineTextAlignment(.leading)
                 Spacer()
             }
-            .contentShape(Rectangle())
-            .onTapGesture {
-                onCellTap()
-            }
-            .onLongPressGesture {
-                UIPasteboard.general.string = report.description
-            }
-            
-            if report.meals.isNotEmpty {
-                
-                Menu {
-                    Button(Strings.reportMenuShareButtonTitle,
-                           systemImage: SFSymbol.squareAndArrowUp.rawValue,
-                           action: onShareButtonTap)
-                    .foregroundColor(Color.primary)
-                    
-                    Button(Strings.reportMenuCopyButtonTitle,
-                           systemImage: SFSymbol.squareAndArrowUp.rawValue) {
-                        UIPasteboard.general.string = report.description
-                    }
-                           .foregroundColor(Color.primary)
-                    
-                } label: {
-                    Image(systemSymbol: .ellipsisCircle)
-                        .foregroundColor(Color.primary)
-                }
-            }
         }
-        .padding()
+        .contentShape(Rectangle())
+        .onTapGesture {
+            onCellTap()
+        }
     }
 }
