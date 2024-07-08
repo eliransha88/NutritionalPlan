@@ -49,7 +49,6 @@ struct DailyReportView: View {
                 }
                 .onDelete(perform: deleteMeal)
                 .listRowInsets(.init(inset: 12.0))
-                .listRowBackground(Color.secondary.opacity(0.4))
             }
             
             Section {
@@ -62,7 +61,6 @@ struct DailyReportView: View {
                     }
                 }
                 .listRowInsets(.init(inset: 12.0))
-                .listRowBackground(Color.secondary.opacity(0.4))
             } header: {
                 HStack {
                     Text(Strings.dailyReportTitle)
@@ -83,9 +81,7 @@ struct DailyReportView: View {
             .listRowInsets(.init(.zero))
         }
         .listRowSpacing(8.0)
-        .preferredColorScheme(.dark)
         .navigationTitle(report.dateString)
-        .toolbarRole(.editor)
         .toolbar {
             
             if report.meals.isNotEmpty {

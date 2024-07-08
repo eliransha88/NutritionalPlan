@@ -24,7 +24,6 @@ struct DailyReportsView: View {
             }
             .onDelete(perform: deleteReport)
             .listRowInsets(.init(inset: 12.0))
-            .listRowBackground(Color.secondary.opacity(0.4))
         }
         .listRowSpacing(12.0)
         .navigationTitle(Strings.dailyReportTitle)

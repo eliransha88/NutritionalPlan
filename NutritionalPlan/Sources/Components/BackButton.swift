@@ -10,6 +10,7 @@ import SFSafeSymbols
 
 struct BackButtonModifier: ViewModifier {
     
+    @Environment(\.layoutDirection) var layoutDirection
     let action: VoidHandler
     
     func body(content: Content) -> some View {
@@ -19,9 +20,8 @@ struct BackButtonModifier: ViewModifier {
                 ToolbarItem(placement: .topBarLeading) {
                     
                     Button("",
-                           systemImage: SFSymbol.chevronLeft.rawValue,
+                           systemImage: layoutDirection == .rightToLeft ? SFSymbol.chevronRight.rawValue : SFSymbol.chevronLeft.rawValue,
                            action: action)
-                    .flipsForRightToLeftLayoutDirection(false)
                 }
             }
     }

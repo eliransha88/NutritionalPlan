@@ -81,7 +81,6 @@ struct SettingsView: View {
             }
         }
         .navigationTitle(Strings.settingsTitle)
-        .toolbarRole(.editor)
         .onSubmit {
             focusedField = focusedField?.nextField
         }

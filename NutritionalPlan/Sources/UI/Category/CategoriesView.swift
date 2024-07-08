@@ -24,7 +24,6 @@ struct CategoriesView: View {
                            selectedCategory: dish.category,
                            onCategoryTap: select(category:))
         .navigationTitle(Strings.categoriesViewTitle)
-        .toolbarRole(.editor)
         .toolbar {
             ToolbarItem {
                 Button("",

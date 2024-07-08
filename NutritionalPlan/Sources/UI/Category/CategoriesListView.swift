@@ -58,7 +58,6 @@ struct CategoriesListView: View {
                 }
             }
             .listRowInsets(.init(inset: 12.0))
-            .listRowBackground(Color.secondary.opacity(0.4))
         }
         .listRowSpacing(8.0)
     }

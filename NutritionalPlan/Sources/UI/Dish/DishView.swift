@@ -78,7 +78,6 @@ struct DishView: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
-        .toolbarRole(.editor)
         .alert(Strings.saveDishErrorTitle, isPresented: $viewModel.isAlertPresented) {
             Button(role: .cancel, action: {}, label: { Text(Strings.saveDishErrorButton) })
         } message: {
