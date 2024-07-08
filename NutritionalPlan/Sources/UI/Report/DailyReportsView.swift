@@ -13,7 +13,7 @@ struct DailyReportsView: View {
     
     private let shareWhatsappMessageService: ShareWhatsappMessageService = .init()
     
-    @EnvironmentObject var router: Router
+    @Environment(Router.self) var router
     @Environment(\.modelContext) var modelContext: ModelContext
     @Query(sort: \DailyReport.date, order: .reverse) var reports: [DailyReport]
     

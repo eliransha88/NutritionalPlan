@@ -11,7 +11,7 @@ import SFSafeSymbols
 
 struct ContentView: View {
 
-    @StateObject private var router: Router = .init()
+    @State private var router: Router = .init()
     
     @Environment(\.modelContext) var modelContext: ModelContext
     @Query var categories: [Category]
@@ -63,7 +63,7 @@ struct ContentView: View {
             })
             
         }
-        .environmentObject(router)
+        .environment(router)
         
     }
 }

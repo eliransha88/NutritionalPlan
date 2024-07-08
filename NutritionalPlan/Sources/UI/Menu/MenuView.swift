@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MenuView: View {
     
-    @EnvironmentObject var router: Router
+    @Environment(Router.self) var router
     
     var body: some View {
         CategoriesListView(searchString: "",

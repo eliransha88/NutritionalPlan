@@ -16,7 +16,7 @@ struct DishesListView: View {
         case favorites
     }
     
-    @EnvironmentObject var router: Router
+    @Environment(Router.self) var router
     @Environment(\.modelContext) var modelContext: ModelContext
     @State private var searchString: String = ""
     

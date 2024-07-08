@@ -11,7 +11,7 @@ import SFSafeSymbols
 
 struct CategoriesView: View {
 
-    @EnvironmentObject var router: Router
+    @Environment(Router.self) var router
     @Environment(\.modelContext) var modelContext: ModelContext
     @State private var searchString: String = ""
     @State private var newCategoryName: String = ""

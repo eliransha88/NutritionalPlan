@@ -31,7 +31,7 @@ struct DishView: View {
     
     @StateObject private var viewModel: DishViewModel
     
-    @EnvironmentObject var router: Router
+    @Environment(Router.self) var router
     @Environment(\.modelContext) var modelContext: ModelContext
     @Query var categories: [Category]
     

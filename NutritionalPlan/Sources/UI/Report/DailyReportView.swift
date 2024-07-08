@@ -11,7 +11,7 @@ import SFSafeSymbols
 
 struct DailyReportView: View {
     
-    @EnvironmentObject var router: Router
+    @Environment(Router.self) var router
     @Environment(\.modelContext) var modelContext
     @Query var meals: [Meal]
     

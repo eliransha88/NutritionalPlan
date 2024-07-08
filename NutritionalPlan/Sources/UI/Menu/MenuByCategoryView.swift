@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MenuByCategoryView: View {
     
-    @EnvironmentObject var router: Router
+    @Environment(Router.self) var router
     let category: Category
     
     var body: some View {
