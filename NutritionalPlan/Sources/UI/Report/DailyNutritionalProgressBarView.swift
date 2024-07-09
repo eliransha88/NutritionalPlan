@@ -20,9 +20,9 @@ struct DailyNutritionalProgressBarView: View {
     @State private var fatProgress: Double = 0.0
     
     let report: DailyReport
-    let dailyConsumation: DailtReportNutritionalValues
+    let dailyConsumation: DailyReportNutritionalValues
     
-    init(report: DailyReport, dailyConsumation: DailtReportNutritionalValues) {
+    init(report: DailyReport, dailyConsumation: DailyReportNutritionalValues) {
         self.report = report
         self.dailyConsumation = dailyConsumation
     }

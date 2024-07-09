@@ -15,9 +15,13 @@ struct DailyReportsView: View {
     @Environment(\.modelContext) var modelContext: ModelContext
     @Query(sort: \DailyReport.date, order: .reverse) var reports: [DailyReport]
     
+    var history: [DailyReport] {
+        reports.filter({ !Calendar.current.isDateInToday($0.date) })
+    }
+    
     var body: some View {
         List {
-            ForEach(reports) { report in
+            ForEach(history) { report in
                 DailyReportCellView(report: report) {
                     router.navigate(to: .dailyReportView(report))
                 }

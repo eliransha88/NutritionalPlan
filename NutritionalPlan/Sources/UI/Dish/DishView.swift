@@ -73,7 +73,7 @@ struct DishView: View {
                 Spacer()
                 
                 Button(Strings.doneButton) {
-                    focusedField = nil
+                    endEditing()
                 }
             }
         }
@@ -87,6 +87,7 @@ struct DishView: View {
         .onReceive(viewModel.saveDishPublisher, perform: { dish in
             modelContext.insert(viewModel.nutritionalValues)
             modelContext.insert(dish)
+            endEditing()
         })
         .onSubmit {
             focusedField = focusedField?.nextField
@@ -173,5 +174,9 @@ struct DishView: View {
                                 isEditable: viewModel.isEditing)
             .focused($focusedField, equals: .fat)
         }
+    }
+    
+    func endEditing() {
+        focusedField = nil
     }
 }

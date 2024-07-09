@@ -10,7 +10,7 @@ import SwiftUI
 struct DailyNutritionalValuesView: View {
     
     let report: DailyReport
-    let dailyConsumation: DailtReportNutritionalValues
+    let dailyConsumation: DailyReportNutritionalValues
     
     init(report: DailyReport) {
         self.report = report

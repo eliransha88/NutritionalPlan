@@ -15,7 +15,7 @@ final class DailyReport: Codable {
     let id: String = UUID().uuidString
     let date: Date
     var meals: [Meal]
-    var dailyConsumation: DailtReportNutritionalValues?
+    var dailyConsumation: DailyReportNutritionalValues?
     
     enum CodingKeys: String, CodingKey {
         case date, meals, dailyConsumation
@@ -64,8 +64,8 @@ final class DailyReport: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.date = try container.decode(Date.self, forKey: .date)
         self.meals = try container.decode([Meal].self, forKey: .meals)
-        self.dailyConsumation = (try? container.decodeIfPresent(DailtReportNutritionalValues.self,
-                                                                forKey: .dailyConsumation)) ?? DailtReportNutritionalValues.defaultValues(with: self)
+        self.dailyConsumation = (try? container.decodeIfPresent(DailyReportNutritionalValues.self,
+                                                                forKey: .dailyConsumation)) ?? DailyReportNutritionalValues.defaultValues(with: self)
     }
     
     func encode(to encoder: any Encoder) throws {
@@ -336,7 +336,7 @@ final class NutritionalValues: Codable {
 }
 
 @Model
-final class DailtReportNutritionalValues: Codable {
+final class DailyReportNutritionalValues: Codable {
     @Attribute(.unique) let id: String = UUID().uuidString
     var carbohydrate: Double
     var protein: Double
@@ -371,7 +371,7 @@ final class DailtReportNutritionalValues: Codable {
         try container.encode(fat, forKey: .fat)
     }
     
-    static func defaultValues(with report: DailyReport? = nil) -> DailtReportNutritionalValues {
+    static func defaultValues(with report: DailyReport? = nil) -> DailyReportNutritionalValues {
         let dailyNutritionalValuesService = DailyNutritionalValuesService()
         return .init(carbohydrate: dailyNutritionalValuesService.carbohydrateDailyConsumption.asDouble,
                      protein: dailyNutritionalValuesService.proteinDailyConsumption.asDouble,

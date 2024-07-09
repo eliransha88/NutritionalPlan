@@ -38,26 +38,31 @@ struct SettingsView: View {
                               text: shareWhatsappMessageService.$phoneNumber,
                               isEditable: true)
                 .focused($focusedField, equals: .phoneNumber)
+                .padding(.horizontal)
             }
             
             SectionView(Strings.dailyConsumption) {
+                
                 EditTextField(title: Strings.dailyNutritionalValuesCarbohydrate,
                               keyboardType: .decimalPad,
                               text: dailyNutritionalValuesService.$carbohydrateDailyConsumption,
                               isEditable: true)
                 .focused($focusedField, equals: .carbohydrate)
+                .padding(.horizontal)
                 
                 EditTextField(title: Strings.dailyNutritionalValuesProtein,
                               keyboardType: .decimalPad,
                               text: dailyNutritionalValuesService.$proteinDailyConsumption,
                               isEditable: true)
                 .focused($focusedField, equals: .protein)
+                .padding(.horizontal)
                 
                 EditTextField(title: Strings.dailyNutritionalValuesFat,
                               keyboardType: .decimalPad,
                               text: dailyNutritionalValuesService.$fatDailyConsumption,
                               isEditable: true)
                 .focused($focusedField, equals: .fat)
+                .padding(.horizontal)
             }
 
         }

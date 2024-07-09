@@ -23,9 +23,14 @@ struct ContentView: View {
     let nutritionalPlanService: NutritionalPlanService
     
     var report: DailyReport {
-        reports.first(where: {
+        guard let report = reports.first(where: {
             Calendar.current.isDateInToday($0.date)
-        }) ?? .init()
+        }) else {
+            let report = DailyReport()
+            modelContext.insert(report)
+            return report
+        }
+        return report
     }
     
     init(nutritionalPlanService: NutritionalPlanService) {
@@ -75,7 +80,6 @@ struct ContentView: View {
         }
         .environment(router)
         .tint(Color.green)
-        
     }
 }
 

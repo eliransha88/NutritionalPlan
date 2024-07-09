@@ -16,12 +16,12 @@ struct DailyReportView: View {
     @Environment(Router.self) var router
     @Environment(\.modelContext) var modelContext
     @Query var meals: [Meal]
-    @Query var reports: [DailyReport]
+    @Query(sort: \DailyReport.date, order: .reverse) var reports: [DailyReport]
     
     @Bindable var report: DailyReport
     
     var history: [DailyReport] {
-        Array(reports.filter({ $0.date != report.date }).prefix(3))
+        Array(reports.filter({ !Calendar.current.isDateInToday($0.date) }).prefix(3))
     }
     
     var filteredMeals: [Meal] {
@@ -34,23 +34,63 @@ struct DailyReportView: View {
     
     var body: some View {
         List {
-            
-            SectionView(Strings.dailyConsumption) {
-                DailyNutritionalValuesView(report: report)
-                    .id(report.meals)
-            }
-            
-            SectionView(Strings.mealsSectionTitle) {
-                ForEach(filteredMeals, id: \.self) { meal in
-                    MealCellView(meal: meal)
-                        .onTapGesture {
-                            router.navigate(to: .mealView(meal))
-                        }
+            dailyConsumptionSection
+            mealsSection
+            historySection
+        }
+        .listRowSpacing(8.0)
+        .navigationTitle(report.dateString)
+        .toolbar {
+            if report.meals.isNotEmpty {
+                ToolbarItem {
+                    Button(Strings.reportMenuShareButtonTitle,
+                           systemImage: SFSymbol.squareAndArrowUp.rawValue,
+                           action: onShareButtonTap)
+                    .foregroundColor(Color.primary)
+                    
                 }
-                .onDelete(perform: deleteMeal)
-                .listRowInsets(.init(inset: 12.0))
             }
             
+            ToolbarItem {
+                Button("",
+                       systemImage: SFSymbol.plus.rawValue,
+                       action: addMeal)
+            }
+            
+            ToolbarItem {
+                EditButton()
+            }
+            
+        }
+    }
+}
+
+private extension DailyReportView {
+    
+    var dailyConsumptionSection: some View {
+        SectionView(Strings.dailyConsumption) {
+            DailyNutritionalValuesView(report: report)
+                .id(report.meals)
+        }
+    }
+    
+    var mealsSection: some View {
+        SectionView(Strings.mealsSectionTitle) {
+            ForEach(filteredMeals, id: \.self) { meal in
+                MealCellView(meal: meal)
+                    .onTapGesture {
+                        router.navigate(to: .mealView(meal))
+                    }
+            }
+            .onDelete(perform: deleteMeal)
+            .listRowInsets(.init(inset: 12.0))
+        }
+    }
+
+    
+    @ViewBuilder
+    var historySection: some View {
+        if history.isNotEmpty {
             Section {
                 ForEach(history, id: \.self) { report in
                     VStack(alignment: .leading) {
@@ -75,35 +115,10 @@ struct DailyReportView: View {
                     } label: {
                         Text(Strings.showAllHistory)
                     }
-
-                }
-            }
-            .listRowInsets(.init(.zero))
-        }
-        .listRowSpacing(8.0)
-        .navigationTitle(report.dateString)
-        .toolbar {
-            
-            if report.meals.isNotEmpty {
-                ToolbarItem {
-                    Button(Strings.reportMenuShareButtonTitle,
-                           systemImage: SFSymbol.squareAndArrowUp.rawValue,
-                           action: onShareButtonTap)
-                    .foregroundColor(Color.primary)
                     
                 }
             }
-            
-            ToolbarItem {
-                Button("",
-                       systemImage: SFSymbol.plus.rawValue,
-                       action: addMeal)
-            }
-            
-            ToolbarItem {
-                EditButton()
-            }
-            
+            .listRowInsets(.init(.zero))
         }
     }
     
