@@ -13,27 +13,31 @@ typealias CategoryType = Category.CategoryType
 @Model
 final class DailyReport: Codable {
     let id: String = UUID().uuidString
-    let date: Date
-    var meals: [Meal]
+    let date: Date = Date.now
+    var meals: [Meal]? = []
     var dailyConsumation: DailyReportNutritionalValues?
     
     enum CodingKeys: String, CodingKey {
-        case date, meals, dailyConsumation
+        case id, date, meals, dailyConsumation
     }
     
     var totalNutritionalValues: NutritionalValues {
-        meals.compactMap({ $0.totalNutritionalValues }).reduce(.init(), +)
+        guard let meals else {
+            return .init()
+        }
+        return meals.compactMap({ $0.totalNutritionalValues })
+            .reduce(.init(), +)
     }
     
     var description: String {
-        guard meals.isNotEmpty else {
+        guard let meals, meals.isNotEmpty else {
             return "תאכל משהו שלא תהיה רעב"
         }
         
         return meals.sorted() {
             $0.createdDate > $1.createdDate
-        }.map {
-            $0.dishes.map { $0.name }
+        }.compactMap {
+            $0.dishes?.map { $0.name }
                 .joined(separator: ", ")
         }
         .joined(separator: "\n")
@@ -54,46 +58,48 @@ final class DailyReport: Codable {
         }
     }
     
-    init(meals: [Meal] = []) {
-        self.date = Date()
+    init(meals: [Meal]? = [],
+         dailyConsumation: DailyReportNutritionalValues? = nil) {
         self.meals = meals
         self.dailyConsumation = dailyConsumation
     }
     
     init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(String.self, forKey: .id)
         self.date = try container.decode(Date.self, forKey: .date)
-        self.meals = try container.decode([Meal].self, forKey: .meals)
+        self.meals = try container.decode([Meal]?.self, forKey: .meals)
         self.dailyConsumation = (try? container.decodeIfPresent(DailyReportNutritionalValues.self,
                                                                 forKey: .dailyConsumation)) ?? DailyReportNutritionalValues.defaultValues(with: self)
     }
     
     func encode(to encoder: any Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
         try container.encode(date, forKey: .date)
         try container.encode(meals, forKey: .meals)
         try container.encode(dailyConsumation, forKey: .dailyConsumation)
     }
     
     func clearEmptyMeals() {
-        meals.removeAll(where: { $0.dishes.isEmpty })
+        meals?.removeAll(where: { $0.dishes?.isEmpty ?? true })
     }
 }
 
 @Model
 final class Meal: Codable {
     let id: String = UUID().uuidString
-    let createdDate: Date = Date()
+    let createdDate: Date = Date.now
     
-    var dishes: [Dish]
-    var report: DailyReport?
+    var dishes: [Dish]? = []
+    @Relationship(inverse: \DailyReport.meals) var report: DailyReport?
     
     enum CodingKeys: CodingKey {
-        case dishes
+        case id, createdDate, dishes, report
     }
     
     var description: String {
-        dishes.compactMap({ $0.name }).joined(separator: ", ")
+        dishes?.compactMap({ $0.name }).joined(separator: ", ") ?? ""
     }
     
     var nutritionalValueString: String {
@@ -112,6 +118,9 @@ final class Meal: Codable {
     }
     
     var totalNutritionalValues: NutritionalValues {
+        guard let dishes else {
+            return .init()
+        }
         return dishes.reduce(into: .init()) { partialResult, value in
             partialResult.carbohydrate += value.nutritionalValues?.carbohydrate ?? 0
             partialResult.protein += value.nutritionalValues?.protein ?? 0
@@ -119,7 +128,7 @@ final class Meal: Codable {
         }
     }
     
-    init(dishes: [Dish] = [],
+    init(dishes: [Dish]? = [],
          report: DailyReport? = nil) {
         self.dishes = dishes
         self.report = report
@@ -127,20 +136,30 @@ final class Meal: Codable {
     
     init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.dishes = try container.decode([Dish].self, forKey: .dishes)
+        self.id = try container.decode(String.self, forKey: .id)
+        self.createdDate = try container.decode(Date.self, forKey: .createdDate)
+        self.dishes = try container.decode([Dish]?.self, forKey: .dishes)
+        self.report = try container.decode(DailyReport.self, forKey: .report)
     }
     
     func encode(to encoder: any Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(createdDate, forKey: .createdDate)
         try container.encode(dishes, forKey: .dishes)
+        try container.encode(report, forKey: .report)
     }
 }
 
 final class NutritionalPlan: Codable {
-    var carbohydrate: [Category]
-    var protein: [Category]
-    var fat: [Category]
-    var other: [Category]
+    var carbohydrate: [Category] = []
+    var protein: [Category] = []
+    var fat: [Category] = []
+    var other: [Category] = []
+    
+    enum CodingKeys: String, CodingKey {
+        case carbohydrate, protein, fat, other
+    }
     
     var categories: [Category] {
         [carbohydrate, protein, fat, other].flatMap({ $0 })
@@ -162,6 +181,14 @@ final class NutritionalPlan: Codable {
         self.protein = protein
         self.fat = fat
         self.other = other
+    }
+    
+    func encode(to encoder: any Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(carbohydrate, forKey: .carbohydrate)
+        try container.encode(protein, forKey: .protein)
+        try container.encode(fat, forKey: .fat)
+        try container.encode(other, forKey: .other)
     }
 }
 
@@ -188,18 +215,18 @@ final class Category: Codable, Equatable {
         }
     }
 
-    @Attribute(.unique) let id: String = UUID().uuidString
-    var type: CategoryType
-    var name: String
+    let id: String = UUID().uuidString
+    var type: CategoryType = CategoryType.unknown
+    var name: String = ""
     var dishes: [Dish]? = []
 
     enum CodingKeys: CodingKey {
-        case type, name, dishes
+        case id, type, name, dishes
     }
     
     init(type: CategoryType,
          name: String,
-         dishes: [Dish] = []) {
+         dishes: [Dish]? = []) {
         self.type = type
         self.name = name
         self.dishes = dishes
@@ -207,13 +234,15 @@ final class Category: Codable, Equatable {
     
     init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = (try? container.decodeIfPresent(String.self, forKey: .id)) ?? UUID().uuidString
         self.type = try container.decodeIfPresent(CategoryType.self, forKey: .type) ?? .unknown
         self.name = try container.decode(String.self, forKey: .name)
-        self.dishes = try container.decode([Dish].self, forKey: .dishes)
+        self.dishes = try container.decode([Dish]?.self, forKey: .dishes)
     }
     
     func encode(to encoder: any Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
         try container.encode(type, forKey: .type)
         try container.encode(name, forKey: .name)
         try container.encode(dishes, forKey: .dishes)
@@ -222,15 +251,14 @@ final class Category: Codable, Equatable {
 
 @Model
 final class Dish: Codable {
-    @Attribute(.unique) let id: String
-    var name: String
-    var amount: Double
-    var unit: String
-    var note: String
+    let id: String = UUID().uuidString
+    var name: String = ""
+    var amount: Double = 0
+    var unit: String = ""
+    var note: String = ""
     @Relationship(deleteRule: .cascade) var nutritionalValues: NutritionalValues?
-    var category: Category?
-    var reports: [DailyReport]? = []
-    
+    @Relationship(inverse: \Category.dishes) var category: Category?
+    @Relationship(inverse: \Meal.dishes) var meals: [Meal]? = []
     var isFavorite: Bool = false
     
     var description: String {
@@ -244,7 +272,7 @@ final class Dish: Codable {
     }
     
     enum CodingKeys: String, CodingKey {
-        case name, amount, unit, note
+        case id, name, amount, unit, note, category, meals, isFavorite
         case nutritionalValues = "nutritional_values"
     }
     
@@ -254,7 +282,7 @@ final class Dish: Codable {
          note: String = "",
          nutritionalValues: NutritionalValues? = nil,
          category: Category? = nil,
-         reports: [DailyReport]? = [],
+         meals: [Meal]? = [],
          isFavorite: Bool = false) {
         self.id = UUID().uuidString
         self.name = name
@@ -263,40 +291,47 @@ final class Dish: Codable {
         self.note = note
         self.nutritionalValues = nutritionalValues
         self.category = category
-        self.reports = reports
+        self.meals = meals
         self.isFavorite = isFavorite
     }
     
     init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = UUID().uuidString
+        self.id = (try? container.decodeIfPresent(String.self, forKey: .id)) ?? UUID().uuidString
         self.name = try container.decode(String.self, forKey: .name)
         self.amount = try container.decode(Double.self, forKey: .amount)
         self.unit = (try? container.decode(String?.self, forKey: .unit)) ?? ""
         self.note = (try? container.decode(String?.self, forKey: .note)) ?? ""
         self.nutritionalValues = try container.decode(NutritionalValues.self, forKey: .nutritionalValues)
+        self.category = try? container.decodeIfPresent(Category.self, forKey: .category)
+        self.meals = (try? container.decodeIfPresent([Meal]?.self, forKey: .meals)) ?? []
+        self.isFavorite = (try? container.decodeIfPresent(Bool.self, forKey: .isFavorite)) ?? false
     }
     
     func encode(to encoder: any Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
         try container.encode(name, forKey: .name)
         try container.encode(amount, forKey: .amount)
         try container.encode(unit, forKey: .unit)
         try container.encode(note, forKey: .note)
         try container.encode(nutritionalValues, forKey: .nutritionalValues)
+        try container.encode(category, forKey: .category)
+        try container.encode(meals, forKey: .meals)
+        try container.encode(isFavorite, forKey: .isFavorite)
     }
 }
 
 @Model
 final class NutritionalValues: Codable {
-    @Attribute(.unique) let id: String = UUID().uuidString
-    var carbohydrate: Double
-    var protein: Double
-    var fat: Double
-    var dish: Dish? = nil
+    let id: String = UUID().uuidString
+    var carbohydrate: Double = 0
+    var protein: Double = 0
+    var fat: Double = 0
+    var dish: Dish?
     
     enum CodingKeys: String, CodingKey {
-        case carbohydrate, protein, fat
+        case id, carbohydrate, protein, fat, dish
     }
        
     var description: String {
@@ -312,20 +347,25 @@ final class NutritionalValues: Codable {
         self.carbohydrate = carbohydrate
         self.protein = protein
         self.fat = fat
+        self.dish = dish
     }
     
     init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = (try? container.decodeIfPresent(String.self, forKey: .id)) ?? UUID().uuidString
         self.carbohydrate = try container.decode(Double.self, forKey: .carbohydrate)
         self.protein = try container.decode(Double.self, forKey: .protein)
         self.fat = try container.decode(Double.self, forKey: .fat)
+        self.dish = try? container.decodeIfPresent(Dish.self, forKey: .carbohydrate)
     }
     
     func encode(to encoder: any Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
         try container.encode(carbohydrate, forKey: .carbohydrate)
         try container.encode(protein, forKey: .protein)
         try container.encode(fat, forKey: .fat)
+        try container.encode(dish, forKey: .dish)
     }
     
     static func + (lhs: NutritionalValues, rhs: NutritionalValues) -> NutritionalValues {
@@ -337,14 +377,14 @@ final class NutritionalValues: Codable {
 
 @Model
 final class DailyReportNutritionalValues: Codable {
-    @Attribute(.unique) let id: String = UUID().uuidString
-    var carbohydrate: Double
-    var protein: Double
-    var fat: Double
-    var report: DailyReport? = nil
+    let id: String = UUID().uuidString
+    var carbohydrate: Double = 0
+    var protein: Double = 0
+    var fat: Double = 0
+    var report: DailyReport?
         
     enum CodingKeys: String, CodingKey {
-        case carbohydrate, protein, fat
+        case id, carbohydrate, protein, fat, report
     }
     
     init(carbohydrate: Double,
@@ -359,16 +399,20 @@ final class DailyReportNutritionalValues: Codable {
     
     init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = (try? container.decodeIfPresent(String.self, forKey: .carbohydrate)) ?? UUID().uuidString
         self.carbohydrate = try container.decode(Double.self, forKey: .carbohydrate)
         self.protein = try container.decode(Double.self, forKey: .protein)
         self.fat = try container.decode(Double.self, forKey: .fat)
+        self.report = try? container.decodeIfPresent(DailyReport.self, forKey: .report)
     }
     
     func encode(to encoder: any Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
         try container.encode(carbohydrate, forKey: .carbohydrate)
         try container.encode(protein, forKey: .protein)
         try container.encode(fat, forKey: .fat)
+        try container.encode(report, forKey: .report)
     }
     
     static func defaultValues(with report: DailyReport? = nil) -> DailyReportNutritionalValues {

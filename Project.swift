@@ -1,38 +1,44 @@
 import ProjectDescription
 import ProjectDescriptionHelpers
 
+let projectName: String = "NutritionalPlan"
+
 let project = Project(
-    name: "NutritionalPlan",
+    name: projectName,
+    organizationName: "Eliran Sharabi",
     options: .options(developmentRegion: "en"),
+    settings: .app(for: projectName),
     targets: [
         .target(
-            name: "NutritionalPlan",
+            name: projectName,
             destinations: .iOS,
             product: .app,
-            bundleId: "io.tuist.NutritionalPlan",
+            bundleId: "${BUNDLE_ID}",
             deploymentTargets: .default,
             infoPlist: .extendingDefault(
                 with: [
-                    "CFBundleDisplayName": "שיטת המנות",
+                    "CFBundleDisplayName": "$(APP_NAME)",
                     "LSApplicationQueriesSchemes": "whatsapp",
                     "UILaunchScreen": [:],
                 ]
             ),
-            sources: ["NutritionalPlan/Sources/**"],
-            resources: ["NutritionalPlan/Resources/**"],
+            sources: ["\(projectName)/Sources/**"],
+            resources: ["\(projectName)/Resources/**"],
             dependencies: [
                 .external(name: "SFSafeSymbols")
-            ]
+            ],
+            settings: .app(for: projectName)
         ),
         .target(
-            name: "NutritionalPlanTests",
+            name: "\(projectName)Tests",
             destinations: .iOS,
             product: .unitTests,
-            bundleId: "io.tuist.NutritionalPlanTests",
+            bundleId: "${BUNDLE_ID}.tests",
             infoPlist: .default,
             sources: ["NutritionalPlan/Tests/**"],
             resources: [],
-            dependencies: [.target(name: "NutritionalPlan")]
+            dependencies: [.target(name: projectName)],
+            settings: Settings.app(for: projectName)
         ),
     ]
 )
