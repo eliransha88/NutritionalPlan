@@ -28,8 +28,11 @@ struct DailyReportView: View {
         meals.filter({ $0.report == report })
     }
     
-    init(report: DailyReport) {
+    let showHistory: Bool
+    
+    init(report: DailyReport, showHistory: Bool = true) {
         self.report = report
+        self.showHistory = showHistory
     }
     
     var body: some View {
@@ -41,7 +44,7 @@ struct DailyReportView: View {
         .listRowSpacing(8.0)
         .navigationTitle(report.dateString)
         .toolbar {
-            if report.meals.isNotEmpty {
+            if report.meals?.isNotEmpty ?? false {
                 ToolbarItem {
                     Button(Strings.reportMenuShareButtonTitle,
                            systemImage: SFSymbol.squareAndArrowUp.rawValue,
@@ -90,14 +93,18 @@ private extension DailyReportView {
     
     @ViewBuilder
     var historySection: some View {
-        if history.isNotEmpty {
+        if showHistory, history.isNotEmpty {
             Section {
                 ForEach(history, id: \.self) { report in
                     VStack(alignment: .leading) {
                         Text(report.dateString)
                             .font(.headline)
-                        Text(report.meals.first?.description ?? Strings.noMeals)
+                        Text(report.meals?.first?.description ?? Strings.noMeals)
                             .font(.subheadline)
+                    }
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        router.navigate(to: .dailyReportView(report))
                     }
                 }
                 .listRowInsets(.init(inset: 12.0))

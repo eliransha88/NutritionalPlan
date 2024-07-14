@@ -20,6 +20,10 @@ public extension Settings {
         return createSettings(configurations: .emptyConfiguration())
     }()
     
+    static func app(for app: String) -> Settings {
+        return createSettings(configurations: .appConfiguration(for: app))
+    }
+    
     // MARK: Private functions
     private static func createSettings(configurations: [Configuration]) -> Settings {
         return .settings(
@@ -43,6 +47,20 @@ public extension Settings {
 }
 
 extension Array where Element == Configuration {
+    
+    fileprivate static func appConfiguration(for app: String) -> [Element] {
+        return [
+            .debug(
+                name: ConfigurationName.debug,
+                xcconfig: .relativeToResources("\(app).xcconfig")
+            ),
+            .release(
+                name: ConfigurationName.release,
+                xcconfig:  .relativeToResources("\(app).xcconfig")
+            )
+        ]
+    }
+    
     /// For modules that only needs to have the configuration types without any actual xcconfig,
     /// otherwise won't compile.
     /// Not suitable for modules that need values inside xcconfig

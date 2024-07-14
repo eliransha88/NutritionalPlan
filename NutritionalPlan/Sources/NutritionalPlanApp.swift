@@ -18,7 +18,8 @@ struct NutritionalPlanApp: App {
             DailyReport.self,
             Category.self
         ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+        let modelConfiguration = ModelConfiguration(schema: schema,
+                                                    isStoredInMemoryOnly: false)
 
         do {
           //  return try ModelContainer(for: schema, migrationPlan: MigrationPlan.self, configurations: [modelConfiguration])

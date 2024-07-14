@@ -93,7 +93,7 @@ struct DishesListView: View {
             ForEach(filteredDishes) { dish in
                 DishCellView(dish: dish,
                              meal: $meal,
-                             isSelected: meal.dishes.contains(dish),
+                             isSelected: meal.dishes?.contains(dish) ?? false,
                              onEditButtonTap: {
                     router.navigate(to: .dishView(dish))
                 })
@@ -121,7 +121,7 @@ struct DishesListView: View {
     }
     
     func validateMeal() {
-        if meal.dishes.isEmpty {
+        if meal.dishes?.isEmpty ?? false {
             modelContext.delete(meal)
         }
         router.navigateBack()

@@ -8,9 +8,10 @@
 import SwiftUI
 import SwiftData
 import SFSafeSymbols
+import CloudKit
 
 struct ContentView: View {
-
+    
     @State private var router: Router = .init()
     
     @Environment(\.modelContext) var modelContext: ModelContext
@@ -53,43 +54,43 @@ struct ContentView: View {
                         }
                     }
                 }
-            .onAppear {
-                fetchAndSaveProducts()
-            }
-            .navigationDestination(for: Router.Destination.self, destination: {
-                switch $0 {
-                case let .mealView(meal):
-                    DishesListView(meal: meal)
-                case let .dishView(dish, isEditing):
-                    DishView(isEditing: isEditing, dish: dish)
-                case let .selectDishCategory(dish):
-                    CategoriesView(dish: dish)
-                case let .dailyReportView(report):
-                    DailyReportView(report: report)
-                case .settings:
-                    SettingsView()
-                case .menu:
-                    MenuView()
-                case let .menuByCategory(category):
-                    MenuByCategoryView(category: category)
-                case .dailyReportsList:
-                    DailyReportsView()
+                .task {
+                    await fetchAndSaveProducts()
                 }
-            })
+                .navigationDestination(for: Router.Destination.self, destination: {
+                    switch $0 {
+                    case let .mealView(meal):
+                        DishesListView(meal: meal)
+                    case let .dishView(dish, isEditing):
+                        DishView(isEditing: isEditing, dish: dish)
+                    case let .selectDishCategory(dish):
+                        CategoriesView(dish: dish)
+                    case let .dailyReportView(report):
+                        DailyReportView(report: report, showHistory: false)
+                    case .settings:
+                        SettingsView()
+                    case .menu:
+                        MenuView()
+                    case let .menuByCategory(category):
+                        MenuByCategoryView(category: category)
+                    case .dailyReportsList:
+                        DailyReportsView()
+                    }
+                })
             
         }
         .environment(router)
         .tint(Color.green)
+        
     }
 }
 
 private extension ContentView {
-
-    func fetchAndSaveProducts() {
+    
+    func fetchAndSaveProducts() async {
         guard categories.isEmpty else {
             return
         }
-        print("start fetching nutritional plan")
         do {
             let categories = try nutritionalPlanService.fetchRemoteCategories()
             categories.forEach {

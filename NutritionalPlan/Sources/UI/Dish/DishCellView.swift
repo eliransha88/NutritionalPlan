@@ -75,9 +75,9 @@ struct DishCellView: View {
         }
         .onChange(of: isSelected) { _, newValue in
             if newValue {
-                meal.dishes.append(dish)
-            } else if let index = meal.dishes.firstIndex(of: dish) {
-                meal.dishes.remove(at: index)
+                meal.dishes?.append(dish)
+            } else if let index = meal.dishes?.firstIndex(of: dish) {
+                meal.dishes?.remove(at: index)
             }
         }
         .padding(.vertical, 4.0)
