@@ -25,9 +25,8 @@ struct SettingsView: View {
         }
     }
     
+    @Environment(\.appPersistence) var appPersistence
     @FocusState private var focusedField: Field?
-    let dailyNutritionalValuesService: DailyNutritionalValuesService = .init()
-    let shareWhatsappMessageService: ShareWhatsappMessageService = .init()
     
     var body: some View {
         List {
@@ -35,7 +34,7 @@ struct SettingsView: View {
             SectionView(Strings.settingsViewShareSectionTitle) {
                 EditTextField(title: Strings.settingsViewSharePhoneNumberTitle,
                               keyboardType: .phonePad,
-                              text: shareWhatsappMessageService.$phoneNumber,
+                              text: appPersistence.$phoneNumber,
                               isEditable: true)
                 .focused($focusedField, equals: .phoneNumber)
                 .padding(.horizontal)
@@ -45,21 +44,21 @@ struct SettingsView: View {
                 
                 EditTextField(title: Strings.dailyNutritionalValuesCarbohydrate,
                               keyboardType: .decimalPad,
-                              text: dailyNutritionalValuesService.$carbohydrateDailyConsumption,
+                              text: appPersistence.$carbohydrateDailyConsumption,
                               isEditable: true)
                 .focused($focusedField, equals: .carbohydrate)
                 .padding(.horizontal)
                 
                 EditTextField(title: Strings.dailyNutritionalValuesProtein,
                               keyboardType: .decimalPad,
-                              text: dailyNutritionalValuesService.$proteinDailyConsumption,
+                              text: appPersistence.$proteinDailyConsumption,
                               isEditable: true)
                 .focused($focusedField, equals: .protein)
                 .padding(.horizontal)
                 
                 EditTextField(title: Strings.dailyNutritionalValuesFat,
                               keyboardType: .decimalPad,
-                              text: dailyNutritionalValuesService.$fatDailyConsumption,
+                              text: appPersistence.$fatDailyConsumption,
                               isEditable: true)
                 .focused($focusedField, equals: .fat)
                 .padding(.horizontal)

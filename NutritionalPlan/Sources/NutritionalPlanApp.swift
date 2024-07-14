@@ -29,11 +29,13 @@ struct NutritionalPlanApp: App {
         }
     }()
     
-    let nutritionalPlanService: NutritionalPlanService = .init()
+    init() {
+        AppDIContainer.shared.setup()
+    }
     
     var body: some Scene {
         WindowGroup {
-            ContentView(nutritionalPlanService: nutritionalPlanService)
+            ContentView()
         }
         .modelContainer(sharedModelContainer)
 

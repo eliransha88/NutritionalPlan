@@ -15,6 +15,7 @@ struct DailyReportView: View {
     
     @Environment(Router.self) var router
     @Environment(\.modelContext) var modelContext
+    @Environment(\.appPersistence) var appPersistence
     @Query var meals: [Meal]
     @Query(sort: \DailyReport.date, order: .reverse) var reports: [DailyReport]
     
@@ -146,6 +147,6 @@ private extension DailyReportView {
     
     func onShareButtonTap() {
         let message: String = Strings.shareToWhatsappMessage(report.description)
-        shareWhatsappMessageService.shareWhatsapp(message: message)
+        shareWhatsappMessageService.shareWhatsapp(message: message, phoneNumber: appPersistence.phoneNumber)
     }
 }

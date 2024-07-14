@@ -377,6 +377,7 @@ final class NutritionalValues: Codable {
 
 @Model
 final class DailyReportNutritionalValues: Codable {
+    
     let id: String = UUID().uuidString
     var carbohydrate: Double = 0
     var protein: Double = 0
@@ -416,10 +417,10 @@ final class DailyReportNutritionalValues: Codable {
     }
     
     static func defaultValues(with report: DailyReport? = nil) -> DailyReportNutritionalValues {
-        let dailyNutritionalValuesService = DailyNutritionalValuesService()
-        return .init(carbohydrate: dailyNutritionalValuesService.carbohydrateDailyConsumption.asDouble,
-                     protein: dailyNutritionalValuesService.proteinDailyConsumption.asDouble,
-                     fat: dailyNutritionalValuesService.fatDailyConsumption.asDouble,
+        let appPersistence = AppPersistence()
+        return .init(carbohydrate: appPersistence.carbohydrateDailyConsumption.asDouble,
+                     protein: appPersistence.proteinDailyConsumption.asDouble,
+                     fat: appPersistence.fatDailyConsumption.asDouble,
                      report: report)
     }
 }

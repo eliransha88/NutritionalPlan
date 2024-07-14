@@ -21,7 +21,7 @@ struct ContentView: View {
     @State private var path: NavigationPath = .init()
     @State private var searchString: String = ""
     
-    let nutritionalPlanService: NutritionalPlanService
+    @Inject var nutritionalPlanService: NutritionalPlanServiceProtocol
     
     var report: DailyReport {
         guard let report = reports.first(where: {
@@ -32,10 +32,6 @@ struct ContentView: View {
             return report
         }
         return report
-    }
-    
-    init(nutritionalPlanService: NutritionalPlanService) {
-        self.nutritionalPlanService = nutritionalPlanService
     }
     
     var body: some View {
@@ -107,7 +103,7 @@ private extension ContentView {
 #Preview {
     do {
         let previewer = try Previewer()
-        return ContentView(nutritionalPlanService: .init())
+        return ContentView()
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")

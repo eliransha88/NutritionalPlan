@@ -9,11 +9,13 @@ import Foundation
 import UIKit
 import SwiftUI
 
-class ShareWhatsappMessageService {
-    
-    @AppStorage("phoneNumber") var phoneNumber: String = "972544353679"
-    
-    func shareWhatsapp(message: String) {
+protocol ShareWhatsappMessageServiceProtocol {
+    func shareWhatsapp(message: String, phoneNumber: String)
+}
+
+class ShareWhatsappMessageService: ShareWhatsappMessageServiceProtocol {
+            
+    func shareWhatsapp(message: String, phoneNumber: String) {
         let urlString = "https://wa.me/\(phoneNumber)?text=\(message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
         if let whatsappURL = URL(string: urlString) {
             if UIApplication.shared.canOpenURL(whatsappURL) {

@@ -7,7 +7,11 @@
 
 import Foundation
 
-class NutritionalPlanService {
+protocol NutritionalPlanServiceProtocol {
+    func fetchRemoteCategories() throws -> [Category]
+}
+
+class NutritionalPlanService: NutritionalPlanServiceProtocol {
     
     enum Error: Swift.Error {
         case failedToFetchJson
