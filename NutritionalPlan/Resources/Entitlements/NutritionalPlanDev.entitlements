@@ -6,7 +6,7 @@
 	<string>development</string>
 	<key>com.apple.developer.icloud-container-identifiers</key>
 	<array>
-		<string>$(ICLOUD_CONTAINER_NAME)</string>
+		<string>iCloud.$(ICLOUD_CONTAINER_NAME)</string>
 	</array>
 	<key>com.apple.developer.icloud-services</key>
 	<array>

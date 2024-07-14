@@ -19,8 +19,7 @@ struct NutritionalPlanApp: App {
             Category.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema,
-                                                    isStoredInMemoryOnly: false,
-                                                    cloudKitDatabase: .automatic)
+                                                    isStoredInMemoryOnly: false)
 
         do {
           //  return try ModelContainer(for: schema, migrationPlan: MigrationPlan.self, configurations: [modelConfiguration])
