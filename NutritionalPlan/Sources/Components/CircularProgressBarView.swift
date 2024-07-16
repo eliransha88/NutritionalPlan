@@ -41,7 +41,10 @@ struct CircularProgressBarView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(size: Constants.arrowSize)
-                        .padding(.top, -5)
+                        .padding(5)
+                        .background(color)
+                        .clipShape(Circle())
+                        .padding(.top, -10)
                         
                 }
         }
@@ -49,5 +52,5 @@ struct CircularProgressBarView: View {
 }
 
 #Preview {
-    CircularProgressBarView(progress: 0.6, color: .green)
+    CircularProgressBarView(progress: 0.0, color: .green)
 }
