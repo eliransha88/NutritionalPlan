@@ -54,17 +54,10 @@ struct DailyReportView: View {
                     
                 }
             }
-            
-            ToolbarItem {
-                Button("",
-                       systemImage: SFSymbol.plus.rawValue,
-                       action: addMeal)
-            }
-            
+                        
             ToolbarItem {
                 EditButton()
             }
-            
         }
     }
 }
@@ -79,7 +72,7 @@ private extension DailyReportView {
     }
     
     var mealsSection: some View {
-        SectionView(Strings.mealsSectionTitle) {
+        SectionWithButtonView(Strings.mealsSectionTitle, content: {
             ForEach(filteredMeals, id: \.self) { meal in
                 MealCellView(meal: meal)
                     .onTapGesture {
@@ -88,7 +81,9 @@ private extension DailyReportView {
             }
             .onDelete(perform: deleteMeal)
             .listRowInsets(.init(inset: 12.0))
-        }
+        }, buttonContent: {
+            Image(systemSymbol: .plus)
+        }, onButtonTap: addMeal)
     }
 
     

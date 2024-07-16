@@ -12,7 +12,7 @@ typealias CategoryType = Category.CategoryType
 
 @Model
 final class DailyReport: Codable {
-    let id: String = UUID().uuidString
+    var id: String = UUID().uuidString
     let date: Date = Date.now
     var meals: [Meal]? = []
     var dailyConsumation: DailyReportNutritionalValues?
@@ -37,7 +37,7 @@ final class DailyReport: Codable {
         return meals.sorted() {
             $0.createdDate > $1.createdDate
         }.compactMap {
-            $0.dishes?.map { $0.name }
+            $0.dishes?.map { $0.description }
                 .joined(separator: ", ")
         }
         .joined(separator: "\n")
@@ -60,6 +60,7 @@ final class DailyReport: Codable {
     
     init(meals: [Meal]? = [],
          dailyConsumation: DailyReportNutritionalValues? = nil) {
+        self.id = UUID().uuidString
         self.meals = meals
         self.dailyConsumation = dailyConsumation
     }
@@ -88,7 +89,7 @@ final class DailyReport: Codable {
 
 @Model
 final class Meal: Codable {
-    let id: String = UUID().uuidString
+    var id: String = UUID().uuidString
     let createdDate: Date = Date.now
     
     var dishes: [Dish]? = []
@@ -99,7 +100,7 @@ final class Meal: Codable {
     }
     
     var description: String {
-        dishes?.compactMap({ $0.name }).joined(separator: ", ") ?? ""
+        dishes?.compactMap({ $0.description }).joined(separator: ", ") ?? ""
     }
     
     var nutritionalValueString: String {
@@ -130,6 +131,7 @@ final class Meal: Codable {
     
     init(dishes: [Dish]? = [],
          report: DailyReport? = nil) {
+        self.id = UUID().uuidString
         self.dishes = dishes
         self.report = report
     }
@@ -196,12 +198,12 @@ final class NutritionalPlan: Codable {
 final class Category: Codable, Equatable {
 
     enum CategoryType: String, Codable, CaseIterable {
-        case all = "הכל"
-        case carbohydrate = "פחמימה"
-        case protein = "חלבון"
-        case fat = "שומן"
-        case other = "לאכול בחוץ"
-        case unknown = "אחר"
+        case all
+        case carbohydrate
+        case protein
+        case fat
+        case other
+        case unknown
         
         var title: String {
             switch self {
@@ -215,7 +217,7 @@ final class Category: Codable, Equatable {
         }
     }
 
-    let id: String = UUID().uuidString
+    var id: String = UUID().uuidString
     var type: CategoryType = CategoryType.unknown
     var name: String = ""
     var dishes: [Dish]? = []
@@ -227,6 +229,7 @@ final class Category: Codable, Equatable {
     init(type: CategoryType,
          name: String,
          dishes: [Dish]? = []) {
+        self.id = UUID().uuidString
         self.type = type
         self.name = name
         self.dishes = dishes
@@ -234,7 +237,7 @@ final class Category: Codable, Equatable {
     
     init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = (try? container.decodeIfPresent(String.self, forKey: .id)) ?? UUID().uuidString
+        self.id = try container.decode(String.self, forKey: .id)
         self.type = try container.decodeIfPresent(CategoryType.self, forKey: .type) ?? .unknown
         self.name = try container.decode(String.self, forKey: .name)
         self.dishes = try container.decode([Dish]?.self, forKey: .dishes)
@@ -251,7 +254,7 @@ final class Category: Codable, Equatable {
 
 @Model
 final class Dish: Codable {
-    let id: String = UUID().uuidString
+    var id: String = UUID().uuidString
     var name: String = ""
     var amount: Double = 0
     var unit: String = ""
@@ -297,7 +300,7 @@ final class Dish: Codable {
     
     init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = (try? container.decodeIfPresent(String.self, forKey: .id)) ?? UUID().uuidString
+        self.id = try container.decode(String.self, forKey: .id)
         self.name = try container.decode(String.self, forKey: .name)
         self.amount = try container.decode(Double.self, forKey: .amount)
         self.unit = (try? container.decode(String?.self, forKey: .unit)) ?? ""
@@ -324,7 +327,7 @@ final class Dish: Codable {
 
 @Model
 final class NutritionalValues: Codable {
-    let id: String = UUID().uuidString
+    var id: String = UUID().uuidString
     var carbohydrate: Double = 0
     var protein: Double = 0
     var fat: Double = 0
@@ -344,6 +347,7 @@ final class NutritionalValues: Codable {
          protein: Double = 0,
          fat: Double = 0,
          dish: Dish? = nil) {
+        self.id = UUID().uuidString
         self.carbohydrate = carbohydrate
         self.protein = protein
         self.fat = fat
@@ -352,7 +356,7 @@ final class NutritionalValues: Codable {
     
     init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = (try? container.decodeIfPresent(String.self, forKey: .id)) ?? UUID().uuidString
+        self.id = try container.decode(String.self, forKey: .id)
         self.carbohydrate = try container.decode(Double.self, forKey: .carbohydrate)
         self.protein = try container.decode(Double.self, forKey: .protein)
         self.fat = try container.decode(Double.self, forKey: .fat)
@@ -378,7 +382,7 @@ final class NutritionalValues: Codable {
 @Model
 final class DailyReportNutritionalValues: Codable {
     
-    let id: String = UUID().uuidString
+    var id: String = UUID().uuidString
     var carbohydrate: Double = 0
     var protein: Double = 0
     var fat: Double = 0
@@ -392,6 +396,7 @@ final class DailyReportNutritionalValues: Codable {
          protein: Double,
          fat: Double,
          report: DailyReport? = nil) {
+        self.id = UUID().uuidString
         self.carbohydrate = carbohydrate
         self.protein = protein
         self.fat = fat
@@ -400,7 +405,7 @@ final class DailyReportNutritionalValues: Codable {
     
     init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = (try? container.decodeIfPresent(String.self, forKey: .carbohydrate)) ?? UUID().uuidString
+        self.id = try container.decode(String.self, forKey: .id)
         self.carbohydrate = try container.decode(Double.self, forKey: .carbohydrate)
         self.protein = try container.decode(Double.self, forKey: .protein)
         self.fat = try container.decode(Double.self, forKey: .fat)

@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 typealias Strings = NutritionalPlanStrings
-
+typealias ImageAssets = NutritionalPlanAsset.Assets
 @main
 struct NutritionalPlanApp: App {
     

@@ -8,7 +8,6 @@
 import SwiftUI
 import SwiftData
 import SFSafeSymbols
-import CloudKit
 
 struct ContentView: View {
     
@@ -20,6 +19,9 @@ struct ContentView: View {
     
     @State private var path: NavigationPath = .init()
     @State private var searchString: String = ""
+    @State private var id: UUID = .init()
+    @State private var isLoading: Bool = true
+    @State private var degreesRotating = 0.0
     
     @Inject var nutritionalPlanService: NutritionalPlanServiceProtocol
     
@@ -35,6 +37,36 @@ struct ContentView: View {
     }
     
     var body: some View {
+        Group {
+            if isLoading {
+                loadingView
+            } else {
+                contentView
+            }
+            
+        }
+        .task {
+            await fetchAndSaveProducts()
+        }
+        
+    }
+}
+
+private extension ContentView {
+    
+    var loadingView: some View {
+        ImageAssets.logo.swiftUIImage
+            .clipShape(Circle())
+            .rotationEffect(.degrees(degreesRotating))
+            .onAppear {
+                withAnimation(.linear(duration: 1)
+                     .speed(0.1).repeatForever(autoreverses: false)) {
+                         degreesRotating = 360.0
+                     }
+            }
+    }
+    
+    var contentView: some View {
         NavigationStack(path: $router.navigationPath) {
             DailyReportView(report: report)
                 .toolbar {
@@ -49,9 +81,6 @@ struct ContentView: View {
                             router.navigate(to: .menu)
                         }
                     }
-                }
-                .task {
-                    await fetchAndSaveProducts()
                 }
                 .navigationDestination(for: Router.Destination.self, destination: {
                     switch $0 {
@@ -73,22 +102,36 @@ struct ContentView: View {
                         DailyReportsView()
                     }
                 })
-            
+                .id(id)
+                .onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification), perform: { _  in
+                    // when back from background if we pass the report date we reload the view and create a new report
+                    if !Calendar.current.isDateInToday(report.date) {
+                        id = UUID()
+                    }
+                })
         }
         .environment(router)
         .tint(Color.green)
-        
     }
-}
-
-private extension ContentView {
     
     func fetchAndSaveProducts() async {
+
+        defer {
+            Task {
+                await setIsLoading(false)
+            }
+        }
+        
+        guard (try? await nutritionalPlanService.isFirstCloudSync()) ?? false else {
+            return
+        }
+        
         guard categories.isEmpty else {
             return
         }
         do {
-            let categories = try nutritionalPlanService.fetchRemoteCategories()
+            let categories = try await nutritionalPlanService.fetchRemoteCategories()
+            
             categories.forEach {
                 modelContext.insert($0)
             }
@@ -96,6 +139,13 @@ private extension ContentView {
         }
         catch {
             print("failed to fetch nutritional plan")
+        }
+    }
+    
+    @MainActor
+    func setIsLoading(_ isLoading: Bool) {
+        withAnimation(.linear(duration: 1.0)) {
+            self.isLoading = isLoading
         }
     }
 }

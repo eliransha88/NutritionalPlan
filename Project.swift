@@ -17,6 +17,9 @@ let project = Project(
             deploymentTargets: .default,
             infoPlist: .extendingDefault(
                 with: [
+                    "UIBackgroundModes": [
+                    "remote-notification"
+                    ],
                     "CFBundleDisplayName": "$(APP_NAME)",
                     "LSApplicationQueriesSchemes": "whatsapp",
                     "UILaunchScreen": [:],

@@ -10,8 +10,8 @@ import SwiftUI
 struct DailyNutritionalProgressBarView: View {
     
     struct Constants {
-        static let carbohydrateProgressSize: CGSize = 130.asSize
-        static let proteinProgressSize: CGSize = 90.asSize
+        static let carbohydrateProgressSize: CGSize = 140.asSize
+        static let proteinProgressSize: CGSize = 95.asSize
         static let fatProgressSize: CGSize = 50.asSize
     }
     

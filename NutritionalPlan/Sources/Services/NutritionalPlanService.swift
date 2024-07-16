@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import CloudKit
 
 protocol NutritionalPlanServiceProtocol {
-    func fetchRemoteCategories() throws -> [Category]
+    func isFirstCloudSync() async throws -> Bool
+    func fetchRemoteCategories() async throws -> [Category]
 }
 
 class NutritionalPlanService: NutritionalPlanServiceProtocol {
@@ -30,5 +32,20 @@ class NutritionalPlanService: NutritionalPlanServiceProtocol {
         catch {
             throw Error.failedToDecode
         }
+    }
+    
+    func isFirstCloudSync() async throws -> Bool {
+        
+        let container = CKContainer.default()
+        let cloudDB = container.privateCloudDatabase
+        
+        let pred = NSPredicate(value: true) //true -> return all records
+        let query = CKQuery(recordType: "CD_Category",
+                            predicate: pred)
+        
+        let (result, _) = try await cloudDB.records(matching: query,
+                                                               resultsLimit: 1)
+        return result.count == 0
+        
     }
 }

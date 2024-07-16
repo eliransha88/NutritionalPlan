@@ -48,9 +48,9 @@ struct DailyNutritionalValuesView: View {
         let color: Color
         
         var body: some View {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 2.0) {
                 Text(title)
-                    .font(.subheadline)
+                    .font(.body)
                 
                 Text(value)
                     .font(.subheadline)
