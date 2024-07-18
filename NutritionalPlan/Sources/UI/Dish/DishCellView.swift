@@ -15,15 +15,18 @@ struct DishCellView: View {
     @Bindable var meal: Meal
     let dish: Dish
     let onEditButtonTap: VoidHandler
+    let onDuplicateButtonTap: VoidHandler
     
     init(dish: Dish,
          meal: Bindable<Meal>,
          isSelected: Bool,
-         onEditButtonTap: @escaping VoidHandler) {
+         onEditButtonTap: @escaping VoidHandler,
+         onDuplicateButtonTap: @escaping VoidHandler) {
         self._isSelected = State(wrappedValue: isSelected)
         self.dish = dish
         self._meal = meal
         self.onEditButtonTap = onEditButtonTap
+        self.onDuplicateButtonTap = onDuplicateButtonTap
     }
     
     var body: some View {
@@ -72,6 +75,11 @@ struct DishCellView: View {
                 onEditButtonTap()
             }
             .tint(.green)
+            
+            Button(Strings.duplicateDishItem) {
+                onEditButtonTap()
+            }
+            .tint(.mint)
         }
         .onChange(of: isSelected) { _, newValue in
             if newValue {

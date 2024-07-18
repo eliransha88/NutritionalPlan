@@ -74,7 +74,7 @@ struct DishesListView: View {
                 ToolbarItem {
                     Button("",
                            systemImage: SFSymbol.plus.rawValue,
-                           action: addReport)
+                           action: addDish)
                 }
                 
                 ToolbarItem {
@@ -90,23 +90,33 @@ struct DishesListView: View {
     
     var list: some View {
         List {
-            ForEach(filteredDishes) { dish in
-                DishCellView(dish: dish,
-                             meal: $meal,
-                             isSelected: meal.dishes?.contains(dish) ?? false,
-                             onEditButtonTap: {
-                    router.navigate(to: .dishView(dish))
-                })
+            Section {
+                ForEach(filteredDishes) { dish in
+                    DishCellView(dish: dish,
+                                 meal: $meal,
+                                 isSelected: meal.dishes?.contains(dish) ?? false,
+                                 onEditButtonTap: {
+                        router.navigate(to: .dishView(dish))
+                    }, onDuplicateButtonTap: {
+                        router.navigate(to: .dishView(dish.copy))
+                    })
+                }
+                .onDelete(perform: deleteDish)
+                .listRowInsets(.init(inset: 12.0))
+            } footer: {
+                Button(Strings.addDishButtonTitle,
+                       systemImage: SFSymbol.plus.rawValue,
+                       action: addDish)
+                .padding()
+                .frame(maxWidth: .infinity)
             }
-            .onDelete(perform: deleteDish)
-            .listRowInsets(.init(inset: 12.0))
         }
         .listRowSpacing(8.0)
         .searchable(text: $searchString)
         .autocorrectionDisabled()
     }
     
-    func addReport() {
+    func addDish() {
         let dish = Dish()
         router.navigate(to: .dishView(dish))
     }

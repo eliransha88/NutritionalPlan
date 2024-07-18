@@ -265,13 +265,36 @@ final class Dish: Codable {
     var isFavorite: Bool = false
     
     var description: String {
-        [amount.asString, unit, name].compactMap({ $0 }).joined(separator: " ")
+        [amount.asString, unit, name]
+            .filter({ $0.isNotEmpty })
+            .joined(separator: " ")
     }
     
     var isValidate: Bool {
         name.isNotEmpty &&
         amount > 0 &&
         category != nil
+    }
+    
+    var copy: Dish {
+        let nutritionalValues = NutritionalValues(
+            carbohydrate: nutritionalValues?.carbohydrate ?? 0.0,
+            protein: nutritionalValues?.protein ?? 0.0,
+            fat: nutritionalValues?.fat ?? 0.0
+        )
+        
+        var dish = Dish(
+            name: name,
+            amount: amount,
+            unit: unit,
+            note: note,
+            nutritionalValues: nutritionalValues,
+            category: category
+        )
+        
+        dish.nutritionalValues?.dish = dish
+        
+        return dish
     }
     
     enum CodingKeys: String, CodingKey {

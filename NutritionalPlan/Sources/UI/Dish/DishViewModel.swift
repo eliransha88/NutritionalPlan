@@ -27,7 +27,7 @@ import Observation
     
     let amountFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
-        formatter.zeroSymbol = ""
+        formatter.numberStyle = .decimal
         return formatter
     }()
     

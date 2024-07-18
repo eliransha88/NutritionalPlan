@@ -14,6 +14,8 @@
       public static let addCategoryAlertMessage = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "add_category_alert_message")
       /// Category Name
       public static let addCategoryAlertTextfieldPlaceholder = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "add_category_alert_textfield_placeholder")
+      /// Add dish
+      public static let addDishButtonTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "add_dish_button_title")
       /// Notes
       public static let addDishNotes = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "add_dish_notes")
       /// Select Category
@@ -64,6 +66,8 @@
       public static let dishesSectionTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "dishes_section_title")
       /// Done
       public static let doneButton = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "done_button")
+      /// Duplicate
+      public static let duplicateDishItem = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "duplicate_dish_item")
       /// Edit
       public static let editButtonTitle = NutritionalPlanStrings.tr(NutritionalPlanResources.bundle, "Localizable", "edit_button_title")
       /// Favorites

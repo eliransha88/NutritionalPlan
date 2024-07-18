@@ -30,15 +30,15 @@ struct DailyNutritionalProgressBarView: View {
     var body: some View {
         ZStack {
             CircularProgressBarView(progress: carbohydrateProgress,
-                                    color: .green)
+                                    color: .red)
             .frame(size: Constants.carbohydrateProgressSize)
             
             CircularProgressBarView(progress: proteinProgress,
-                                    color: .red)
+                                    color: .green)
             .frame(size: Constants.proteinProgressSize)
             
             CircularProgressBarView(progress: fatProgress,
-                                    color: .blue)
+                                    color: .mint)
             .frame(size: Constants.fatProgressSize)
         }
         .onAppear {
