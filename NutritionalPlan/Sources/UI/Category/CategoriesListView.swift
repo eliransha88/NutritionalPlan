@@ -35,7 +35,7 @@ struct CategoriesListView: View {
             ForEach(Array(CategoryType.allCases), id: \.rawValue) { key in
                 if let categories = sections[key],
                    !categories.isEmpty {
-                    SectionView(key.rawValue) {
+                    SectionView(key.title) {
                         ForEach(categories) { category in
                             HStack {
                                 Text(category.name)

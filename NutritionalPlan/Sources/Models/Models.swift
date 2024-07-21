@@ -35,7 +35,7 @@ final class DailyReport: Codable {
         }
         
         return meals.sorted() {
-            $0.createdDate > $1.createdDate
+            $0.createdDate < $1.createdDate
         }.compactMap {
             $0.dishes?.map { $0.description }
                 .joined(separator: ", ")
@@ -265,7 +265,7 @@ final class Dish: Codable {
     var isFavorite: Bool = false
     
     var description: String {
-        [amount.asString, unit, name]
+        [amount > 1 ? amount.asString : "", unit, name]
             .filter({ $0.isNotEmpty })
             .joined(separator: " ")
     }
@@ -283,7 +283,7 @@ final class Dish: Codable {
             fat: nutritionalValues?.fat ?? 0.0
         )
         
-        var dish = Dish(
+        let dish = Dish(
             name: name,
             amount: amount,
             unit: unit,

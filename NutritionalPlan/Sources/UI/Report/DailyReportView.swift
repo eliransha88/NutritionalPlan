@@ -11,7 +11,7 @@ import SFSafeSymbols
 
 struct DailyReportView: View {
     
-    private let shareWhatsappMessageService: ShareWhatsappMessageService = .init()
+    @Inject var shareWhatsappMessageService: ShareWhatsappMessageServiceProtocol
     
     @Environment(Router.self) var router
     @Environment(\.modelContext) var modelContext

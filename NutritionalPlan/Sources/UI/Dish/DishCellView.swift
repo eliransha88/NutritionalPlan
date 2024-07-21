@@ -77,7 +77,7 @@ struct DishCellView: View {
             .tint(.green)
             
             Button(Strings.duplicateDishItem) {
-                onEditButtonTap()
+                onDuplicateButtonTap()
             }
             .tint(.mint)
         }
