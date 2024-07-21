@@ -28,6 +28,7 @@ import Observation
     let amountFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 0
         return formatter
     }()
     

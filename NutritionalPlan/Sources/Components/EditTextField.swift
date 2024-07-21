@@ -83,7 +83,7 @@ struct EditDoubleTextField: View {
                               formatter: formatter)
                     .keyboardType(keyboardType)
                 } else {
-                    Text(text.description)
+                    Text(text.asString)
                 }
             }
             .font(.subheadline)
