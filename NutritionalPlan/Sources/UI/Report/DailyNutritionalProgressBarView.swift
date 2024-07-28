@@ -42,11 +42,9 @@ struct DailyNutritionalProgressBarView: View {
             .frame(size: Constants.fatProgressSize)
         }
         .onAppear {
-            withAnimation(.spring().delay(1.0)) {
+            withAnimation {
                 carbohydrateProgress = report.totalNutritionalValues.carbohydrate / dailyConsumation.carbohydrate
-
                 proteinProgress = report.totalNutritionalValues.protein / dailyConsumation.protein
-     
                 fatProgress = report.totalNutritionalValues.fat / dailyConsumation.fat
             }
         }
