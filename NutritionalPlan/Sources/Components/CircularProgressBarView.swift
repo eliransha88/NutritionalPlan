@@ -35,7 +35,7 @@ struct CircularProgressBarView: View {
                 .trim(from: 0, to: CGFloat(min(progress, 1.0)))
                 .stroke(color, style: StrokeStyle(lineWidth: Constants.lineWidth, lineCap: .round))
                 .rotationEffect(Angle(degrees: layoutDirection == .rightToLeft ? 90 : -90))
-                .animation(.linear, value: progress)
+                .animation(.easeOut(duration: 2.0).delay(0.5), value: progress)
                 .overlay(alignment: .top) {
                     Image(systemSymbol: .arrowRight)
                         .resizable()
