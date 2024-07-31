@@ -22,14 +22,14 @@ struct DailyNutritionalValuesView: View {
             VStack(alignment: .leading, spacing: 8.0) {
                 Row(title: Strings.dailyNutritionalValuesCarbohydrate,
                     value: "\(report.totalNutritionalValues.carbohydrate)/\(dailyConsumation.carbohydrate)",
-                    color: .red
+                    color: Colors.red1
                 )
                 Row(title: Strings.dailyNutritionalValuesProtein,
                     value: "\(report.totalNutritionalValues.protein)/\(dailyConsumation.protein)",
-                    color: .green)
+                    color: Colors.green1)
                 Row(title: Strings.dailyNutritionalValuesFat,
                     value: "\(report.totalNutritionalValues.fat)/\(dailyConsumation.fat)",
-                    color: .mint)
+                    color: Colors.teal1)
             }
             
             Spacer()

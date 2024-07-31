@@ -265,7 +265,7 @@ final class Dish: Codable {
     var isFavorite: Bool = false
     
     var description: String {
-        [amount > 1 ? amount.asString : "", unit, name]
+        [(amount != 1 && amount != 0) ? amount.asString : "", unit, name]
             .filter({ $0.isNotEmpty })
             .joined(separator: " ")
     }

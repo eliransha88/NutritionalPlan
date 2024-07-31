@@ -111,7 +111,7 @@ private extension ContentView {
                 })
         }
         .environment(router)
-        .tint(Color.green)
+        .tint(Colors.green1)
     }
     
     func fetchAndSaveProducts() async {

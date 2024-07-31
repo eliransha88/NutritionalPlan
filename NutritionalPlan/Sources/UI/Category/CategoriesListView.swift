@@ -44,7 +44,7 @@ struct CategoriesListView: View {
                                 if selectedCategory == category {
                                     Image(systemSymbol: .checkmark)
                                         .resizable()
-                                        .foregroundStyle(Color.green)
+                                        .foregroundStyle(Colors.green1)
                                         .frame(width: 16, height: 16)
                                 }
                             }
