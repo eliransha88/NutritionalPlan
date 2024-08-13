@@ -18,23 +18,22 @@ struct CircularProgressBarView: View {
     @Environment(\.layoutDirection) var layoutDirection
     
     let progress: Double
-    let colors: [Color]
+    let color: Color
     
-    init(progress: Double, colors: [Color]) {
+    init(progress: Double, color: Color) {
         self.progress = progress
-        self.colors = colors
+        self.color = color
     }
     
     var body: some View {
         ZStack {
             Circle()
-                .stroke(colors.first!.opacity(0.4),
+                .stroke(color.opacity(0.4),
                         style: StrokeStyle(lineWidth: Constants.lineWidth))
             
             Circle()
                 .trim(from: 0, to: CGFloat(min(progress, 1.0)))
-                .stroke(AngularGradient(colors: colors,
-                                        center: .center),
+                .stroke(color.gradient,
                         style: StrokeStyle(lineWidth: Constants.lineWidth,
                                            lineCap: .round))
                 .rotationEffect(Angle(degrees: layoutDirection == .rightToLeft ? 90 : -90))
@@ -46,7 +45,7 @@ struct CircularProgressBarView: View {
                         .foregroundStyle(Color.black)
                         .frame(size: Constants.arrowSize)
                         .padding(5)
-                        .background(colors.first)
+                        .background(color)
                         .clipShape(Circle())
                         .padding(.top, -10)
                         
@@ -56,6 +55,7 @@ struct CircularProgressBarView: View {
 }
 
 #Preview {
-    CircularProgressBarView(progress: 0.8, colors:  [Colors.red1, Colors.red2, Colors.red3, Colors.red4])
+    CircularProgressBarView(progress: 0.8,
+                            color:  Colors.red)
         .padding()
 }

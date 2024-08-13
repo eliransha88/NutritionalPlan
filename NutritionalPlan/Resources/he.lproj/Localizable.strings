@@ -36,7 +36,7 @@
 "save_button_title" = "שמור";
 
 /* סיכום יומי */
-"daily_report_title" = "היסטוריה";
+"history_title" = "היסטוריה";
 
 /* ערוך */
 "edit_button_title" = "ערוך";
@@ -58,6 +58,8 @@
 
 /* צריכה יומית */
 "daily_consumption" = "צריכה יומית";
+
+"weekly_consumption" = "צריכה שבועית";
 
 /* קטגוריה: */
 "category" = "קטגוריה:";
@@ -131,3 +133,5 @@
 "duplicate_dish_item" = "שכפל";
 
 "add_dish_button_title" =  "הוסף מנה";
+
+"goal" = "מטרה";

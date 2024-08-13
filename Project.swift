@@ -23,6 +23,7 @@ let project = Project(
                     "CFBundleDisplayName": "$(APP_NAME)",
                     "LSApplicationQueriesSchemes": "whatsapp",
                     "UILaunchScreen": [:],
+                    "UISupportedInterfaceOrientations": ["UIInterfaceOrientationPortrait"],
                 ]
             ),
             sources: ["\(projectName)/Sources/**"],

@@ -35,7 +35,7 @@
 "save_button_title" = "Save";
 
 /* Daily Summary */
-"daily_report_title" = "History";
+"history_title" = "History";
 
 /* Edit */
 "edit_button_title" = "Edit";
@@ -57,6 +57,8 @@
 
 /* Daily Consumption */
 "daily_consumption" = "Daily Consumption";
+
+"weekly_consumption" = "Weekly Consumption";
 
 /* Category: */
 "category" = "Category:";
@@ -130,3 +132,5 @@
 "duplicate_dish_item" = "Duplicate";
 
 "add_dish_button_title" = "Add dish";
+
+"goal" = "Goal";

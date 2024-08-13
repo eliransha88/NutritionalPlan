@@ -100,6 +100,8 @@ private extension ContentView {
                         MenuByCategoryView(category: category)
                     case .dailyReportsList:
                         DailyReportsView()
+                    case let .weeklyReports(date):
+                        WeeklyReportsView(date: date)
                     }
                 })
                 .id(id)
@@ -111,7 +113,8 @@ private extension ContentView {
                 })
         }
         .environment(router)
-        .tint(Colors.green1)
+        .tint(Colors.green)
+        .preferredColorScheme(.dark)
     }
     
     func fetchAndSaveProducts() async {
@@ -122,13 +125,10 @@ private extension ContentView {
             }
         }
         
-        guard (try? await nutritionalPlanService.isFirstCloudSync()) ?? false else {
+        guard (try? await nutritionalPlanService.isFirstCloudSync()) ?? false || categories.isEmpty else {
             return
         }
         
-        guard categories.isEmpty else {
-            return
-        }
         do {
             let categories = try await nutritionalPlanService.fetchRemoteCategories()
             

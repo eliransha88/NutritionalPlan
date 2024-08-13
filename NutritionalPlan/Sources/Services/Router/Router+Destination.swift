@@ -18,5 +18,6 @@ extension Router {
         case settings
         case menu
         case menuByCategory(Category)
+        case weeklyReports(date: Date)
     }
 }

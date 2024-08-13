@@ -34,7 +34,7 @@ struct DishCellView: View {
 
             Image(systemSymbol: dish.isFavorite ? .starFill : .star)
                 .resizable()
-                .foregroundStyle(dish.isFavorite ? Colors.green1 : .primary)
+                .foregroundStyle(dish.isFavorite ? Colors.green : .primary)
                 .padding(4.0)
                 .frame(width: 32, height: 32)
                 .onTapGesture {
@@ -65,7 +65,7 @@ struct DishCellView: View {
             } label: {
                 Image(systemSymbol: isSelected ? .checkmarkCircle : .plusCircle)
                         .resizable()
-                        .foregroundStyle(isSelected ? Colors.green1 : .primary)
+                        .foregroundStyle(isSelected ? Colors.green : .primary)
                         .padding(4.0)
                         .frame(width: 32, height: 32)
             }
@@ -74,12 +74,12 @@ struct DishCellView: View {
             Button(Strings.editButtonTitle) {
                 onEditButtonTap()
             }
-            .tint(Colors.green1)
+            .tint(Colors.green)
             
             Button(Strings.duplicateDishItem) {
                 onDuplicateButtonTap()
             }
-            .tint(Colors.teal1)
+            .tint(Colors.teal)
         }
         .onChange(of: isSelected) { _, newValue in
             if newValue {

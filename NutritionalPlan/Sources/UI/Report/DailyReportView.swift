@@ -66,8 +66,13 @@ private extension DailyReportView {
     
     var dailyConsumptionSection: some View {
         SectionView(Strings.dailyConsumption) {
-            DailyNutritionalValuesView(report: report)
+            NutritionValuesConsumationView(totalConsumation: report.totalNutritionalValues,
+                                           consumation: report.dailyConsumation ?? .defaultValues(with: report))
                 .id(report.meals)
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    router.navigate(to: .weeklyReports(date: report.date))
+                }
         }
     }
     
@@ -106,7 +111,7 @@ private extension DailyReportView {
                 .listRowInsets(.init(inset: 12.0))
             } header: {
                 HStack {
-                    Text(Strings.dailyReportTitle)
+                    Text(Strings.historyTitle)
                         .font(.headline)
                         .foregroundStyle(Color.primary)
                         .padding(.vertical, 16.0)

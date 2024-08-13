@@ -12,9 +12,9 @@ struct AppPersistence {
     init() {}
     
     @AppStorage("phoneNumber") var phoneNumber : String = "972544353679"
-    @AppStorage("carbohydrateDailyConsumption") var carbohydrateDailyConsumption : String = "3.5"
-    @AppStorage("proteinDailyConsumption") var proteinDailyConsumption : String = "3.5"
-    @AppStorage("fatDailyConsumption") var fatDailyConsumption : String = "2"
+    @AppStorage("carbohydrateDailyConsumption") var carbohydrateDailyConsumption : Double = 3.5
+    @AppStorage("proteinDailyConsumption") var proteinDailyConsumption : Double = 3.5
+    @AppStorage("fatDailyConsumption") var fatDailyConsumption : Double = 2.0
     
 }
 

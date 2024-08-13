@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SFSafeSymbols
+import SwiftData
 
 struct SettingsView: View {
     
@@ -25,8 +26,20 @@ struct SettingsView: View {
         }
     }
     
+    @Query var reports: [DailyReport]
     @Environment(\.appPersistence) var appPersistence
     @FocusState private var focusedField: Field?
+    
+    var currentReport: DailyReport? {
+        reports.first(where: { Calendar.current.isDateInToday($0.date) })
+    }
+    
+    let amountFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 0
+        return formatter
+    }()
     
     var body: some View {
         List {
@@ -42,28 +55,31 @@ struct SettingsView: View {
             
             SectionView(Strings.dailyConsumption) {
                 
-                EditTextField(title: Strings.dailyNutritionalValuesCarbohydrate,
-                              keyboardType: .decimalPad,
-                              text: appPersistence.$carbohydrateDailyConsumption,
-                              isEditable: true)
+                EditDoubleTextField(title: Strings.dailyNutritionalValuesCarbohydrate,
+                                    keyboardType: .decimalPad,
+                                    text: appPersistence.$carbohydrateDailyConsumption,
+                                    formatter: amountFormatter,
+                                    isEditable: true)
                 .focused($focusedField, equals: .carbohydrate)
                 .padding(.horizontal)
                 
-                EditTextField(title: Strings.dailyNutritionalValuesProtein,
-                              keyboardType: .decimalPad,
-                              text: appPersistence.$proteinDailyConsumption,
-                              isEditable: true)
+                EditDoubleTextField(title: Strings.dailyNutritionalValuesProtein,
+                                    keyboardType: .decimalPad,
+                                    text: appPersistence.$proteinDailyConsumption,
+                                    formatter: amountFormatter,
+                                    isEditable: true)
                 .focused($focusedField, equals: .protein)
                 .padding(.horizontal)
                 
-                EditTextField(title: Strings.dailyNutritionalValuesFat,
-                              keyboardType: .decimalPad,
-                              text: appPersistence.$fatDailyConsumption,
-                              isEditable: true)
+                EditDoubleTextField(title: Strings.dailyNutritionalValuesFat,
+                                    keyboardType: .decimalPad,
+                                    text: appPersistence.$fatDailyConsumption,
+                                    formatter: amountFormatter,
+                                    isEditable: true)
                 .focused($focusedField, equals: .fat)
                 .padding(.horizontal)
             }
-
+            
         }
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
@@ -87,6 +103,15 @@ struct SettingsView: View {
         .navigationTitle(Strings.settingsTitle)
         .onSubmit {
             focusedField = focusedField?.nextField
+        }
+        .onChange(of: appPersistence.carbohydrateDailyConsumption) { _, newValue in
+            currentReport?.dailyConsumation?.carbohydrate = newValue
+        }
+        .onChange(of: appPersistence.proteinDailyConsumption) { _, newValue in
+            currentReport?.dailyConsumation?.protein = newValue
+        }
+        .onChange(of: appPersistence.fatDailyConsumption) { _, newValue in
+            currentReport?.dailyConsumation?.fat = newValue
         }
     }
 }

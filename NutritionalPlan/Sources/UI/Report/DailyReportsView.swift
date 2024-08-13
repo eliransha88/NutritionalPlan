@@ -30,7 +30,7 @@ struct DailyReportsView: View {
             .listRowInsets(.init(inset: 12.0))
         }
         .listRowSpacing(12.0)
-        .navigationTitle(Strings.dailyReportTitle)
+        .navigationTitle(Strings.historyTitle)
         .onAppear {
             clearEmptyMeals()
         }
@@ -48,7 +48,7 @@ struct DailyReportsView: View {
     
     func deleteReport(at indexSet: IndexSet) {
         for index in indexSet {
-            let report = reports[index]
+            let report = history[index]
             modelContext.delete(report)
         }
     }

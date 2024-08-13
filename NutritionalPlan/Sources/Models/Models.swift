@@ -12,7 +12,7 @@ typealias CategoryType = Category.CategoryType
 
 @Model
 final class DailyReport: Codable {
-    var id: String = UUID().uuidString
+    let id: String = UUID().uuidString
     let date: Date = Date.now
     var meals: [Meal]? = []
     var dailyConsumation: DailyReportNutritionalValues?
@@ -59,8 +59,10 @@ final class DailyReport: Codable {
     }
     
     init(meals: [Meal]? = [],
+         date: Date = .now,
          dailyConsumation: DailyReportNutritionalValues? = nil) {
         self.id = UUID().uuidString
+        self.date = date
         self.meals = meals
         self.dailyConsumation = dailyConsumation
     }
@@ -415,9 +417,9 @@ final class DailyReportNutritionalValues: Codable {
         case id, carbohydrate, protein, fat, report
     }
     
-    init(carbohydrate: Double,
-         protein: Double,
-         fat: Double,
+    init(carbohydrate: Double = 0,
+         protein: Double = 0,
+         fat: Double = 0,
          report: DailyReport? = nil) {
         self.id = UUID().uuidString
         self.carbohydrate = carbohydrate
@@ -446,9 +448,9 @@ final class DailyReportNutritionalValues: Codable {
     
     static func defaultValues(with report: DailyReport? = nil) -> DailyReportNutritionalValues {
         let appPersistence = AppPersistence()
-        return .init(carbohydrate: appPersistence.carbohydrateDailyConsumption.asDouble,
-                     protein: appPersistence.proteinDailyConsumption.asDouble,
-                     fat: appPersistence.fatDailyConsumption.asDouble,
+        return .init(carbohydrate: appPersistence.carbohydrateDailyConsumption,
+                     protein: appPersistence.proteinDailyConsumption,
+                     fat: appPersistence.fatDailyConsumption,
                      report: report)
     }
 }
