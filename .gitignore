@@ -2,3 +2,5 @@
 *.xcbkptlist
 Derived/Sources/TuistAssets+NutritionalPlan.swift
 Derived/Sources/TuistStrings+NutritionalPlan.swift
+Tuist/.build
+NutritionalPlan.xcworkspace

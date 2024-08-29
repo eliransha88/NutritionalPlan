@@ -7,18 +7,19 @@
 //
 
 import Foundation
+import Swinject
 
 class AppDIContainer {
     
     static let shared = AppDIContainer()
     
-    let container: DIContainer = DIContainer.shared
+    let container: Container = .init()
     
     private init() {}
     
     func setup() {
-        container.register(ShareWhatsappMessageServiceProtocol.self, instance: ShareWhatsappMessageService())
-        container.register(NutritionalPlanServiceProtocol.self, instance: NutritionalPlanService())
+        container.register(ShareWhatsappMessageServiceProtocol.self) { _ in ShareWhatsappMessageService() }
+        container.register(NutritionalPlanServiceProtocol.self) { _ in NutritionalPlanService() }
     }
     
     func resolve<T>(_ protocolType: T.Type) -> T?  {

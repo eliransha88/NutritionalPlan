@@ -29,7 +29,8 @@ let project = Project(
             sources: ["\(projectName)/Sources/**"],
             resources: ["\(projectName)/Resources/**"],
             dependencies: [
-                .external(name: "SFSafeSymbols")
+                .external(name: "SFSafeSymbols"),
+                .external(name: "Swinject")
             ],
             settings: .app(for: projectName)
         ),
