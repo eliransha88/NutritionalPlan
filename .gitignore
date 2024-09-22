@@ -1,6 +1,15 @@
-*.pbxproj
-*.xcbkptlist
-Derived/Sources/TuistAssets+NutritionalPlan.swift
-Derived/Sources/TuistStrings+NutritionalPlan.swift
-Tuist/.build
-NutritionalPlan.xcworkspace
+### Xcode Patch ###
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+/*.gcno
+
+### Projects ###
+*.xcodeproj
+*.xcworkspace
+
+### Tuist managed dependencies ###
+.build
+graph.png
+Derived
