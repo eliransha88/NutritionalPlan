@@ -49,6 +49,7 @@ struct CategoriesView: View {
         let category = Category(type: .unknown, name: newCategoryName)
         category.dishes?.append(dish)
         modelContext.insert(category)
+        try? modelContext.save()
     }
     
     func select(category: Category) {

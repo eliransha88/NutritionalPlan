@@ -39,6 +39,7 @@ struct DailyReportsView: View {
     func addReport() {
         let report = DailyReport()
         modelContext.insert(report)
+        try? modelContext.save()
         router.navigate(to: .dailyReportView(report))
     }
     
@@ -51,5 +52,6 @@ struct DailyReportsView: View {
             let report = history[index]
             modelContext.delete(report)
         }
+        try? modelContext.save()
     }
 }

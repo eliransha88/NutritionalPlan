@@ -76,6 +76,7 @@ struct MenuByCategoryView: View {
                 let dish = filteredDishes[index]
                 modelContext.delete(dish)
             }
+            try? modelContext.save()
         }
     }
     

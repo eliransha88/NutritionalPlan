@@ -133,6 +133,7 @@ private extension DailyReportView {
     func addMeal() {
         let meal: Meal = .init(report: report)
         modelContext.insert(meal)
+        try? modelContext.save()
         router.navigate(to: .mealView(meal))
     }
     
@@ -142,6 +143,7 @@ private extension DailyReportView {
                 let meal = filteredMeals[index]
                 modelContext.delete(meal)
             }
+            try? modelContext.save()
         }
     }
     

@@ -87,6 +87,7 @@ struct DishView: View {
         .onReceive(viewModel.saveDishPublisher, perform: { dish in
             modelContext.insert(viewModel.nutritionalValues)
             modelContext.insert(dish)
+            try? modelContext.save()
             endEditing()
         })
         .onSubmit {

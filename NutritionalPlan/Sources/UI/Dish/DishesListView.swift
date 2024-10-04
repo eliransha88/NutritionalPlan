@@ -127,6 +127,7 @@ struct DishesListView: View {
                 let dish = filteredDishes[index]
                 modelContext.delete(dish)
             }
+            try? modelContext.save()
         }
     }
     
@@ -134,6 +135,7 @@ struct DishesListView: View {
         if meal.dishes?.isEmpty ?? false {
             modelContext.delete(meal)
         }
+        try? modelContext.save()
         router.navigateBack()
     }
 }

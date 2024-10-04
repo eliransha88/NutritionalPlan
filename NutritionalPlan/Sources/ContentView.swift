@@ -31,6 +31,7 @@ struct ContentView: View {
         }) else {
             let report = DailyReport()
             modelContext.insert(report)
+            try? modelContext.save()
             return report
         }
         return report
@@ -132,8 +133,12 @@ private extension ContentView {
         do {
             let categories = try await nutritionalPlanService.fetchRemoteCategories()
             
-            categories.forEach {
-                modelContext.insert($0)
+            await MainActor.run {
+                categories.forEach {
+                    modelContext.insert($0)
+                }
+                
+                try? modelContext.save()
             }
             print("fetch and save categories succeed")
         }
