@@ -39,4 +39,4 @@ DEVELOPMENT_TEAM[config=Release]=27NF894P9T
 DEVELOPMENT_TEAM[config=Debug]=27NF894P9T
 
 ICLOUD_CONTAINER_NAME[config=Release]=NutritionalPlan
-ICLOUD_CONTAINER_NAME[config=Debug]=NutritionalPlan.dev
+ICLOUD_CONTAINER_NAME[config=Debug]=com.eliransha.NutritionalPlan.dev
