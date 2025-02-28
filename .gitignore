@@ -13,3 +13,7 @@
 .build
 graph.png
 Derived
+Derived/Sources/TuistBundle+NutritionalPlan.swift
+NutritionalPlan.xcodeproj/xcshareddata/xcschemes/NutritionalPlan.xcscheme
+build/XCBuildData
+.DS_Store

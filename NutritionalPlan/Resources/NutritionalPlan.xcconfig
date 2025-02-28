@@ -33,7 +33,7 @@ CODE_SIGN_ENTITLEMENTS[config=Release]=$(SRCROOT)/NutritionalPlan/Resources/Enti
 CODE_SIGN_ENTITLEMENTS[config=Debug]=$(SRCROOT)/NutritionalPlan/Resources/Entitlements/NutritionalPlan.entitlements
 
 PROVISIONING_PROFILE[config=Release]=7750d1ee-feed-4250-a6a1-deda082ebe9f
-PROVISIONING_PROFILE[config=Debug]=1f9d0c5b-c528-496a-a9db-6848c4b81bb8
+PROVISIONING_PROFILE[config=Debug]=f76609d4-df4e-4f82-bcd2-4b61e450b69e
 
 DEVELOPMENT_TEAM[config=Release]=27NF894P9T
 DEVELOPMENT_TEAM[config=Debug]=27NF894P9T
