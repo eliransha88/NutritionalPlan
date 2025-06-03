@@ -19,3 +19,4 @@ build/XCBuildData
 .DS_Store
 Derived/Sources/TuistBundle+NutritionalPlan.swift
 NutritionalPlan.xcodeproj/xcshareddata
+Apps/NutritionalPlan/build/XCBuildData

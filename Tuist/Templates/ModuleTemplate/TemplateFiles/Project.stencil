@@ -1,0 +1,10 @@
+import ProjectDescription
+import ProjectDescriptionHelpers
+
+let project = Project.newProject(
+    name: "{{ name }}",
+    targets: [
+        .{{ lcname }}Module,
+        .{{ lcname }}UnitTests
+    ]
+)

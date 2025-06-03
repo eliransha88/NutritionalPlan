@@ -1,0 +1,35 @@
+/* Today */
+"date_today" = "Today";
+
+/* Yesterday */
+"date_yesterday" = "Yesterday";
+
+/* Carbohydrates */
+"daily_nutritional_values_carbohydrate" = "Carbohydrates";
+
+/* Proteins */
+"daily_nutritional_values_protein" = "Proteins";
+
+/* Fat */
+"daily_nutritional_values_fat" = "Fat";
+
+/* All */
+"category_type_all_title" = "All";
+
+/* Carbohydrate */
+"category_type_carbohydrate_title" = "Carbohydrate";
+
+/* Protein */
+"category_type_protein_title" = "Protein";
+
+/* Fat */
+"category_type_fat_title" = "Fat";
+
+/* Eating Out */
+"category_type_other_title" = "Eating Out";
+
+/* Other */
+"category_type_unknown_title" = "Other";
+
+/* Nutritional values description */
+"dish_nutritional_values_description" = "Carbohydrate: %@ Protein: %@ Fat: %@"; 

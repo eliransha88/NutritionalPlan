@@ -1,0 +1,354 @@
+
+/* Class = "UILabel"; text = "Body5"; ObjectID = "1Js-Np-gUV"; */
+"1Js-Np-gUV.text" = "Body5";
+
+/* Class = "UIButton"; normalTitle = "Primary"; ObjectID = "29i-cl-hG3"; */
+"29i-cl-hG3.normalTitle" = "Primary";
+
+/* Class = "UILabel"; text = "Body2 Multiline Body2 Multiline Body2 Multiline Body2 Multiline Body2 Multiline Body2 Multiline"; ObjectID = "2Rf-ll-3rU"; */
+"2Rf-ll-3rU.text" = "Body2 Multiline Body2 Multiline Body2 Multiline Body2 Multiline Body2 Multiline Body2 Multiline";
+
+/* Class = "UILabel"; text = "Body4"; ObjectID = "2Yg-vd-imi"; */
+"2Yg-vd-imi.text" = "Body4";
+
+/* Class = "UIButton"; normalTitle = "Show Banner"; ObjectID = "2ad-PT-80i"; */
+"2ad-PT-80i.normalTitle" = "Show Banner";
+
+/* Class = "UISegmentedControl"; 3cE-Oa-vXK.segmentTitles[0] = "Sucs"; ObjectID = "3cE-Oa-vXK"; */
+"3cE-Oa-vXK.segmentTitles[0]" = "Sucs";
+
+/* Class = "UISegmentedControl"; 3cE-Oa-vXK.segmentTitles[1] = "Info"; ObjectID = "3cE-Oa-vXK"; */
+"3cE-Oa-vXK.segmentTitles[1]" = "Info";
+
+/* Class = "UISegmentedControl"; 3cE-Oa-vXK.segmentTitles[2] = "Impo"; ObjectID = "3cE-Oa-vXK"; */
+"3cE-Oa-vXK.segmentTitles[2]" = "Impo";
+
+/* Class = "UISegmentedControl"; 3cE-Oa-vXK.segmentTitles[3] = "Err"; ObjectID = "3cE-Oa-vXK"; */
+"3cE-Oa-vXK.segmentTitles[3]" = "Err";
+
+/* Class = "UISegmentedControl"; 3cE-Oa-vXK.segmentTitles[4] = "InfoD"; ObjectID = "3cE-Oa-vXK"; */
+"3cE-Oa-vXK.segmentTitles[4]" = "InfoD";
+
+/* Class = "UIButton"; normalTitle = "Read now"; ObjectID = "3hh-ey-B1q"; */
+"3hh-ey-B1q.normalTitle" = "Read now";
+
+/* Class = "UILabel"; text = "strecthed button"; ObjectID = "62W-DX-q3R"; */
+"62W-DX-q3R.text" = "strecthed button";
+
+/* Class = "UILabel"; text = "icon"; ObjectID = "6U0-J0-piO"; */
+"6U0-J0-piO.text" = "icon";
+
+/* Class = "UILabel"; text = "Body1 Multiline Body1 Multiline Body1 Multiline Body1 Multiline Body1 Multiline Body1 Multiline"; ObjectID = "6UO-Jl-P7a"; */
+"6UO-Jl-P7a.text" = "Body1 Multiline Body1 Multiline Body1 Multiline Body1 Multiline Body1 Multiline Body1 Multiline";
+
+/* Class = "UILabel"; text = "Appear with animation"; ObjectID = "7AP-Al-ZKa"; */
+"7AP-Al-ZKa.text" = "Appear with animation";
+
+/* Class = "UILabel"; text = "Label2 Multiline Label2 Multiline Label2 Multiline Label2 Multiline Label2 Multiline Label2 Multiline "; ObjectID = "8Up-IF-FmF"; */
+"8Up-IF-FmF.text" = "Label2 Multiline Label2 Multiline Label2 Multiline Label2 Multiline Label2 Multiline Label2 Multiline ";
+
+/* Class = "UIButton"; normalTitle = "Read now"; ObjectID = "8jV-c3-LzJ"; */
+"8jV-c3-LzJ.normalTitle" = "Read now";
+
+/* Class = "UILabel"; text = "Body4 Multiline Body4 Multiline Body4 Multiline Body4 Multiline Body4 Multiline Body4 Multiline"; ObjectID = "8n7-Gn-7S5"; */
+"8n7-Gn-7S5.text" = "Body4 Multiline Body4 Multiline Body4 Multiline Body4 Multiline Body4 Multiline Body4 Multiline";
+
+/* Class = "UILabel"; text = "Subtitle2"; ObjectID = "97t-Oy-bAx"; */
+"97t-Oy-bAx.text" = "Subtitle2";
+
+/* Class = "UILabel"; text = "Link2"; ObjectID = "9BE-vc-Pd3"; */
+"9BE-vc-Pd3.text" = "Link2";
+
+/* Class = "UILabel"; text = "customView"; ObjectID = "9IP-ch-9dR"; */
+"9IP-ch-9dR.text" = "customView";
+
+/* Class = "UILabel"; text = "Label1"; ObjectID = "9yp-UB-Ryu"; */
+"9yp-UB-Ryu.text" = "Label1";
+
+/* Class = "UILabel"; text = "Multiline Header H1 Multiline Header H1 Multiline Header H1 Multiline Header H1 Multiline Header H1 Multiline Header H1"; ObjectID = "AAE-Kc-RUa"; */
+"AAE-Kc-RUa.text" = "Multiline Header H1 Multiline Header H1 Multiline Header H1 Multiline Header H1 Multiline Header H1 Multiline Header H1";
+
+/* Class = "UILabel"; text = "Large"; ObjectID = "APm-Ye-p3M"; */
+"APm-Ye-p3M.text" = "Large";
+
+/* Class = "UIButton"; normalTitle = "Read"; ObjectID = "AVT-2q-A7N"; */
+"AVT-2q-A7N.normalTitle" = "Read";
+
+/* Class = "UILabel"; text = "Subtitle4"; ObjectID = "AsZ-zm-RlS"; */
+"AsZ-zm-RlS.text" = "Subtitle4";
+
+/* Class = "UIButton"; normalTitle = "Read"; ObjectID = "BYh-HA-uxL"; */
+"BYh-HA-uxL.normalTitle" = "Read";
+
+/* Class = "UILabel"; text = "description"; ObjectID = "ByV-rQ-g2F"; */
+"ByV-rQ-g2F.text" = "description";
+
+/* Class = "UINavigationItem"; title = "Custom UIButton"; ObjectID = "C2g-qy-rDA"; */
+"C2g-qy-rDA.title" = "Custom UIButton";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "CKC-M8-44M"; */
+"CKC-M8-44M.normalTitle" = "Cancel";
+
+/* Class = "UIButton"; normalTitle = "Read"; ObjectID = "CpH-b0-tl4"; */
+"CpH-b0-tl4.normalTitle" = "Read";
+
+/* Class = "UILabel"; text = "Type - Primary"; ObjectID = "DTT-Zo-Hyh"; */
+"DTT-Zo-Hyh.text" = "Type - Primary";
+
+/* Class = "UILabel"; text = "close button"; ObjectID = "ECn-Qn-vmn"; */
+"ECn-Qn-vmn.text" = "close button";
+
+/* Class = "UIHostingController"; title = "Horizon"; ObjectID = "EyX-hp-1tV"; */
+"EyX-hp-1tV.title" = "Horizon";
+
+/* Class = "UIButton"; normalTitle = "Read"; ObjectID = "GDP-b3-TOQ"; */
+"GDP-b3-TOQ.normalTitle" = "Read";
+
+/* Class = "UILabel"; text = "topImage"; ObjectID = "GQI-wH-LxJ"; */
+"GQI-wH-LxJ.text" = "topImage";
+
+/* Class = "UILabel"; text = "Body3 Multiline Body3 Multiline Body3 Multiline Body3 Multiline Body3 Multiline Body3 Multiline"; ObjectID = "H5P-mX-gM8"; */
+"H5P-mX-gM8.text" = "Body3 Multiline Body3 Multiline Body3 Multiline Body3 Multiline Body3 Multiline Body3 Multiline";
+
+/* Class = "UILabel"; text = "title"; ObjectID = "HGA-Xk-oJ0"; */
+"HGA-Xk-oJ0.text" = "title";
+
+/* Class = "UILabel"; text = "config"; ObjectID = "HlL-jA-nbc"; */
+"HlL-jA-nbc.text" = "config";
+
+/* Class = "UILabel"; text = "Select which components you would like to show at your example banner"; ObjectID = "IBc-2r-LYs"; */
+"IBc-2r-LYs.text" = "Select which components you would like to show at your example banner";
+
+/* Class = "UILabel"; text = "Medium"; ObjectID = "IUe-ge-skJ"; */
+"IUe-ge-skJ.text" = "Medium";
+
+/* Class = "UISegmentedControl"; Ier-8M-pSb.segmentTitles[0] = "Small"; ObjectID = "Ier-8M-pSb"; */
+"Ier-8M-pSb.segmentTitles[0]" = "Small";
+
+/* Class = "UISegmentedControl"; Ier-8M-pSb.segmentTitles[1] = "Medium"; ObjectID = "Ier-8M-pSb"; */
+"Ier-8M-pSb.segmentTitles[1]" = "Medium";
+
+/* Class = "UISegmentedControl"; Ier-8M-pSb.segmentTitles[2] = "Large"; ObjectID = "Ier-8M-pSb"; */
+"Ier-8M-pSb.segmentTitles[2]" = "Large";
+
+/* Class = "UIButton"; normalTitle = "Read now"; ObjectID = "JLV-vv-UZf"; */
+"JLV-vv-UZf.normalTitle" = "Read now";
+
+/* Class = "UIButton"; normalTitle = "Read now"; ObjectID = "Jvc-qm-AH5"; */
+"Jvc-qm-AH5.normalTitle" = "Read now";
+
+/* Class = "UILabel"; text = "Small"; ObjectID = "KZy-Lv-CdL"; */
+"KZy-Lv-CdL.text" = "Small";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "KeY-mh-imU"; */
+"KeY-mh-imU.normalTitle" = "Cancel";
+
+/* Class = "UILabel"; text = "Tab"; ObjectID = "Kqg-ni-bin"; */
+"Kqg-ni-bin.text" = "Tab";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "LW4-FM-eEq"; */
+"LW4-FM-eEq.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Header H2"; ObjectID = "Ljd-Df-6MO"; */
+"Ljd-Df-6MO.text" = "Header H2";
+
+/* Class = "UILabel"; text = "Type - Link"; ObjectID = "M3A-uP-zMa"; */
+"M3A-uP-zMa.text" = "Type - Link";
+
+/* Class = "UIButton"; normalTitle = "Show Modal"; ObjectID = "MRq-bf-OEv"; */
+"MRq-bf-OEv.normalTitle" = "Show Modal";
+
+/* Class = "UIButton"; normalTitle = "Reverse"; ObjectID = "Mb3-D0-oeD"; */
+"Mb3-D0-oeD.normalTitle" = "Reverse";
+
+/* Class = "UIButton"; normalTitle = "Modal"; ObjectID = "NO5-8W-jqn"; */
+"NO5-8W-jqn.normalTitle" = "Modal";
+
+/* Class = "UINavigationItem"; title = "Button"; ObjectID = "NhD-Ib-APF"; */
+"NhD-Ib-APF.title" = "Button";
+
+/* Class = "UILabel"; text = "Link4"; ObjectID = "OBy-kh-4lM"; */
+"OBy-kh-4lM.text" = "Link4";
+
+/* Class = "UINavigationItem"; title = "Label"; ObjectID = "ODa-by-r9q"; */
+"ODa-by-r9q.title" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Read now"; ObjectID = "PEK-X4-Iy7"; */
+"PEK-X4-Iy7.normalTitle" = "Read now";
+
+/* Class = "UILabel"; text = "dismiss when tap outside "; ObjectID = "PaM-4K-axr"; */
+"PaM-4K-axr.text" = "dismiss when tap outside ";
+
+/* Class = "UILabel"; text = "Link3"; ObjectID = "QXD-L9-ML8"; */
+"QXD-L9-ML8.text" = "Link3";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Qcc-9Y-9Sx"; */
+"Qcc-9Y-9Sx.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Small"; ObjectID = "RGn-TO-2c6"; */
+"RGn-TO-2c6.text" = "Small";
+
+/* Class = "UILabel"; text = "Large"; ObjectID = "Rfw-F7-YDo"; */
+"Rfw-F7-YDo.text" = "Large";
+
+/* Class = "UIButton"; configuration.title = "SwiftUI"; ObjectID = "S02-jC-d73"; */
+"S02-jC-d73.configuration.title" = "SwiftUI";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "S02-jC-d73"; */
+"S02-jC-d73.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Label"; ObjectID = "SDc-B5-4d4"; */
+"SDc-B5-4d4.normalTitle" = "Label";
+
+/* Class = "UILabel"; text = "Add dismiss button"; ObjectID = "SQe-Im-PCO"; */
+"SQe-Im-PCO.text" = "Add dismiss button";
+
+/* Class = "UILabel"; text = "Medium"; ObjectID = "TOs-Ni-9U8"; */
+"TOs-Ni-9U8.text" = "Medium";
+
+/* Class = "UILabel"; text = "Subtitle2 Multiline Subtitle2 Multiline Subtitle2 Multiline Subtitle2 Multiline Subtitle2 Multiline Subtitle2 Multiline"; ObjectID = "TWz-Z2-odc"; */
+"TWz-Z2-odc.text" = "Subtitle2 Multiline Subtitle2 Multiline Subtitle2 Multiline Subtitle2 Multiline Subtitle2 Multiline Subtitle2 Multiline";
+
+/* Class = "UILabel"; text = "Body3"; ObjectID = "U6N-Gm-gKw"; */
+"U6N-Gm-gKw.text" = "Body3";
+
+/* Class = "UILabel"; text = "Type - Outline"; ObjectID = "UdZ-WA-Hyq"; */
+"UdZ-WA-Hyq.text" = "Type - Outline";
+
+/* Class = "UILabel"; text = "Small"; ObjectID = "VCJ-gB-Omm"; */
+"VCJ-gB-Omm.text" = "Small";
+
+/* Class = "UILabel"; text = "Label2"; ObjectID = "VSk-Ei-P3O"; */
+"VSk-Ei-P3O.text" = "Label2";
+
+/* Class = "UIButton"; normalTitle = "Custom UIButton"; ObjectID = "VZB-M4-lSq"; */
+"VZB-M4-lSq.normalTitle" = "Custom UIButton";
+
+/* Class = "UILabel"; text = "Mini"; ObjectID = "Wh2-zD-7tG"; */
+"Wh2-zD-7tG.text" = "Mini";
+
+/* Class = "UILabel"; text = "Header H4"; ObjectID = "WiA-V0-9qf"; */
+"WiA-V0-9qf.text" = "Header H4";
+
+/* Class = "UIButton"; normalTitle = "Link"; ObjectID = "aFX-wQ-TgN"; */
+"aFX-wQ-TgN.normalTitle" = "Link";
+
+/* Class = "UILabel"; text = "Subtitle3"; ObjectID = "aLv-Br-e5p"; */
+"aLv-Br-e5p.text" = "Subtitle3";
+
+/* Class = "UIButton"; normalTitle = "Custom Theme - Primary Fanta Button"; ObjectID = "arQ-MA-Ze4"; */
+"arQ-MA-Ze4.normalTitle" = "Custom Theme - Primary Fanta Button";
+
+/* Class = "UIButton"; normalTitle = "NotificationBanner"; ObjectID = "awO-DZ-Hu7"; */
+"awO-DZ-Hu7.normalTitle" = "NotificationBanner";
+
+/* Class = "UILabel"; text = "Subtitle4 Multiline Subtitle4 Multiline Subtitle4 Multiline Subtitle4 Multiline Subtitle4 Multiline Subtitle4 Multiline"; ObjectID = "bsN-D7-s5Y"; */
+"bsN-D7-s5Y.text" = "Subtitle4 Multiline Subtitle4 Multiline Subtitle4 Multiline Subtitle4 Multiline Subtitle4 Multiline Subtitle4 Multiline";
+
+/* Class = "UILabel"; text = "Style"; ObjectID = "cBC-72-EXa"; */
+"cBC-72-EXa.text" = "Style";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "egO-jT-QtD"; */
+"egO-jT-QtD.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Fanta"; ObjectID = "fzf-Ip-WET"; */
+"fzf-Ip-WET.normalTitle" = "Fanta";
+
+/* Class = "UILabel"; text = "Medium"; ObjectID = "gUD-K4-1RS"; */
+"gUD-K4-1RS.text" = "Medium";
+
+/* Class = "UILabel"; text = "Subtitle3 Multiline Subtitle3 Multiline Subtitle3 Multiline Subtitle3 Multiline Subtitle3 Multiline Subtitle3 Multiline"; ObjectID = "guN-4c-C1d"; */
+"guN-4c-C1d.text" = "Subtitle3 Multiline Subtitle3 Multiline Subtitle3 Multiline Subtitle3 Multiline Subtitle3 Multiline Subtitle3 Multiline";
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "h5W-0f-hqN"; */
+"h5W-0f-hqN.text" = "Type";
+
+/* Class = "UILabel"; text = "Header H5"; ObjectID = "hq4-Or-2LT"; */
+"hq4-Or-2LT.text" = "Header H5";
+
+/* Class = "UILabel"; text = "Header H1"; ObjectID = "iST-eg-tcJ"; */
+"iST-eg-tcJ.text" = "Header H1";
+
+/* Class = "UILabel"; text = "Body1"; ObjectID = "iVr-6A-tEq"; */
+"iVr-6A-tEq.text" = "Body1";
+
+/* Class = "UILabel"; text = "Header H3"; ObjectID = "is4-ph-H4A"; */
+"is4-ph-H4A.text" = "Header H3";
+
+/* Class = "UIButton"; normalTitle = "Horizon"; ObjectID = "jvm-Lb-sIM"; */
+"jvm-Lb-sIM.normalTitle" = "Horizon";
+
+/* Class = "UILabel"; text = "Subtitle1"; ObjectID = "kxl-sd-TaZ"; */
+"kxl-sd-TaZ.text" = "Subtitle1";
+
+/* Class = "UILabel"; text = "Select which components you would like to show at your example modal"; ObjectID = "mJp-KT-ooI"; */
+"mJp-KT-ooI.text" = "Select which components you would like to show at your example modal";
+
+/* Class = "UINavigationItem"; title = "Styleguide"; ObjectID = "mLe-nm-Zc9"; */
+"mLe-nm-Zc9.title" = "Styleguide";
+
+/* Class = "UISegmentedControl"; myZ-gV-LMi.segmentTitles[0] = "Top"; ObjectID = "myZ-gV-LMi"; */
+"myZ-gV-LMi.segmentTitles[0]" = "Top";
+
+/* Class = "UISegmentedControl"; myZ-gV-LMi.segmentTitles[1] = "Bottom"; ObjectID = "myZ-gV-LMi"; */
+"myZ-gV-LMi.segmentTitles[1]" = "Bottom";
+
+/* Class = "UILabel"; text = "minusculeText"; ObjectID = "nof-8E-gq5"; */
+"nof-8E-gq5.text" = "minusculeText";
+
+/* Class = "UILabel"; text = "Subtitle1 Multiline Subtitle1 Multiline Subtitle1 Multiline Subtitle1 Multiline Subtitle1 Multiline Subtitle1 Multiline"; ObjectID = "ocN-zI-RWv"; */
+"ocN-zI-RWv.text" = "Subtitle1 Multiline Subtitle1 Multiline Subtitle1 Multiline Subtitle1 Multiline Subtitle1 Multiline Subtitle1 Multiline";
+
+/* Class = "UILabel"; text = "Header H2 Multiline Header H2 Multiline Header H2 Multiline Header H2 Multiline Header H2 Multiline"; ObjectID = "owT-8N-ywQ"; */
+"owT-8N-ywQ.text" = "Header H2 Multiline Header H2 Multiline Header H2 Multiline Header H2 Multiline Header H2 Multiline";
+
+/* Class = "UILabel"; text = "Medium"; ObjectID = "p9w-fh-dsE"; */
+"p9w-fh-dsE.text" = "Medium";
+
+/* Class = "UILabel"; text = "DismissAuto"; ObjectID = "q20-zG-SHk"; */
+"q20-zG-SHk.text" = "DismissAuto";
+
+/* Class = "UILabel"; text = "Position"; ObjectID = "qRh-d2-CBa"; */
+"qRh-d2-CBa.text" = "Position";
+
+/* Class = "UIButton"; normalTitle = "Read now"; ObjectID = "qoC-iS-753"; */
+"qoC-iS-753.normalTitle" = "Read now";
+
+/* Class = "UILabel"; text = "Header H4 Mutliline Header H4 Mutliline Header H4 Mutliline Header H4 Mutliline Header H4 Mutliline"; ObjectID = "rj4-ED-VR5"; */
+"rj4-ED-VR5.text" = "Header H4 Mutliline Header H4 Mutliline Header H4 Mutliline Header H4 Mutliline Header H4 Mutliline";
+
+/* Class = "UILabel"; text = "Body2"; ObjectID = "tDU-aN-lxG"; */
+"tDU-aN-lxG.text" = "Body2";
+
+/* Class = "UIButton"; normalTitle = "Outline"; ObjectID = "u5s-NL-x7m"; */
+"u5s-NL-x7m.normalTitle" = "Outline";
+
+/* Class = "UILabel"; text = "Body5 Multiline Body5 Multiline Body5 Multiline Body5 Multiline Body5 Multiline Body5 Multiline"; ObjectID = "uWs-Cf-nFU"; */
+"uWs-Cf-nFU.text" = "Body5 Multiline Body5 Multiline Body5 Multiline Body5 Multiline Body5 Multiline Body5 Multiline";
+
+/* Class = "UILabel"; text = "Header H5 Mutliline Header H5 Mutliline Header H5 Mutliline Header H5 Mutliline Header H5 Mutliline"; ObjectID = "uvh-Z0-LyO"; */
+"uvh-Z0-LyO.text" = "Header H5 Mutliline Header H5 Mutliline Header H5 Mutliline Header H5 Mutliline Header H5 Mutliline";
+
+/* Class = "UILabel"; text = "two horizontal buttons"; ObjectID = "v5x-ry-wP3"; */
+"v5x-ry-wP3.text" = "two horizontal buttons";
+
+/* Class = "UILabel"; text = "Type - Reverse"; ObjectID = "vaG-UK-rcT"; */
+"vaG-UK-rcT.text" = "Type - Reverse";
+
+/* Class = "UILabel"; text = "Large"; ObjectID = "vv0-8Y-28w"; */
+"vv0-8Y-28w.text" = "Large";
+
+/* Class = "UILabel"; text = "Header H3 Mutliline Header H3 Mutliline Header H3 Mutliline Header H3 Mutliline Header H3 Mutliline"; ObjectID = "xQ6-uf-EtA"; */
+"xQ6-uf-EtA.text" = "Header H3 Mutliline Header H3 Mutliline Header H3 Mutliline Header H3 Mutliline Header H3 Mutliline";
+
+/* Class = "UILabel"; text = "Link1"; ObjectID = "xce-cg-CX2"; */
+"xce-cg-CX2.text" = "Link1";
+
+/* Class = "UILabel"; text = "Large"; ObjectID = "xnE-j9-QFk"; */
+"xnE-j9-QFk.text" = "Large";
+
+/* Class = "UILabel"; text = "Label1 Multiline Label1 Multiline Label1 Multiline Label1 Multiline Label1 Multiline Label1 Multiline "; ObjectID = "zPX-Fa-2me"; */
+"zPX-Fa-2me.text" = "Label1 Multiline Label1 Multiline Label1 Multiline Label1 Multiline Label1 Multiline Label1 Multiline ";
+
+/* Class = "UINavigationItem"; title = "Fanta"; ObjectID = "zjn-4y-mFV"; */
+"zjn-4y-mFV.title" = "Fanta";

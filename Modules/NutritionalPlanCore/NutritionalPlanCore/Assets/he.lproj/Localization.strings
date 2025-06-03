@@ -1,0 +1,35 @@
+/* היום */
+"date_today" = "היום";
+
+/* אתמול */
+"date_yesterday" = "אתמול";
+
+/* פחמימות */
+"daily_nutritional_values_carbohydrate" = "פחמימות";
+
+/* חלבונים */
+"daily_nutritional_values_protein" = "חלבונים";
+
+/* שומן */
+"daily_nutritional_values_fat" = "שומן";
+
+/* הכל */
+"category_type_all_title" = "הכל";
+
+/* פחמימה */
+"category_type_carbohydrate_title" = "פחמימה";
+
+/* חלבון */
+"category_type_protein_title" = "חלבון";
+
+/* שומן */
+"category_type_fat_title" = "שומן";
+
+/* לאכול בחוץ */
+"category_type_other_title" = "לאכול בחוץ";
+
+/* אחר */
+"category_type_unknown_title" = "אחר";
+
+/* תיאור ערכים תזונתיים */
+"dish_nutritional_values_description" = "פחמימה: %@ חלבון: %@ שומן: %@"; 

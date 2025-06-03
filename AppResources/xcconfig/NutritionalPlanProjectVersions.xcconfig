@@ -1,0 +1,4 @@
+// Add any version-specific configurations here 
+APP_BUILD_NUMBER=0
+APP_BUNDLE_VERSION=${APP_VERSION}.${APP_BUILD_NUMBER}
+APP_VERSION=0.0.1

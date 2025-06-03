@@ -1,0 +1,18 @@
+//
+//  {{ name }}DIAssembly.swift
+//  {{ name }}
+//
+//  Created by Template
+//
+
+import Foundation
+import NutritionalPlanDI
+
+public class {{ name }}DIAssembly: NSObject, DIAssemblyProtocol {
+    
+    required override public init() {}
+    
+    public func assemble(container: DIContainerProtocol) {
+    
+    }
+}

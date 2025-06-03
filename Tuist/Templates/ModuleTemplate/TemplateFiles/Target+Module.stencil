@@ -1,0 +1,18 @@
+import ProjectDescription
+
+public extension Target {
+    private static let targetName = "{{ name }}"
+    static let {{ lcname }}Module: Target = .targetModule(targetName: targetName,
+                                                    resourcesTypes: [])
+    static let {{ lcname }}UnitTests: Target = .targetModule(targetType: .unitTests,
+                                                       targetName: targetName)
+}
+
+public extension Path {
+    static let {{ lcname }}ProjectPath: Path = .relativeToModules(Target.{{ lcname }}Module.name)
+}
+
+public extension Reference {
+    nonisolated(unsafe) static let {{ lcname }} = Reference(projectPath: .{{ lcname }}ProjectPath, target: .{{ lcname }}Module)
+    nonisolated(unsafe) static let {{ lcname }}UnitTests = Reference(projectPath: .{{ lcname }}ProjectPath, target: .{{ lcname }}UnitTests)
+}

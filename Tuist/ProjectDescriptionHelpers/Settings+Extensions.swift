@@ -2,7 +2,7 @@
 //  Settings+Extensions.swift
 //  ProjectDescriptionHelpers
 //
-//  Created by Gal Orlanczyk on 26/05/2022.
+//  Created by Eliran Sharabi on 26/05/2022.
 //
 
 import ProjectDescription
@@ -19,7 +19,39 @@ public extension Settings {
     static let empty: Settings = {
         return createSettings(configurations: .emptyConfiguration())
     }()
+
+    /// Should be used for app projects
+    /// Will create a setting with default configuration and NutritionalPlanProject.xcconfig
+    static let appProject: Settings = {
+        return createSettings(configurations: [
+            .debug(name: ConfigurationName.debug,
+                   xcconfig: .relativeToAppResources("xcconfig/NutritionalPlanProject.xcconfig")),
+            .release(name: ConfigurationName.release,
+                     xcconfig: .relativeToAppResources("xcconfig/NutritionalPlanProject.xcconfig"))
+        ])
+    }()
     
+    /// Should be used for modules
+    /// Will create a base settings with the default configuraion and recommended settings
+    static let module: Settings = {
+        return .settings(
+            base: ["CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER": "NO"],
+            configurations: .emptyConfiguration(),
+            defaultSettings: DefaultSettings.recommended)
+    }()
+    
+    /// Should be used for modules
+    /// Will create a base settings with the default configuraion and relvant settings for system tests
+    static func systemTests(targetName: String) -> Settings {
+        return .settings(
+            base: ["OTHER_LDFLAGS": "-ObjC"
+                  ],
+            configurations: .emptyConfiguration(),
+            defaultSettings: .recommended(excluding: ["CODE_SIGN_IDENTITY"]))
+    }
+    
+    /// Used for app targets
+    /// Will create a base settings with the default configuraion and relvant settings for app target
     static func app(for app: String) -> Settings {
         return createSettings(configurations: .appConfiguration(for: app))
     }
@@ -52,11 +84,11 @@ extension Array where Element == Configuration {
         return [
             .debug(
                 name: ConfigurationName.debug,
-                xcconfig: .relativeToResources("\(app).xcconfig")
+                xcconfig: .relativeToAppResources("xcconfig/\(app).xcconfig")
             ),
             .release(
                 name: ConfigurationName.release,
-                xcconfig:  .relativeToResources("\(app).xcconfig")
+                xcconfig: .relativeToAppResources("xcconfig/\(app).xcconfig")
             )
         ]
     }

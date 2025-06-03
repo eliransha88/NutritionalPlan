@@ -1,0 +1,20 @@
+#include "NutritionalPlanProjectVersions.xcconfig"
+
+CODE_SIGN_IDENTITY[config=Release]=iPhone Distribution
+CODE_SIGN_IDENTITY[config=Debug]=iPhone Developer
+CODE_SIGN_IDENTITY[sdk=iphoneos*][config=Release]=iPhone Distribution
+CODE_SIGN_IDENTITY[sdk=iphoneos*][config=Debug]=iPhone Developer
+
+COPY_PHASE_STRIP[config=Release]=YES
+COPY_PHASE_STRIP[config=Debug]=NO
+
+DEBUG_INFORMATION_FORMAT[sdk=iphoneos*][config=Debug]=dwarf-with-dsym
+DEBUG_INFORMATION_FORMAT[sdk=iphonesimulator*][config=Debug]=dwarf
+
+CODE_SIGN_STYLE=Manual
+
+SDKROOT=iphoneos
+
+DEVELOPMENT_TEAM[config=Release]=27NF894P9T
+DEVELOPMENT_TEAM[config=Debug]=27NF894P9T
+
