@@ -134,3 +134,7 @@
 "add_dish_button_title" = "Add dish";
 
 "goal" = "Goal";
+
+"settings_view_use_meals_counter" = "Use meals counter";
+
+"settings_view_settings_section_title" = "App Settings";

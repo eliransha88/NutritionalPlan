@@ -15,7 +15,7 @@ public extension Target {
                                                         .reference(.utilities),
                                                         .external(name: "Swinject")
                                                        ],
-                                                       resourcesTypes: [.strings],
+                                                                 resourcesTypes: [.json, .strings],
                                                        withUmrella: true)
     
     static let nutritionalPlanCoreUnitTests: Target = .targetModule(targetType: .unitTests,

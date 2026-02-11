@@ -8,7 +8,9 @@
 import Foundation
 
 public extension DailyReport {
-    static let mock: DailyReport = .init(meals: [.mock, .mock], dailyConsumation: .defaultValues())
+    static let mock: DailyReport = .init(meals: [.mock, .mock],
+                                         dailyConsumation: .defaultValues(),
+                                         mealCounterConsumation: .defaultValues())
 }
 
 public extension Meal {

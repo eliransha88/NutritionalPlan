@@ -16,7 +16,7 @@ public extension Target {
                                                                  dependencies: [
                                                                     .reference(.nutritionalPlanCore)
                                                        ],
-                                                       resourcesTypes: [.json, .strings, .xcassets])
+                                                       resourcesTypes: [.strings, .xcassets])
     static let nutritionalPlanHomeUnitTests: Target = .targetModule(targetType: .unitTests,
                                                           targetName: nutritionalPlanHomeTargetName,
                                                           parentFolder: parentFolder,

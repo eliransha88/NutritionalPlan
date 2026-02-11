@@ -12,8 +12,5 @@ ASSETCATALOG_COMPILER_APPICON_NAME[config=Debug]=AppIconDebug
 PROVISIONING_PROFILE[config=Release]=7750d1ee-feed-4250-a6a1-deda082ebe9f
 PROVISIONING_PROFILE[config=Debug]=f76609d4-df4e-4f82-bcd2-4b61e450b69e
 
-ICLOUD_CONTAINER_NAME[config=Release]=NutritionalPlan
-ICLOUD_CONTAINER_NAME[config=Debug]=com.eliransha.NutritionalPlan.dev
-
 CODE_SIGN_ENTITLEMENTS[config=Release]=$(SRCROOT)/../../AppResources/Entitlements/NutritionalPlan/NutritionalPlanRelease.entitlements
 CODE_SIGN_ENTITLEMENTS[config=Debug]=$(SRCROOT)/../../AppResources/Entitlements/NutritionalPlan/NutritionalPlan.entitlements

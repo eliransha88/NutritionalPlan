@@ -15,6 +15,7 @@ public struct AppPersistence {
     @AppStorage("carbohydrateDailyConsumption") public var carbohydrateDailyConsumption : Double = 3.5
     @AppStorage("proteinDailyConsumption") public var proteinDailyConsumption : Double = 3.5
     @AppStorage("fatDailyConsumption") public var fatDailyConsumption : Double = 2.0
+    @AppStorage("useMealsCounter") public var useMealsCounter : Bool = false
     
 }
 

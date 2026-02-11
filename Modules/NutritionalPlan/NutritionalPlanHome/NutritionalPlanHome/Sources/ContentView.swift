@@ -127,7 +127,7 @@ private extension ContentView {
             setIsLoading(false)
         }
         
-        guard (try? await nutritionalPlanService.isFirstCloudSync()) ?? false || categories.isEmpty else {
+        guard categories.isEmpty else {
             return
         }
         
@@ -144,7 +144,7 @@ private extension ContentView {
             print("fetch and save categories succeed")
         }
         catch {
-            print("failed to fetch nutritional plan")
+            print("failed to fetch nutritional plan with error: \(error.localizedDescription)")
         }
     }
     

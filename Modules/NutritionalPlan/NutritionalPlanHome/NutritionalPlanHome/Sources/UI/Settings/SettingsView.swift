@@ -31,6 +31,7 @@ struct SettingsView: View {
     @Query var reports: [DailyReport]
     @Environment(\.appPersistence) var appPersistence
     @FocusState private var focusedField: Field?
+    @State private var useMealsCounter: Bool = false
     
     var currentReport: DailyReport? {
         reports.first(where: { Calendar.current.isDateInToday($0.date) })
@@ -43,19 +44,26 @@ struct SettingsView: View {
         return formatter
     }()
     
+    let rowInsets: EdgeInsets = .init(top: 0, leading: 12, bottom: 0, trailing: 12)
+    
     var body: some View {
-        List {
+        Form {
             
-            SectionView(Strings.settingsViewShareSectionTitle) {
+            SectionView(Strings.settingsViewSettingsSectionTitle, rowInsets: rowInsets) {
+                Toggle(isOn: $useMealsCounter) {
+                    Text(Strings.settingsViewUseMealsCounter)
+                }
+            }
+            
+            SectionView(Strings.settingsViewShareSectionTitle, rowInsets: rowInsets) {
                 EditTextField(title: Strings.settingsViewSharePhoneNumberTitle,
                               keyboardType: .phonePad,
                               text: appPersistence.$phoneNumber,
                               isEditable: true)
                 .focused($focusedField, equals: .phoneNumber)
-                .padding(.horizontal)
             }
             
-            SectionView(Strings.dailyConsumption) {
+            SectionView(Strings.dailyConsumption, rowInsets: rowInsets) {
                 
                 EditDoubleTextField(title: Strings.dailyNutritionalValuesCarbohydrate,
                                     keyboardType: .decimalPad,
@@ -63,7 +71,6 @@ struct SettingsView: View {
                                     formatter: amountFormatter,
                                     isEditable: true)
                 .focused($focusedField, equals: .carbohydrate)
-                .padding(.horizontal)
                 
                 EditDoubleTextField(title: Strings.dailyNutritionalValuesProtein,
                                     keyboardType: .decimalPad,
@@ -71,7 +78,6 @@ struct SettingsView: View {
                                     formatter: amountFormatter,
                                     isEditable: true)
                 .focused($focusedField, equals: .protein)
-                .padding(.horizontal)
                 
                 EditDoubleTextField(title: Strings.dailyNutritionalValuesFat,
                                     keyboardType: .decimalPad,
@@ -79,7 +85,6 @@ struct SettingsView: View {
                                     formatter: amountFormatter,
                                     isEditable: true)
                 .focused($focusedField, equals: .fat)
-                .padding(.horizontal)
             }
             
         }
@@ -114,6 +119,12 @@ struct SettingsView: View {
         }
         .onChange(of: appPersistence.fatDailyConsumption) { _, newValue in
             currentReport?.dailyConsumation?.fat = newValue
+        }
+        .onChange(of: useMealsCounter) { _, newValue in
+            appPersistence.useMealsCounter = useMealsCounter
+        }
+        .task {
+            useMealsCounter = appPersistence.useMealsCounter
         }
     }
 }

@@ -12,26 +12,43 @@ import Utilities
 public typealias CategoryType = Category.CategoryType
 
 @Model
+final class MigrationPlanV3Object: Codable {
+    
+    init(from decoder: any Decoder) throws {}
+    func encode(to encoder: any Encoder) throws {}
+}
+
+let appPersistence = AppPersistence()
+
+@Model
 public final class DailyReport: Codable {
     public var id: String = UUID().uuidString
     public var date: Date = Date.now
-    public var meals: [Meal]? = []
+    public var meals: [Meal] = []
     public var dailyConsumation: DailyReportNutritionalValues?
+    public var mealCounterConsumation: DailyReportNutritionalValues
     
     enum CodingKeys: String, CodingKey {
-        case id, date, meals, dailyConsumation
+        case id, date, meals, dailyConsumation, mealCounterConsumation
     }
     
     public var totalNutritionalValues: NutritionalValues {
-        guard let meals else {
-            return .init()
+        if appPersistence.useMealsCounter {
+            return .init(carbohydrate: mealCounterConsumation.carbohydrate,
+                         protein: mealCounterConsumation.protein,
+                         fat: mealCounterConsumation.fat,
+                         dish: nil)
+        } else {
+            guard meals.isNotEmpty else {
+                return .init()
+            }
+            return meals.compactMap({ $0.totalNutritionalValues })
+                .reduce(.init(), +)
         }
-        return meals.compactMap({ $0.totalNutritionalValues })
-            .reduce(.init(), +)
     }
     
     public var description: String {
-        guard let meals, meals.isNotEmpty else {
+        guard meals.isNotEmpty else {
             return "תאכל משהו שלא תהיה רעב"
         }
         
@@ -59,20 +76,23 @@ public final class DailyReport: Codable {
         }
     }
     
-    public init(meals: [Meal]? = [],
-         date: Date = .now,
-         dailyConsumation: DailyReportNutritionalValues? = nil) {
+    public init(meals: [Meal] = [],
+                date: Date = .now,
+                dailyConsumation: DailyReportNutritionalValues? = nil,
+                mealCounterConsumation: DailyReportNutritionalValues = .init()) {
         self.id = UUID().uuidString
         self.date = date
         self.meals = meals
         self.dailyConsumation = dailyConsumation
+        self.mealCounterConsumation = mealCounterConsumation
     }
     
     public required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(String.self, forKey: .id)
         self.date = try container.decode(Date.self, forKey: .date)
-        self.meals = try container.decode([Meal]?.self, forKey: .meals)
+        self.meals = try container.decode([Meal].self, forKey: .meals)
+        self.mealCounterConsumation = try container.decode(DailyReportNutritionalValues.self, forKey: .mealCounterConsumation)
         self.dailyConsumation = (try? container.decodeIfPresent(DailyReportNutritionalValues.self,
                                                                 forKey: .dailyConsumation)) ?? DailyReportNutritionalValues.defaultValues(with: self)
     }
@@ -83,10 +103,11 @@ public final class DailyReport: Codable {
         try container.encode(date, forKey: .date)
         try container.encode(meals, forKey: .meals)
         try container.encode(dailyConsumation, forKey: .dailyConsumation)
+        try container.encode(mealCounterConsumation, forKey: .mealCounterConsumation)
     }
     
     public func clearEmptyMeals() {
-        meals?.removeAll(where: { $0.dishes?.isEmpty ?? true })
+        meals.removeAll(where: { $0.dishes?.isEmpty ?? true })
     }
 }
 
@@ -133,7 +154,7 @@ public final class Meal: Codable {
     }
     
     public init(dishes: [Dish]? = [],
-         report: DailyReport? = nil) {
+                report: DailyReport? = nil) {
         self.id = UUID().uuidString
         self.dishes = dishes
         self.report = report
@@ -199,7 +220,7 @@ public final class NutritionalPlan: Codable {
 
 @Model
 public final class Category: Codable, Equatable {
-
+    
     public enum CategoryType: String, Codable, CaseIterable {
         case all
         case carbohydrate
@@ -219,19 +240,19 @@ public final class Category: Codable, Equatable {
             }
         }
     }
-
+    
     public var id: String = UUID().uuidString
     public var type: CategoryType = CategoryType.unknown
     public var name: String = ""
     public var dishes: [Dish]? = []
-
+    
     enum CodingKeys: CodingKey {
         case id, type, name, dishes
     }
     
     public init(type: CategoryType,
-         name: String,
-         dishes: [Dish]? = []) {
+                name: String,
+                dishes: [Dish]? = []) {
         self.id = UUID().uuidString
         self.type = type
         self.name = name
@@ -310,13 +331,13 @@ public final class Dish: Codable {
     }
     
     public init(name: String = "",
-         amount: Double = 0,
-         unit: String = "",
-         note: String = "",
-         nutritionalValues: NutritionalValues? = nil,
-         category: Category? = nil,
-         meals: [Meal]? = [],
-         isFavorite: Bool = false) {
+                amount: Double = 0,
+                unit: String = "",
+                note: String = "",
+                nutritionalValues: NutritionalValues? = nil,
+                category: Category? = nil,
+                meals: [Meal]? = [],
+                isFavorite: Bool = false) {
         self.id = UUID().uuidString
         self.name = name
         self.amount = amount
@@ -366,17 +387,17 @@ public final class NutritionalValues: Codable {
     enum CodingKeys: String, CodingKey {
         case id, carbohydrate, protein, fat, dish
     }
-       
+    
     public var description: String {
         NutritionalPlanCoreStrings.dishNutritionalValuesDescription(carbohydrate.asString,
-                                                 protein.asString,
-                                                 fat.asString)
+                                                                    protein.asString,
+                                                                    fat.asString)
     }
     
     public init(carbohydrate: Double = 0,
-         protein: Double = 0,
-         fat: Double = 0,
-         dish: Dish? = nil) {
+                protein: Double = 0,
+                fat: Double = 0,
+                dish: Dish? = nil) {
         self.id = UUID().uuidString
         self.carbohydrate = carbohydrate
         self.protein = protein
@@ -404,8 +425,8 @@ public final class NutritionalValues: Codable {
     
     public static func + (lhs: NutritionalValues, rhs: NutritionalValues) -> NutritionalValues {
         return .init(carbohydrate: lhs.carbohydrate + rhs.carbohydrate,
-                                 protein: lhs.protein + rhs.protein,
-                                 fat: lhs.fat + rhs.fat)
+                     protein: lhs.protein + rhs.protein,
+                     fat: lhs.fat + rhs.fat)
     }
 }
 
@@ -417,15 +438,15 @@ public final class DailyReportNutritionalValues: Codable {
     public var protein: Double = 0
     public var fat: Double = 0
     public var report: DailyReport?
-        
+    
     enum CodingKeys: String, CodingKey {
         case id, carbohydrate, protein, fat, report
     }
     
     public init(carbohydrate: Double = 0,
-         protein: Double = 0,
-         fat: Double = 0,
-         report: DailyReport? = nil) {
+                protein: Double = 0,
+                fat: Double = 0,
+                report: DailyReport? = nil) {
         self.id = UUID().uuidString
         self.carbohydrate = carbohydrate
         self.protein = protein

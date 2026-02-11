@@ -41,13 +41,18 @@ struct DailyReportView: View {
     var body: some View {
         List {
             dailyConsumptionSection
-            mealsSection
-            historySection
+           
+            if appPersistence.useMealsCounter {
+                mealsCounterSection
+            } else {
+                mealsSection
+                historySection
+            }
         }
         .listRowSpacing(8.0)
         .navigationTitle(report.dateString)
         .toolbar {
-            if report.meals?.isNotEmpty ?? false {
+            if report.meals.isNotEmpty {
                 ToolbarItem {
                     Button(Strings.reportMenuShareButtonTitle,
                            systemImage: SFSymbol.squareAndArrowUp.rawValue,
@@ -61,6 +66,9 @@ struct DailyReportView: View {
                 EditButton()
             }
         }
+        .onChange(of: appPersistence.useMealsCounter) { _, _ in
+            // This will trigger a view update when useMealsCounter changes
+        }
     }
 }
 
@@ -70,7 +78,7 @@ private extension DailyReportView {
         SectionView(Strings.dailyConsumption) {
             NutritionValuesConsumationView(totalConsumation: report.totalNutritionalValues,
                                            consumation: report.dailyConsumation ?? .defaultValues(with: report))
-                .id(report.meals)
+                .id(appPersistence.useMealsCounter ? "counter_\(report.mealCounterConsumation.carbohydrate)_\(report.mealCounterConsumation.protein)_\(report.mealCounterConsumation.fat)" : "meals_\(report.meals.count)")
                 .contentShape(Rectangle())
                 .onTapGesture {
                     router.navigate(to: .weeklyReports(date: report.date))
@@ -93,6 +101,11 @@ private extension DailyReportView {
         }, onButtonTap: addMeal)
     }
 
+    var mealsCounterSection: some View {
+        SectionView(Strings.mealsSectionTitle) {
+            MealCounter(report: report)
+        }
+    }
     
     @ViewBuilder
     var historySection: some View {
@@ -102,7 +115,7 @@ private extension DailyReportView {
                     VStack(alignment: .leading) {
                         Text(report.dateString)
                             .font(.headline)
-                        Text(report.meals?.first?.description ?? Strings.noMeals)
+                        Text(report.meals.first?.description ?? Strings.noMeals)
                             .font(.subheadline)
                     }
                     .contentShape(Rectangle())
